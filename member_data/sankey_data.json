@@ -1,0 +1,164 @@
+[
+  {
+    "source": "2024-11-07",
+    "target": "2025-01-03",
+    "value": 617,
+    "label": "Stayed"
+  },
+  {
+    "source": "New members",
+    "target": "2025-01-03",
+    "value": 638,
+    "label": "Joined"
+  },
+  {
+    "source": "2024-11-07",
+    "target": "Left",
+    "value": 636,
+    "label": "Left"
+  },
+  {
+    "source": "2025-01-03",
+    "target": "2025-02-15",
+    "value": 520,
+    "label": "Stayed"
+  },
+  {
+    "source": "New members",
+    "target": "2025-02-15",
+    "value": 620,
+    "label": "Joined"
+  },
+  {
+    "source": "2025-01-03",
+    "target": "Left",
+    "value": 735,
+    "label": "Left"
+  },
+  {
+    "source": "2025-02-15",
+    "target": "2025-04-01",
+    "value": 531,
+    "label": "Stayed"
+  },
+  {
+    "source": "New members",
+    "target": "2025-04-01",
+    "value": 553,
+    "label": "Joined"
+  },
+  {
+    "source": "2025-02-15",
+    "target": "Left",
+    "value": 609,
+    "label": "Left"
+  },
+  {
+    "source": "2025-04-01",
+    "target": "2025-04-06",
+    "value": 543,
+    "label": "Stayed"
+  },
+  {
+    "source": "New members",
+    "target": "2025-04-06",
+    "value": 559,
+    "label": "Joined"
+  },
+  {
+    "source": "2025-04-01",
+    "target": "Left",
+    "value": 541,
+    "label": "Left"
+  },
+  {
+    "source": "2025-04-06",
+    "target": "2025-05-01",
+    "value": 552,
+    "label": "Stayed"
+  },
+  {
+    "source": "New members",
+    "target": "2025-05-01",
+    "value": 545,
+    "label": "Joined"
+  },
+  {
+    "source": "2025-04-06",
+    "target": "Left",
+    "value": 550,
+    "label": "Left"
+  },
+  {
+    "source": "2025-05-01",
+    "target": "2025-06-01",
+    "value": 552,
+    "label": "Stayed"
+  },
+  {
+    "source": "New members",
+    "target": "2025-06-01",
+    "value": 555,
+    "label": "Joined"
+  },
+  {
+    "source": "2025-05-01",
+    "target": "Left",
+    "value": 545,
+    "label": "Left"
+  },
+  {
+    "source": "2025-06-01",
+    "target": "2025-07-01",
+    "value": 546,
+    "label": "Stayed"
+  },
+  {
+    "source": "New members",
+    "target": "2025-07-01",
+    "value": 555,
+    "label": "Joined"
+  },
+  {
+    "source": "2025-06-01",
+    "target": "Left",
+    "value": 561,
+    "label": "Left"
+  },
+  {
+    "source": "2025-07-01",
+    "target": "2025-08-04",
+    "value": 551,
+    "label": "Stayed"
+  },
+  {
+    "source": "New members",
+    "target": "2025-08-04",
+    "value": 571,
+    "label": "Joined"
+  },
+  {
+    "source": "2025-07-01",
+    "target": "Left",
+    "value": 550,
+    "label": "Left"
+  },
+  {
+    "source": "2025-08-04",
+    "target": "2026-02-06",
+    "value": 477,
+    "label": "Stayed"
+  },
+  {
+    "source": "New members",
+    "target": "2026-02-06",
+    "value": 609,
+    "label": "Joined"
+  },
+  {
+    "source": "2025-08-04",
+    "target": "Left",
+    "value": 645,
+    "label": "Left"
+  }
+]

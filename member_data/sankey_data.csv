@@ -1,0 +1,28 @@
+source,target,value,label
+2024-11-07,2025-01-03,617,Stayed
+New members,2025-01-03,638,Joined
+2024-11-07,Left,636,Left
+2025-01-03,2025-02-15,520,Stayed
+New members,2025-02-15,620,Joined
+2025-01-03,Left,735,Left
+2025-02-15,2025-04-01,531,Stayed
+New members,2025-04-01,553,Joined
+2025-02-15,Left,609,Left
+2025-04-01,2025-04-06,543,Stayed
+New members,2025-04-06,559,Joined
+2025-04-01,Left,541,Left
+2025-04-06,2025-05-01,552,Stayed
+New members,2025-05-01,545,Joined
+2025-04-06,Left,550,Left
+2025-05-01,2025-06-01,552,Stayed
+New members,2025-06-01,555,Joined
+2025-05-01,Left,545,Left
+2025-06-01,2025-07-01,546,Stayed
+New members,2025-07-01,555,Joined
+2025-06-01,Left,561,Left
+2025-07-01,2025-08-04,551,Stayed
+New members,2025-08-04,571,Joined
+2025-07-01,Left,550,Left
+2025-08-04,2026-02-06,477,Stayed
+New members,2026-02-06,609,Joined
+2025-08-04,Left,645,Left

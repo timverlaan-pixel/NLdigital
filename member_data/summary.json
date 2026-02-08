@@ -1,0 +1,52 @@
+[
+  {
+    "date": "2024-11-07 01:58:20",
+    "member_count": 1253,
+    "expected_count": 628
+  },
+  {
+    "date": "2025-01-03 22:54:06",
+    "member_count": 1255,
+    "expected_count": 632
+  },
+  {
+    "date": "2025-02-15 04:41:33",
+    "member_count": 1140,
+    "expected_count": 546
+  },
+  {
+    "date": "2025-04-01 03:58:03",
+    "member_count": 1084,
+    "expected_count": 552
+  },
+  {
+    "date": "2025-04-06 03:06:01",
+    "member_count": 1102,
+    "expected_count": 552
+  },
+  {
+    "date": "2025-05-01 10:46:14",
+    "member_count": 1097,
+    "expected_count": 555
+  },
+  {
+    "date": "2025-06-01 11:24:21",
+    "member_count": 1107,
+    "expected_count": 554
+  },
+  {
+    "date": "2025-07-01 13:10:56",
+    "member_count": 1101,
+    "expected_count": 563
+  },
+  {
+    "date": "2025-08-04 00:32:40",
+    "member_count": 1122,
+    "expected_count": 571
+  },
+  {
+    "date": "2026-02-06 16:52:00",
+    "member_count": 1086,
+    "expected_count": 543
+  }
+]
