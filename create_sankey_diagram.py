@@ -58,6 +58,20 @@ for i, flow in enumerate(active_flows):
     from_node = f"{from_date}\n({from_count} leden)"
     to_node = f"{to_date}\n({to_count} leden)"
     
+    # Create company list string for hover text (companies that left)
+    left_companies = flow.get('left_members', [])
+    companies_text = '<b>Companies that left:</b><br>'
+    if left_companies:
+        # Show first 10 companies + count of remaining
+        for company in left_companies[:10]:
+            # Normalize display name
+            display_name = company.replace('-', ' ').replace('bv', 'BV')
+            companies_text += f"• {display_name}<br>"
+        if len(left_companies) > 10:
+            companies_text += f"... and {len(left_companies) - 10} more<br>"
+    else:
+        companies_text += "No data"
+    
     # Add stayed flow
     if flow['stayed'] > 0:
         sankey_entries.append({
@@ -85,7 +99,8 @@ for i, flow in enumerate(active_flows):
             'target': 'Vertrokken',
             'value': flow['left'],
             'label': f"Vertrokken: {flow['left']}",
-            'type': 'left'
+            'type': 'left',
+            'hover_companies': companies_text
         })
 
 print(f"Total flow entries: {len(sankey_entries)}")
@@ -108,6 +123,15 @@ source_indices = [node_indices[s] for s in df['source']]
 target_indices = [node_indices[t] for t in df['target']]
 values = df['value'].tolist()
 labels = df['label'].tolist()
+
+# Prepare custom hover text with company information
+hover_texts = []
+for idx, row in df.iterrows():
+    if 'hover_companies' in row and row['hover_companies']:
+        hover_text = f"{row['label']}<br>{row['hover_companies']}"
+    else:
+        hover_text = row['label']
+    hover_texts.append(hover_text)
 
 # Create color mapping with better visibility
 colors = []
@@ -146,7 +170,8 @@ fig = go.Figure(data=[go.Sankey(
         value=values,
         color=colors,
         label=labels,
-        hovertemplate='%{label}<br>Aantal: %{value}<extra></extra>'
+        customdata=hover_texts,
+        hovertemplate='%{customdata}<br><b>Aantal:</b> %{value}<extra></extra>'
     )
 )])
 

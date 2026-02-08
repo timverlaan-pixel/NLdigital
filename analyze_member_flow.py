@@ -19,6 +19,10 @@ def extract_company_name(url):
             company_slug = parts[1].strip('/').strip()
             # Make sure it's not a logo path
             if not company_slug.startswith('wp-content'):
+                # Normalize company names: "b v" -> "bv"
+                company_slug = company_slug.replace(' b v', ' bv').replace(' b v/', 'bv')
+                # Also handle common variants
+                company_slug = company_slug.replace('-b-v', '-bv')
                 return company_slug
     return None
 

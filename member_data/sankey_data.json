@@ -20,37 +20,37 @@
   {
     "source": "2025-01-03",
     "target": "2025-02-15",
-    "value": 520,
+    "value": 522,
     "label": "Stayed"
   },
   {
     "source": "New members",
     "target": "2025-02-15",
-    "value": 51,
+    "value": 49,
     "label": "Joined"
   },
   {
     "source": "2025-01-03",
     "target": "Left",
-    "value": 112,
+    "value": 110,
     "label": "Left"
   },
   {
     "source": "2025-02-15",
     "target": "2025-04-01",
-    "value": 531,
+    "value": 533,
     "label": "Stayed"
   },
   {
     "source": "New members",
     "target": "2025-04-01",
-    "value": 15,
+    "value": 13,
     "label": "Joined"
   },
   {
     "source": "2025-02-15",
     "target": "Left",
-    "value": 40,
+    "value": 38,
     "label": "Left"
   },
   {
@@ -92,19 +92,19 @@
   {
     "source": "2025-06-01",
     "target": "2025-07-01",
-    "value": 546,
+    "value": 549,
     "label": "Stayed"
   },
   {
     "source": "New members",
     "target": "2025-07-01",
-    "value": 8,
+    "value": 5,
     "label": "Joined"
   },
   {
     "source": "2025-06-01",
     "target": "Left",
-    "value": 9,
+    "value": 6,
     "label": "Left"
   },
   {

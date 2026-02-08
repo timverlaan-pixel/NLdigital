@@ -236,10 +236,16 @@ html_content = '''<!DOCTYPE html>
                         const logoUrl = snapshot.logos_by_company[company];
                         
                         if (logoUrl) {
-                            const companyDisplay = company.replace(/-/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
+                            // Format company name: replace hyphens with spaces, normalize "b v" to "bv"
+                            let companyDisplay = company
+                                .replace(/-/g, ' ')
+                                .replace(/b v/g, 'BV')
+                                .replace(/b-v/g, 'BV')
+                                .replace(/([a-z])([A-Z])/g, '$1 $2');
+                            
                             logoGalleryHtml += `
                                 <div class="logo-item" title="${companyDisplay}">
-                                    <img src="${logoUrl}" alt="${company}" onerror="this.style.display='none'">
+                                    <img src="${logoUrl}" alt="${companyDisplay}" onerror="this.style.display='none'">
                                     <div class="logo-item-name">${companyDisplay}</div>
                                 </div>
                             `;
