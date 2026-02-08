@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLdigital Member Flow Analysis</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .stat-label {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .stat-value {
+            color: #333;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        
+        .description {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .description h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .description p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        
+        .diagram-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        #sankey {
+            width: 100%;
+            height: 800px;
+        }
+        
+        footer {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            header, .description, .diagram-container, footer {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 NLdigital Member Flow Analysis</h1>
+            <p class="subtitle">Analyzing member inflow and outflow from November 2024 to February 2026</p>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-label">Members Joined</div>
+                    <div class="stat-value">5,205</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Members Left</div>
+                    <div class="stat-value">5,372</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Retention Rate</div>
+                    <div class="stat-value">47.6%</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Data Points</div>
+                    <div class="stat-value">10</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="description">
+            <h2>About This Analysis</h2>
+            <p>
+                This interactive Sankey diagram visualizes the member flow dynamics of NLdigital over a 15-month period. 
+                Each flow represents the movement of members between consecutive snapshots.
+            </p>
+            <p>
+                <strong>Data Source:</strong> Member sitemaps captured from the Internet Archive's Wayback Machine and live data (February 2026).
+            </p>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: rgba(100, 150, 200, 1);"></div>
+                    <span><strong>Stayed</strong> - Members who remained active</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: rgba(100, 200, 100, 1);"></div>
+                    <span><strong>Joined</strong> - New members added</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: rgba(200, 100, 100, 1);"></div>
+                    <span><strong>Left</strong> - Members who departed</span>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; color: #999; font-size: 0.9em;">
+                💡 Tip: Hover over the diagram to see detailed flow information. Drag nodes to rearrange the visualization.
+            </p>
+        </div>
+        
+        <div class="diagram-container">
+            <div id="sankey"></div>
+        </div>
+        
+        <footer>
+            <p>Generated with Python, Plotly, and data from the Internet Archive (archive.org)</p>
+            <p><a href="https://github.com/timverlaan-pixel/NLdigital" style="color: #667eea; text-decoration: none;">View on GitHub</a></p>
+        </footer>
+    </div>
+    
+    <script>
+        // Load and display the Sankey diagram
+        fetch('member_data/sankey_data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Process data for Plotly
+                const sources = data.map(d => d.source);
+                const targets = data.map(d => d.target);
+                const values = data.map(d => d.value);
+                
+                // Get unique nodes
+                const allNodes = [...new Set([...sources, ...targets])].sort();
+                
+                // Create node indices
+                const nodeIndices = {};
+                allNodes.forEach((node, idx) => {
+                    nodeIndices[node] = idx;
+                });
+                
+                // Map to indices
+                const sourceIndices = sources.map(s => nodeIndices[s]);
+                const targetIndices = targets.map(t => nodeIndices[t]);
+                
+                // Color mapping
+                const colors = data.map(d => {
+                    if (d.label === 'Stayed') return 'rgba(100, 150, 200, 0.5)';
+                    if (d.label === 'Joined') return 'rgba(100, 200, 100, 0.5)';
+                    if (d.label === 'Left') return 'rgba(200, 100, 100, 0.5)';
+                    return 'rgba(150, 150, 150, 0.5)';
+                });
+                
+                // Node colors
+                const nodeColors = allNodes.map(n => {
+                    if (n === 'New members') return 'rgba(100, 200, 100, 1)';
+                    if (n === 'Left') return 'rgba(200, 100, 100, 1)';
+                    return 'rgba(100, 150, 200, 1)';
+                });
+                
+                const sankey = {
+                    type: "sankey",
+                    node: {
+                        pad: 15,
+                        thickness: 20,
+                        line: { color: "black", width: 0.5 },
+                        label: allNodes,
+                        color: nodeColors
+                    },
+                    link: {
+                        source: sourceIndices,
+                        target: targetIndices,
+                        value: values,
+                        color: colors,
+                        label: data.map(d => d.label)
+                    }
+                };
+                
+                const layout = {
+                    title: {
+                        text: "NLdigital Member Flows (2024-2026)",
+                        font: { size: 20 }
+                    },
+                    font: { size: 12 },
+                    template: 'plotly_white'
+                };
+                
+                Plotly.newPlot('sankey', [sankey], layout, { responsive: true });
+            })
+            .catch(error => {
+                console.error('Error loading Sankey data:', error);
+                document.getElementById('sankey').innerHTML = '<p>Error loading diagram</p>';
+            });
+    </script>
+</body>
+</html>
