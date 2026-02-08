@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Create interactive Sankey diagram for NLdigital member flows
+Shows member inflow/outflow with clear labels and filtered batches
 """
 
 import json
@@ -17,17 +18,80 @@ except ImportError:
     subprocess.check_call(['pip', 'install', 'plotly', '-q'])
     import plotly.graph_objects as go
 
-# Load Sankey data
+# Load Sankey data and flow analysis
 data_dir = '/workspaces/NLdigital/member_data'
-sankey_file = os.path.join(data_dir, 'sankey_data.json')
+flow_file = os.path.join(data_dir, 'member_flows.json')
 
-with open(sankey_file, 'r', encoding='utf-8') as f:
-    sankey_data = json.load(f)
+with open(flow_file, 'r') as f:
+    flows = json.load(f)
 
-print("Creating Sankey diagram...")
+print("Creating enhanced Sankey diagram...")
+print("\nFiltering out batches with 0 departures...")
 
-# Convert to dataframe for easier processing
-df = pd.DataFrame(sankey_data)
+# Filter out batches where no one left
+active_flows = [f for f in flows if f['left'] > 0]
+print(f"Original batches: {len(flows)}")
+print(f"Active batches (with departures): {len(active_flows)}")
+
+# Build the Sankey data
+sankey_entries = []
+
+# Load the original member snapshots for count information
+import json
+member_files = sorted([f for f in os.listdir(data_dir) if f.startswith('members_') and f.endswith('.json')])
+member_counts = {}
+for filename in member_files:
+    with open(os.path.join(data_dir, filename), 'r') as f:
+        data = json.load(f)
+        date = data['date'].split()[0]
+        member_counts[data['date']] = data['member_count']
+
+# Process each active flow
+for i, flow in enumerate(active_flows):
+    from_date = flow['from_date'].split()[0]  # Just date part
+    to_date = flow['to_date'].split()[0]
+    
+    from_count = member_counts.get(flow['from_date'], '?')
+    to_count = member_counts.get(flow['to_date'], '?')
+    
+    # Create labeled nodes
+    from_node = f"{from_date}\n({from_count} leden)"
+    to_node = f"{to_date}\n({to_count} leden)"
+    
+    # Add stayed flow
+    if flow['stayed'] > 0:
+        sankey_entries.append({
+            'source': from_node,
+            'target': to_node,
+            'value': flow['stayed'],
+            'label': f"Gebleven: {flow['stayed']}",
+            'type': 'stayed'
+        })
+    
+    # Add joined flow (from "New")
+    if flow['joined'] > 0:
+        sankey_entries.append({
+            'source': 'Nieuw / Toegetreden',
+            'target': to_node,
+            'value': flow['joined'],
+            'label': f"Toegetreden: {flow['joined']}",
+            'type': 'joined'
+        })
+    
+    # Add left flow (to "Gone")
+    if flow['left'] > 0:
+        sankey_entries.append({
+            'source': from_node,
+            'target': 'Vertrokken',
+            'value': flow['left'],
+            'label': f"Vertrokken: {flow['left']}",
+            'type': 'left'
+        })
+
+print(f"Total flow entries: {len(sankey_entries)}")
+
+# Convert to dataframe
+df = pd.DataFrame(sankey_entries)
 
 # Get all unique nodes
 all_sources = df['source'].unique().tolist()
@@ -35,7 +99,6 @@ all_targets = df['target'].unique().tolist()
 all_nodes = sorted(list(set(all_sources + all_targets)))
 
 print(f"Total nodes: {len(all_nodes)}")
-print(f"Nodes: {all_nodes}")
 
 # Create mapping of node names to indices
 node_indices = {node: i for i, node in enumerate(all_nodes)}
@@ -46,17 +109,27 @@ target_indices = [node_indices[t] for t in df['target']]
 values = df['value'].tolist()
 labels = df['label'].tolist()
 
-# Create color mapping
+# Create color mapping with better visibility
 colors = []
 for label in labels:
-    if label == 'Stayed':
-        colors.append('rgba(100, 150, 200, 0.5)')  # Blue
-    elif label == 'Joined':
-        colors.append('rgba(100, 200, 100, 0.5)')  # Green
-    elif label == 'Left':
-        colors.append('rgba(200, 100, 100, 0.5)')  # Red
+    if 'Gebleven' in label:
+        colors.append('rgba(100, 150, 200, 0.6)')  # Blue
+    elif 'Toegetreden' in label:
+        colors.append('rgba(100, 200, 100, 0.6)')  # Green
+    elif 'Vertrokken' in label:
+        colors.append('rgba(200, 100, 100, 0.6)')  # Red
     else:
-        colors.append('rgba(150, 150, 150, 0.5)')  # Gray
+        colors.append('rgba(150, 150, 150, 0.5)')
+
+# Node colors
+node_colors = []
+for n in all_nodes:
+    if 'Toegetreden' in n:
+        node_colors.append('rgba(100, 200, 100, 1)')
+    elif 'Vertrokken' in n:
+        node_colors.append('rgba(200, 100, 100, 1)')
+    else:
+        node_colors.append('rgba(100, 150, 200, 1)')
 
 # Create Sankey diagram
 fig = go.Figure(data=[go.Sankey(
@@ -65,60 +138,47 @@ fig = go.Figure(data=[go.Sankey(
         thickness=20,
         line=dict(color='black', width=0.5),
         label=all_nodes,
-        color=['rgba(100, 150, 200, 1)' if 'New' in n or 'Left' not in n and '-' in n else 
-               'rgba(100, 200, 100, 1)' if 'New' in n else
-               'rgba(200, 100, 100, 1)' if 'Left' in n else
-               'rgba(150, 150, 150, 1)' for n in all_nodes]
+        color=node_colors
     ),
     link=dict(
         source=source_indices,
         target=target_indices,
         value=values,
         color=colors,
-        label=labels
+        label=labels,
+        hovertemplate='%{label}<br>Aantal: %{value}<extra></extra>'
     )
 )])
 
 fig.update_layout(
-    title_text="NLdigital Member Flows (2024-2026)",
-    font=dict(size=10),
-    height=800,
+    title_text="NLdigital Ledenstromen - Gefiltreerde Batches<br>(Alleen batches met vertrekken)",
+    font=dict(size=11),
+    height=900,
     width=1400,
-    template='plotly_white'
+    template='plotly_white',
+    hovermode='closest'
 )
 
 # Save HTML
-output_file = os.path.join(data_dir, 'sankey_diagram.html')
+output_file = os.path.join(data_dir, '..', 'sankey_diagram_filtered.html')
 fig.write_html(output_file)
 print(f"✓ Sankey diagram saved to {output_file}")
 
-# Also try to save as PNG (requires kaleido)
-try:
-    png_file = os.path.join(data_dir, 'sankey_diagram.png')
-    fig.write_image(png_file)
-    print(f"✓ PNG saved to {png_file}")
-except Exception as e:
-    print(f"Note: PNG export not available ({str(e)})")
+# Print summary
+print("\n" + "="*70)
+print("SAMENVATTING - GEFILTERDE BATCHES (alleen met vertrekken)")
+print("="*70)
+for flow in active_flows:
+    from_date = flow['from_date'].split()[0]
+    to_date = flow['to_date'].split()[0]
+    from_count = member_counts.get(flow['from_date'], '?')
+    to_count = member_counts.get(flow['to_date'], '?')
+    
+    print(f"\n{from_date} ({from_count} leden) → {to_date} ({to_count} leden)")
+    print(f"  Gebleven:    {flow['stayed']}")
+    print(f"  Toegetreden: {flow['joined']}")
+    print(f"  Vertrokken:  {flow['left']} ⚠️")
+    print(f"  Netto:       {flow['joined'] - flow['left']:+d}")
 
-# Create a summary statistics
-print("\n" + "="*60)
-print("Summary Statistics")
-print("="*60)
+print("\n" + "="*70)
 
-# Analyze total flows
-total_joined = df[df['label'] == 'Joined']['value'].sum()
-total_left = df[df['label'] == 'Left']['value'].sum()
-total_stayed = df[df['label'] == 'Stayed']['value'].sum()
-
-print(f"\nTotal member movements across all periods:")
-print(f"  Total joined: {total_joined}")
-print(f"  Total left:   {total_left}")
-print(f"  Total stayed: {total_stayed}")
-
-print(f"\nMembership retention rate: {total_stayed / (total_stayed + total_left):.1%}")
-print(f"Churn flows per transition: {(total_left / len(df[df['label'] == 'Left'])):.0f} average")
-
-print("\n" + "="*60)
-print("Sankey diagram ready for viewing!")
-print("Open sankey_diagram.html in a browser to see the interactive visualization.")
-print("="*60)

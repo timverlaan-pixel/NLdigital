@@ -4,45 +4,30 @@ This project analyzes member inflow and outflow for NLdigital from November 2024
 
 ## 📊 Visualizations
 
-### 1. Member Flow Sankey Diagram
+### 1. Member Flow Sankey Diagram (Enhanced)
 **URL:** [https://timverlaan-pixel.github.io/NLdigital/](https://timverlaan-pixel.github.io/NLdigital/)
 
+**NEW: Filtered & Enhanced View** - Showing only batches with departures!
+
 Interactive Sankey diagram showing:
-- **Member movements** between 10 distinct time snapshots
+- **Member movements** between active time periods (7 batches with departures)
+- **Clear labels with numbers**: Shows exactly how many stayed, joined, and left
+- **Member count at each step**: See the total membership size progression
 - **Color-coded flows**: 
   - 🔵 Blue = Members who stayed
   - 🟢 Green = New members who joined  
   - 🔴 Red = Members who left
 
-**Key Metrics (Unique Companies Only):**
-- Total Members Joined: **279**
-- Total Members Left: **264**
-- Average Retention Rate: **68.5%**
+**Key Insights:**
+- **Largest Departure Batch**: Aug 2025 → Feb 2026 (86 companies left)
+- **Highest Churn Period**: Jan 2025 → Feb 2025 (112 companies left)
+- **Member Count Range**: 628-632 unique companies across all snapshots
 
-**Note:** Sitemaps contained ~50% duplicate logo URLs, removed for accurate company counts.
-
-### 2. Departed Companies - Visual Gallery
-**URL:** [departed_companies_logos.html](departed_companies_logos.html)
-
-**Interactive logo gallery** showing company logos organized by departure batch:
-- Nov 2024 → Jan 2025: 11 companies left
-- Jan 2025 → Feb 2025: 112 companies left
-- Feb 2025 → Apr 2025: 40 companies left
-- Apr 2025 → May 2025: 3 companies left
-- May 2025 → Jun 2025: 0 companies left
-- Jun 2025 → Jul 2025: 9 companies left
-- Jul 2025 → Aug 2025: 3 companies left
-- **Aug 2025 → Feb 2026: 86 companies left** (largest batch)
-
-**Features:**
-- ✅ Hover to see company names
-- ✅ Visual gallery with company logos
-- ✅ Grouped by departure period
-
-### 3. Companies That Left (Text List)
-**URL:** [companies_left.html](companies_left.html) (deprecated - previous version had incorrect counts)
-
-Interactive list view (now using corrected data).
+**Improvements in this version:**
+- ✅ Only shows batches where companies actually left (filtered out 2 periods with 0 departures)
+- ✅ Clear numerical labels on each flow showing exact counts
+- ✅ Member count displayed at each timestamp
+- ✅ Better visual clarity and larger diagram
 
 ---
 

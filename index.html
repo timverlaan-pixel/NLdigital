@@ -218,7 +218,7 @@
         </div>
         
         <div class="diagram-container">
-            <div id="sankey"></div>
+            <iframe src="sankey_diagram_filtered.html" style="width: 100%; height: 900px; border: none; border-radius: 8px;"></iframe>
         </div>
         
         <footer>
@@ -226,78 +226,5 @@
             <p><a href="https://github.com/timverlaan-pixel/NLdigital" style="color: #667eea; text-decoration: none;">View on GitHub</a></p>
         </footer>
     </div>
-    
-    <script>
-        // Load and display the Sankey diagram
-        fetch('member_data/sankey_data.json')
-            .then(response => response.json())
-            .then(data => {
-                // Process data for Plotly
-                const sources = data.map(d => d.source);
-                const targets = data.map(d => d.target);
-                const values = data.map(d => d.value);
-                
-                // Get unique nodes
-                const allNodes = [...new Set([...sources, ...targets])].sort();
-                
-                // Create node indices
-                const nodeIndices = {};
-                allNodes.forEach((node, idx) => {
-                    nodeIndices[node] = idx;
-                });
-                
-                // Map to indices
-                const sourceIndices = sources.map(s => nodeIndices[s]);
-                const targetIndices = targets.map(t => nodeIndices[t]);
-                
-                // Color mapping
-                const colors = data.map(d => {
-                    if (d.label === 'Stayed') return 'rgba(100, 150, 200, 0.5)';
-                    if (d.label === 'Joined') return 'rgba(100, 200, 100, 0.5)';
-                    if (d.label === 'Left') return 'rgba(200, 100, 100, 0.5)';
-                    return 'rgba(150, 150, 150, 0.5)';
-                });
-                
-                // Node colors
-                const nodeColors = allNodes.map(n => {
-                    if (n === 'New members') return 'rgba(100, 200, 100, 1)';
-                    if (n === 'Left') return 'rgba(200, 100, 100, 1)';
-                    return 'rgba(100, 150, 200, 1)';
-                });
-                
-                const sankey = {
-                    type: "sankey",
-                    node: {
-                        pad: 15,
-                        thickness: 20,
-                        line: { color: "black", width: 0.5 },
-                        label: allNodes,
-                        color: nodeColors
-                    },
-                    link: {
-                        source: sourceIndices,
-                        target: targetIndices,
-                        value: values,
-                        color: colors,
-                        label: data.map(d => d.label)
-                    }
-                };
-                
-                const layout = {
-                    title: {
-                        text: "NLdigital Member Flows (2024-2026)",
-                        font: { size: 20 }
-                    },
-                    font: { size: 12 },
-                    template: 'plotly_white'
-                };
-                
-                Plotly.newPlot('sankey', [sankey], layout, { responsive: true });
-            })
-            .catch(error => {
-                console.error('Error loading Sankey data:', error);
-                document.getElementById('sankey').innerHTML = '<p>Error loading diagram</p>';
-            });
-    </script>
 </body>
 </html>
