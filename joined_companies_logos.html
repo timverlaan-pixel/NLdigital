@@ -10,20 +10,19 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
                 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             min-height: 100vh;
             padding: 40px 20px;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         h1 {
             color: white;
             text-align: center;
@@ -31,21 +30,49 @@
             font-size: 2.5em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-        
-        .subtitle {
+
+        .stats {
             color: rgba(255,255,255,0.9);
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-size: 1.1em;
         }
-        
-        .gallery {
+
+        .batch-section {
+            margin-bottom: 40px;
+        }
+
+        .batch-header {
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .batch-dates {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .batch-count-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .batch-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
-            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 0 0 12px 12px;
         }
-        
+
         .company-card {
             background: white;
             border-radius: 12px;
@@ -56,12 +83,12 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .company-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 24px rgba(0,0,0,0.15);
         }
-        
+
         .company-link {
             text-decoration: none;
             color: inherit;
@@ -69,7 +96,7 @@
             flex-direction: column;
             height: 100%;
         }
-        
+
         .logo-container {
             background: #f5f5f5;
             height: 200px;
@@ -79,13 +106,13 @@
             overflow: hidden;
             border-bottom: 1px solid #eee;
         }
-        
+
         .company-logo {
             max-width: 90%;
             max-height: 90%;
             object-fit: contain;
         }
-        
+
         .company-name {
             padding: 15px;
             font-weight: 600;
@@ -98,42 +125,45 @@
             font-size: 0.95em;
             transition: color 0.3s ease;
         }
-        
-        .company-card:hover .company-name {
-            color: #11998e;
-        }
-        
+
         .back-link {
             color: white;
             text-align: center;
             margin-top: 30px;
             font-size: 1em;
         }
-        
+
         .back-link a {
             color: white;
             text-decoration: underline;
             transition: opacity 0.3s ease;
         }
-        
+
         .back-link a:hover {
             opacity: 0.8;
         }
-        
-        .stats {
-            color: rgba(255,255,255,0.9);
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 0.95em;
+
+        body {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .company-card:hover .company-name {
+            color: #11998e;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>✨ Nieuwe Bedrijven</h1>
-        <div class="stats">136 bedrijven zijn toegetreden tot NLdigital</div>
-        
-        <div class="gallery">
+        <h1>Nieuwe Bedrijven</h1>
+        <div class="stats">172 bedrijven zijn toegetreden tot NLdigital</div>
+
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2024-11-07 &rarr; 2025-01-03</div>
+                <div class="batch-count-badge">15 bedrijven</div>
+            </div>
+            <div class="batch-gallery">
     <div class="company-card">
         <a href="https://nldigital.nl/leden/3-dm-consultancy/" title="Ga naar 3 Dm Consultancy op NLDigital.nl" class="company-link">
             <div class="logo-container">
@@ -142,6 +172,127 @@
             <div class="company-name">3 Dm Consultancy</div>
         </a>
     </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/bakkerelkhuizen-software-bv/" title="Ga naar Bakkerelkhuizen Software Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-bakkerelkhuizen-software-b-v.jpg" alt="Bakkerelkhuizen Software Bv" class="company-logo">
+            </div>
+            <div class="company-name">Bakkerelkhuizen Software Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/bradon-bv/" title="Ga naar Bradon Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-bradon-bv.jpg" alt="Bradon Bv" class="company-logo">
+            </div>
+            <div class="company-name">Bradon Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/bruis-bv/" title="Ga naar Bruis Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-bruis-b-v.jpg" alt="Bruis Bv" class="company-logo">
+            </div>
+            <div class="company-name">Bruis Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/digital-forms-bv/" title="Ga naar Digital Forms Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-digital-forms-b-v.jpg" alt="Digital Forms Bv" class="company-logo">
+            </div>
+            <div class="company-name">Digital Forms Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/dysel-bv/" title="Ga naar Dysel Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-dysel-b-v.jpg" alt="Dysel Bv" class="company-logo">
+            </div>
+            <div class="company-name">Dysel Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/hackify-bv/" title="Ga naar Hackify Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-hackify-b-v.jpg" alt="Hackify Bv" class="company-logo">
+            </div>
+            <div class="company-name">Hackify Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/ictivity-groep-bv/" title="Ga naar Ictivity Groep Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-ictivity-groep-b-v.jpg" alt="Ictivity Groep Bv" class="company-logo">
+            </div>
+            <div class="company-name">Ictivity Groep Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/intigris-bv/" title="Ga naar Intigris Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-intigris-b-v.jpg" alt="Intigris Bv" class="company-logo">
+            </div>
+            <div class="company-name">Intigris Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/nebius-group-n-v/" title="Ga naar Nebius Group N V op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-nebius-group-n-v.jpg" alt="Nebius Group N V" class="company-logo">
+            </div>
+            <div class="company-name">Nebius Group N V</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/northbridge-group-ict-services-bv/" title="Ga naar Northbridge Group Ict Services Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-northbridge-group-ict-services-b-v.jpg" alt="Northbridge Group Ict Services Bv" class="company-logo">
+            </div>
+            <div class="company-name">Northbridge Group Ict Services Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/sqnetworks-cyber-security-bv/" title="Ga naar Sqnetworks Cyber Security Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-sqnetworks-cyber-security-b-v.jpg" alt="Sqnetworks Cyber Security Bv" class="company-logo">
+            </div>
+            <div class="company-name">Sqnetworks Cyber Security Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/the-digital-federation-bv/" title="Ga naar The Digital Federation Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-the-digital-federation-b-v.jpg" alt="The Digital Federation Bv" class="company-logo">
+            </div>
+            <div class="company-name">The Digital Federation Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/travelspirit-bv/" title="Ga naar Travelspirit Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-travelspirit-b-v.jpg" alt="Travelspirit Bv" class="company-logo">
+            </div>
+            <div class="company-name">Travelspirit Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/turn-one/" title="Ga naar Turn One op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-turn-one.jpg" alt="Turn One" class="company-logo">
+            </div>
+            <div class="company-name">Turn One</div>
+        </a>
+    </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-01-03 &rarr; 2025-02-15</div>
+                <div class="batch-count-badge">49 bedrijven</div>
+            </div>
+            <div class="batch-gallery">
     <div class="company-card">
         <a href="https://nldigital.nl/leden/accenture-bv/" title="Ga naar Accenture Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
@@ -159,22 +310,6 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/argonexus-bv/" title="Ga naar Argonexus Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-argonexus-b-v.jpg" alt="Argonexus Bv" class="company-logo">
-            </div>
-            <div class="company-name">Argonexus Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/atos-netherlands-bv/" title="Ga naar Atos Netherlands Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-atos-netherlands-b-v.jpg" alt="Atos Netherlands Bv" class="company-logo">
-            </div>
-            <div class="company-name">Atos Netherlands Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/axians-performance-solutions-bv/" title="Ga naar Axians Performance Solutions Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-axians-performance-solutions-b-v.jpg" alt="Axians Performance Solutions Bv" class="company-logo">
@@ -183,35 +318,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/axm-365-bv/" title="Ga naar Axm 365 Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-axm-365-b-v.jpg" alt="Axm 365 Bv" class="company-logo">
-            </div>
-            <div class="company-name">Axm 365 Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/b00-bv/" title="Ga naar B00 Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-b00-b-v.jpg" alt="B00 Bv" class="company-logo">
-            </div>
-            <div class="company-name">B00 Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/babbage-bv/" title="Ga naar Babbage Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-babbage-b-v.jpg" alt="Babbage Bv" class="company-logo">
             </div>
             <div class="company-name">Babbage Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/bakkerelkhuizen-software-bv/" title="Ga naar Bakkerelkhuizen Software Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-bakkerelkhuizen-software-b-v.jpg" alt="Bakkerelkhuizen Software Bv" class="company-logo">
-            </div>
-            <div class="company-name">Bakkerelkhuizen Software Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -231,6 +342,359 @@
         </a>
     </div>
     <div class="company-card">
+        <a href="https://nldigital.nl/leden/bolt/" title="Ga naar Bolt op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-bolt.jpg" alt="Bolt" class="company-logo">
+            </div>
+            <div class="company-name">Bolt</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/buro-de-haan-informatietechnologie/" title="Ga naar Buro De Haan Informatietechnologie op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-buro-de-haan-informatietechnologie.jpg" alt="Buro De Haan Informatietechnologie" class="company-logo">
+            </div>
+            <div class="company-name">Buro De Haan Informatietechnologie</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/chiefs-of-it-bv/" title="Ga naar Chiefs Of It Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-chiefs-of-it-b-v.jpg" alt="Chiefs Of It Bv" class="company-logo">
+            </div>
+            <div class="company-name">Chiefs Of It Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/compurity/" title="Ga naar Compurity op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-compurity.jpg" alt="Compurity" class="company-logo">
+            </div>
+            <div class="company-name">Compurity</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/connectwise-nederland/" title="Ga naar Connectwise Nederland op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-connectwise-nederland.jpg" alt="Connectwise Nederland" class="company-logo">
+            </div>
+            <div class="company-name">Connectwise Nederland</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/crown-consulting-management/" title="Ga naar Crown Consulting Management op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-crown-consulting-management.jpg" alt="Crown Consulting Management" class="company-logo">
+            </div>
+            <div class="company-name">Crown Consulting Management</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/declan-bv/" title="Ga naar Declan Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-declan-b-v.jpg" alt="Declan Bv" class="company-logo">
+            </div>
+            <div class="company-name">Declan Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/edwin-zoetemeijer-consultancy/" title="Ga naar Edwin Zoetemeijer Consultancy op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-edwin-zoetemeijer-consultancy.jpg" alt="Edwin Zoetemeijer Consultancy" class="company-logo">
+            </div>
+            <div class="company-name">Edwin Zoetemeijer Consultancy</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/fsas-technologies-bv/" title="Ga naar Fsas Technologies Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-fsas-technologies-b-v.jpg" alt="Fsas Technologies Bv" class="company-logo">
+            </div>
+            <div class="company-name">Fsas Technologies Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/gateway-software-services-bv/" title="Ga naar Gateway Software Services Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-gateway-software-services-b-v.jpg" alt="Gateway Software Services Bv" class="company-logo">
+            </div>
+            <div class="company-name">Gateway Software Services Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/goharmony/" title="Ga naar Goharmony op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-goharmony.jpg" alt="Goharmony" class="company-logo">
+            </div>
+            <div class="company-name">Goharmony</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/green-secure-it-bv/" title="Ga naar Green Secure It Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-green-secure-it-b-v.jpg" alt="Green Secure It Bv" class="company-logo">
+            </div>
+            <div class="company-name">Green Secure It Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/helloprint-bv/" title="Ga naar Helloprint Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-helloprint-b-v.jpg" alt="Helloprint Bv" class="company-logo">
+            </div>
+            <div class="company-name">Helloprint Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/informant-software-bv/" title="Ga naar Informant Software Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-informant-software-b-v.jpg" alt="Informant Software Bv" class="company-logo">
+            </div>
+            <div class="company-name">Informant Software Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/infourge-consulting-bv/" title="Ga naar Infourge Consulting Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-infourge-consulting-b-v.jpg" alt="Infourge Consulting Bv" class="company-logo">
+            </div>
+            <div class="company-name">Infourge Consulting Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/inlinesoftware-bv/" title="Ga naar Inlinesoftware Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-inlinesoftware-b-v.jpg" alt="Inlinesoftware Bv" class="company-logo">
+            </div>
+            <div class="company-name">Inlinesoftware Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/it-formule/" title="Ga naar It Formule op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-it-formule.jpg" alt="It Formule" class="company-logo">
+            </div>
+            <div class="company-name">It Formule</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/itph-academy-gbo-bv/" title="Ga naar Itph Academy Gbo Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-itph-academy-gbo-b-v.jpg" alt="Itph Academy Gbo Bv" class="company-logo">
+            </div>
+            <div class="company-name">Itph Academy Gbo Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/iventure-it-solutions-bv/" title="Ga naar Iventure It Solutions Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-iventure-it-solutions-b-v.jpg" alt="Iventure It Solutions Bv" class="company-logo">
+            </div>
+            <div class="company-name">Iventure It Solutions Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/kentie-smart-packaging-solutions-bv/" title="Ga naar Kentie Smart Packaging Solutions Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-kentie-smart-packaging-solutions-b-v.jpg" alt="Kentie Smart Packaging Solutions Bv" class="company-logo">
+            </div>
+            <div class="company-name">Kentie Smart Packaging Solutions Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/kerridge-commercial-systems-nederland-bv/" title="Ga naar Kerridge Commercial Systems Nederland Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-kerridge-commercial-systems-nederland-bv.jpg" alt="Kerridge Commercial Systems Nederland Bv" class="company-logo">
+            </div>
+            <div class="company-name">Kerridge Commercial Systems Nederland Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/leanforms/" title="Ga naar Leanforms op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-leanforms.jpg" alt="Leanforms" class="company-logo">
+            </div>
+            <div class="company-name">Leanforms</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/lefebvre-sdu/" title="Ga naar Lefebvre Sdu op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-lefebvre-sdu.jpg" alt="Lefebvre Sdu" class="company-logo">
+            </div>
+            <div class="company-name">Lefebvre Sdu</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/mdcs-ai/" title="Ga naar Mdcs Ai op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-mdcs-ai.jpg" alt="Mdcs Ai" class="company-logo">
+            </div>
+            <div class="company-name">Mdcs Ai</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/meneer-jansen-ict/" title="Ga naar Meneer Jansen Ict op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-meneer-jansen-ict.jpg" alt="Meneer Jansen Ict" class="company-logo">
+            </div>
+            <div class="company-name">Meneer Jansen Ict</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/merlinq-bv/" title="Ga naar Merlinq Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-merlinq-b-v.jpg" alt="Merlinq Bv" class="company-logo">
+            </div>
+            <div class="company-name">Merlinq Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/mnp-solutions/" title="Ga naar Mnp Solutions op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-mnp-solutions.jpg" alt="Mnp Solutions" class="company-logo">
+            </div>
+            <div class="company-name">Mnp Solutions</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/mosteasy/" title="Ga naar Mosteasy op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-mosteasy.jpg" alt="Mosteasy" class="company-logo">
+            </div>
+            <div class="company-name">Mosteasy</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/omines-internetbureau-bv/" title="Ga naar Omines Internetbureau Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-omines-internetbureau-b-v.jpg" alt="Omines Internetbureau Bv" class="company-logo">
+            </div>
+            <div class="company-name">Omines Internetbureau Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/purple-dragon-cybersecurity-bv/" title="Ga naar Purple Dragon Cybersecurity Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-purple-dragon-cybersecurity-b-v.jpg" alt="Purple Dragon Cybersecurity Bv" class="company-logo">
+            </div>
+            <div class="company-name">Purple Dragon Cybersecurity Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/quotifai-bv/" title="Ga naar Quotifai Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-quotifai-b-v.jpg" alt="Quotifai Bv" class="company-logo">
+            </div>
+            <div class="company-name">Quotifai Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/rappit-bv/" title="Ga naar Rappit Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-rappit-bv.jpg" alt="Rappit Bv" class="company-logo">
+            </div>
+            <div class="company-name">Rappit Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/sevenp-bv/" title="Ga naar Sevenp Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-sevenp-b-v.jpg" alt="Sevenp Bv" class="company-logo">
+            </div>
+            <div class="company-name">Sevenp Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/stb-computer-service/" title="Ga naar Stb Computer Service op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-stb-computer-service.jpg" alt="Stb Computer Service" class="company-logo">
+            </div>
+            <div class="company-name">Stb Computer Service</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/stormin-bv/" title="Ga naar Stormin Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-stormin-b-v.jpg" alt="Stormin Bv" class="company-logo">
+            </div>
+            <div class="company-name">Stormin Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/the-coding-company-bv/" title="Ga naar The Coding Company Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-the-coding-company-b-v.jpg" alt="The Coding Company Bv" class="company-logo">
+            </div>
+            <div class="company-name">The Coding Company Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/the-rmo-company-bv/" title="Ga naar The Rmo Company Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-the-rmo-company-b-v.jpg" alt="The Rmo Company Bv" class="company-logo">
+            </div>
+            <div class="company-name">The Rmo Company Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/thij-soft-computers-oldenzaal-bv/" title="Ga naar Thij Soft Computers Oldenzaal Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-thij-soft-computers-oldenzaal-b-v.jpg" alt="Thij Soft Computers Oldenzaal Bv" class="company-logo">
+            </div>
+            <div class="company-name">Thij Soft Computers Oldenzaal Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/top-systems/" title="Ga naar Top Systems op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-top-systems.jpg" alt="Top Systems" class="company-logo">
+            </div>
+            <div class="company-name">Top Systems</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/toshiba-global-commerce-solutions-benelux/" title="Ga naar Toshiba Global Commerce Solutions Benelux op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-toshiba-global-commerce-solutions-benelux.jpg" alt="Toshiba Global Commerce Solutions Benelux" class="company-logo">
+            </div>
+            <div class="company-name">Toshiba Global Commerce Solutions Benelux</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/wercstat/" title="Ga naar Wercstat op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-wercstat.jpg" alt="Wercstat" class="company-logo">
+            </div>
+            <div class="company-name">Wercstat</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/westcon-group-europe/" title="Ga naar Westcon Group Europe op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-westcon-group-europe.jpg" alt="Westcon Group Europe" class="company-logo">
+            </div>
+            <div class="company-name">Westcon Group Europe</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/workforce-insights-bv/" title="Ga naar Workforce Insights Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-workforce-insights-b-v.jpg" alt="Workforce Insights Bv" class="company-logo">
+            </div>
+            <div class="company-name">Workforce Insights Bv</div>
+        </a>
+    </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-02-15 &rarr; 2025-04-01</div>
+                <div class="batch-count-badge">13 bedrijven</div>
+            </div>
+            <div class="batch-gallery">
+    <div class="company-card">
         <a href="https://nldigital.nl/leden/bilgeadam-technologies-bv/" title="Ga naar Bilgeadam Technologies Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-bilgeadam-technologies-bv.jpg" alt="Bilgeadam Technologies Bv" class="company-logo">
@@ -239,11 +703,400 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/bolt/" title="Ga naar Bolt op NLDigital.nl" class="company-link">
+        <a href="https://nldigital.nl/leden/buro-de-haan-informatietechnologie-bv/" title="Ga naar Buro De Haan Informatietechnologie Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-bolt.jpg" alt="Bolt" class="company-logo">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-buro-de-haan-informatietechnologie-b-v.jpg" alt="Buro De Haan Informatietechnologie Bv" class="company-logo">
             </div>
-            <div class="company-name">Bolt</div>
+            <div class="company-name">Buro De Haan Informatietechnologie Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/hogeschool-dirksen-bv/" title="Ga naar Hogeschool Dirksen Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-hogeschool-dirksen-b-v.jpg" alt="Hogeschool Dirksen Bv" class="company-logo">
+            </div>
+            <div class="company-name">Hogeschool Dirksen Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/iacobien/" title="Ga naar Iacobien op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-iacobien.jpg" alt="Iacobien" class="company-logo">
+            </div>
+            <div class="company-name">Iacobien</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/informant-software/" title="Ga naar Informant Software op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-informant-software.jpg" alt="Informant Software" class="company-logo">
+            </div>
+            <div class="company-name">Informant Software</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/insphire-international-bv/" title="Ga naar Insphire International Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-insphire-international-b-v.jpg" alt="Insphire International Bv" class="company-logo">
+            </div>
+            <div class="company-name">Insphire International Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/itph-academy-bv/" title="Ga naar Itph Academy Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-itph-academy-b-v.jpg" alt="Itph Academy Bv" class="company-logo">
+            </div>
+            <div class="company-name">Itph Academy Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/obses-bv/" title="Ga naar Obses Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-obses-b-v.jpg" alt="Obses Bv" class="company-logo">
+            </div>
+            <div class="company-name">Obses Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/sdu-bv/" title="Ga naar Sdu Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-sdu-b-v.jpg" alt="Sdu Bv" class="company-logo">
+            </div>
+            <div class="company-name">Sdu Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/seqvitum-bv/" title="Ga naar Seqvitum Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-seqvitum-b-v.jpg" alt="Seqvitum Bv" class="company-logo">
+            </div>
+            <div class="company-name">Seqvitum Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/sevenp/" title="Ga naar Sevenp op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-sevenp.jpg" alt="Sevenp" class="company-logo">
+            </div>
+            <div class="company-name">Sevenp</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/top-systems-bv/" title="Ga naar Top Systems Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-top-systems-b-v.jpg" alt="Top Systems Bv" class="company-logo">
+            </div>
+            <div class="company-name">Top Systems Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/water-platform-company-bv/" title="Ga naar Water Platform Company Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-water-platform-company-bv.jpg" alt="Water Platform Company Bv" class="company-logo">
+            </div>
+            <div class="company-name">Water Platform Company Bv</div>
+        </a>
+    </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-04-01 &rarr; 2025-04-06</div>
+                <div class="batch-count-badge">9 bedrijven</div>
+            </div>
+            <div class="batch-gallery">
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/accenture-bv/" title="Ga naar Accenture Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-accenture-b-v.jpg" alt="Accenture Bv" class="company-logo">
+            </div>
+            <div class="company-name">Accenture Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/atos-netherlands-bv/" title="Ga naar Atos Netherlands Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-atos-netherlands-b-v.jpg" alt="Atos Netherlands Bv" class="company-logo">
+            </div>
+            <div class="company-name">Atos Netherlands Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/compurity/" title="Ga naar Compurity op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-compurity.jpg" alt="Compurity" class="company-logo">
+            </div>
+            <div class="company-name">Compurity</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/declan-bv/" title="Ga naar Declan Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-declan-b-v.jpg" alt="Declan Bv" class="company-logo">
+            </div>
+            <div class="company-name">Declan Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/inlinesoftware-bv/" title="Ga naar Inlinesoftware Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-inlinesoftware-b-v.jpg" alt="Inlinesoftware Bv" class="company-logo">
+            </div>
+            <div class="company-name">Inlinesoftware Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/itph-academy-gbo-bv/" title="Ga naar Itph Academy Gbo Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-itph-academy-gbo-b-v.jpg" alt="Itph Academy Gbo Bv" class="company-logo">
+            </div>
+            <div class="company-name">Itph Academy Gbo Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/mnp-solutions/" title="Ga naar Mnp Solutions op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-mnp-solutions.jpg" alt="Mnp Solutions" class="company-logo">
+            </div>
+            <div class="company-name">Mnp Solutions</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/sevenp-bv/" title="Ga naar Sevenp Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-sevenp-b-v.jpg" alt="Sevenp Bv" class="company-logo">
+            </div>
+            <div class="company-name">Sevenp Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/the-rmo-company-bv/" title="Ga naar The Rmo Company Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-the-rmo-company-b-v.jpg" alt="The Rmo Company Bv" class="company-logo">
+            </div>
+            <div class="company-name">The Rmo Company Bv</div>
+        </a>
+    </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-05-01 &rarr; 2025-06-01</div>
+                <div class="batch-count-badge">3 bedrijven</div>
+            </div>
+            <div class="batch-gallery">
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/babbage-bv/" title="Ga naar Babbage Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-babbage-b-v.jpg" alt="Babbage Bv" class="company-logo">
+            </div>
+            <div class="company-name">Babbage Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/iventure-it-solutions-bv/" title="Ga naar Iventure It Solutions Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-iventure-it-solutions-b-v.jpg" alt="Iventure It Solutions Bv" class="company-logo">
+            </div>
+            <div class="company-name">Iventure It Solutions Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/omines-internetbureau-bv/" title="Ga naar Omines Internetbureau Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-omines-internetbureau-b-v.jpg" alt="Omines Internetbureau Bv" class="company-logo">
+            </div>
+            <div class="company-name">Omines Internetbureau Bv</div>
+        </a>
+    </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-06-01 &rarr; 2025-07-01</div>
+                <div class="batch-count-badge">5 bedrijven</div>
+            </div>
+            <div class="batch-gallery">
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/bgts-bv/" title="Ga naar Bgts Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-bgts-b-v.jpg" alt="Bgts Bv" class="company-logo">
+            </div>
+            <div class="company-name">Bgts Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/buro-de-haan-informatietechnologie/" title="Ga naar Buro De Haan Informatietechnologie op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-buro-de-haan-informatietechnologie.jpg" alt="Buro De Haan Informatietechnologie" class="company-logo">
+            </div>
+            <div class="company-name">Buro De Haan Informatietechnologie</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/green-secure-it-bv/" title="Ga naar Green Secure It Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-green-secure-it-b-v.jpg" alt="Green Secure It Bv" class="company-logo">
+            </div>
+            <div class="company-name">Green Secure It Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/informant-software-bv/" title="Ga naar Informant Software Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-informant-software-b-v.jpg" alt="Informant Software Bv" class="company-logo">
+            </div>
+            <div class="company-name">Informant Software Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/top-systems/" title="Ga naar Top Systems op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-top-systems.jpg" alt="Top Systems" class="company-logo">
+            </div>
+            <div class="company-name">Top Systems</div>
+        </a>
+    </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-07-01 &rarr; 2025-08-04</div>
+                <div class="batch-count-badge">12 bedrijven</div>
+            </div>
+            <div class="batch-gallery">
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/bee-flow-bv/" title="Ga naar Bee Flow Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-bee-flow-b-v.jpg" alt="Bee Flow Bv" class="company-logo">
+            </div>
+            <div class="company-name">Bee Flow Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/chiefs-of-it-bv/" title="Ga naar Chiefs Of It Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-chiefs-of-it-b-v.jpg" alt="Chiefs Of It Bv" class="company-logo">
+            </div>
+            <div class="company-name">Chiefs Of It Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/connectwise-nederland/" title="Ga naar Connectwise Nederland op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-connectwise-nederland.jpg" alt="Connectwise Nederland" class="company-logo">
+            </div>
+            <div class="company-name">Connectwise Nederland</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/infourge-consulting-bv/" title="Ga naar Infourge Consulting Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-infourge-consulting-b-v.jpg" alt="Infourge Consulting Bv" class="company-logo">
+            </div>
+            <div class="company-name">Infourge Consulting Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/it-formule/" title="Ga naar It Formule op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-it-formule.jpg" alt="It Formule" class="company-logo">
+            </div>
+            <div class="company-name">It Formule</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/kentie-smart-packaging-solutions-bv/" title="Ga naar Kentie Smart Packaging Solutions Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-kentie-smart-packaging-solutions-b-v.jpg" alt="Kentie Smart Packaging Solutions Bv" class="company-logo">
+            </div>
+            <div class="company-name">Kentie Smart Packaging Solutions Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/lefebvre-sdu/" title="Ga naar Lefebvre Sdu op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-lefebvre-sdu.jpg" alt="Lefebvre Sdu" class="company-logo">
+            </div>
+            <div class="company-name">Lefebvre Sdu</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/mosteasy/" title="Ga naar Mosteasy op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-mosteasy.jpg" alt="Mosteasy" class="company-logo">
+            </div>
+            <div class="company-name">Mosteasy</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/stb-computer-service/" title="Ga naar Stb Computer Service op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-stb-computer-service.jpg" alt="Stb Computer Service" class="company-logo">
+            </div>
+            <div class="company-name">Stb Computer Service</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/stormin-bv/" title="Ga naar Stormin Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-stormin-b-v.jpg" alt="Stormin Bv" class="company-logo">
+            </div>
+            <div class="company-name">Stormin Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/thij-soft-computers-oldenzaal-bv/" title="Ga naar Thij Soft Computers Oldenzaal Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-thij-soft-computers-oldenzaal-b-v.jpg" alt="Thij Soft Computers Oldenzaal Bv" class="company-logo">
+            </div>
+            <div class="company-name">Thij Soft Computers Oldenzaal Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/westcon-group-europe/" title="Ga naar Westcon Group Europe op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-westcon-group-europe.jpg" alt="Westcon Group Europe" class="company-logo">
+            </div>
+            <div class="company-name">Westcon Group Europe</div>
+        </a>
+    </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-08-04 &rarr; 2026-02-06</div>
+                <div class="batch-count-badge">66 bedrijven</div>
+            </div>
+            <div class="batch-gallery">
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/argonexus-bv/" title="Ga naar Argonexus Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-argonexus-b-v.jpg" alt="Argonexus Bv" class="company-logo">
+            </div>
+            <div class="company-name">Argonexus Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/axm-365-bv/" title="Ga naar Axm 365 Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-axm-365-b-v.jpg" alt="Axm 365 Bv" class="company-logo">
+            </div>
+            <div class="company-name">Axm 365 Bv</div>
+        </a>
+    </div>
+    <div class="company-card">
+        <a href="https://nldigital.nl/leden/b00-bv/" title="Ga naar B00 Bv op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-b00-b-v.jpg" alt="B00 Bv" class="company-logo">
+            </div>
+            <div class="company-name">B00 Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -263,51 +1116,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/bradon-bv/" title="Ga naar Bradon Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-bradon-bv.jpg" alt="Bradon Bv" class="company-logo">
-            </div>
-            <div class="company-name">Bradon Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/bright-leisure-services-bv/" title="Ga naar Bright Leisure Services Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-bright-leisure-services-b-v.jpg" alt="Bright Leisure Services Bv" class="company-logo">
             </div>
             <div class="company-name">Bright Leisure Services Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/bruis-bv/" title="Ga naar Bruis Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-bruis-b-v.jpg" alt="Bruis Bv" class="company-logo">
-            </div>
-            <div class="company-name">Bruis Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/buro-de-haan-informatietechnologie/" title="Ga naar Buro De Haan Informatietechnologie op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-buro-de-haan-informatietechnologie.jpg" alt="Buro De Haan Informatietechnologie" class="company-logo">
-            </div>
-            <div class="company-name">Buro De Haan Informatietechnologie</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/buro-de-haan-informatietechnologie-bv/" title="Ga naar Buro De Haan Informatietechnologie Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-buro-de-haan-informatietechnologie-b-v.jpg" alt="Buro De Haan Informatietechnologie Bv" class="company-logo">
-            </div>
-            <div class="company-name">Buro De Haan Informatietechnologie Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/chiefs-of-it-bv/" title="Ga naar Chiefs Of It Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-chiefs-of-it-b-v.jpg" alt="Chiefs Of It Bv" class="company-logo">
-            </div>
-            <div class="company-name">Chiefs Of It Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -327,27 +1140,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/compurity/" title="Ga naar Compurity op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-compurity.jpg" alt="Compurity" class="company-logo">
-            </div>
-            <div class="company-name">Compurity</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/connectwise-bv/" title="Ga naar Connectwise Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-connectwise-b-v.jpg" alt="Connectwise Bv" class="company-logo">
             </div>
             <div class="company-name">Connectwise Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/connectwise-nederland/" title="Ga naar Connectwise Nederland op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-connectwise-nederland.jpg" alt="Connectwise Nederland" class="company-logo">
-            </div>
-            <div class="company-name">Connectwise Nederland</div>
         </a>
     </div>
     <div class="company-card">
@@ -375,51 +1172,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/declan-bv/" title="Ga naar Declan Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-declan-b-v.jpg" alt="Declan Bv" class="company-logo">
-            </div>
-            <div class="company-name">Declan Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/digital-forms-bv/" title="Ga naar Digital Forms Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-digital-forms-b-v.jpg" alt="Digital Forms Bv" class="company-logo">
-            </div>
-            <div class="company-name">Digital Forms Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/dysel-bv/" title="Ga naar Dysel Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-dysel-b-v.jpg" alt="Dysel Bv" class="company-logo">
-            </div>
-            <div class="company-name">Dysel Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/edwin-zoetemeijer-consultancy/" title="Ga naar Edwin Zoetemeijer Consultancy op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-edwin-zoetemeijer-consultancy.jpg" alt="Edwin Zoetemeijer Consultancy" class="company-logo">
-            </div>
-            <div class="company-name">Edwin Zoetemeijer Consultancy</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/eye-able-bv/" title="Ga naar Eye Able Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-eye-able-b-v.jpg" alt="Eye Able Bv" class="company-logo">
             </div>
             <div class="company-name">Eye Able Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/fsas-technologies-bv/" title="Ga naar Fsas Technologies Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-fsas-technologies-b-v.jpg" alt="Fsas Technologies Bv" class="company-logo">
-            </div>
-            <div class="company-name">Fsas Technologies Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -431,43 +1188,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/gateway-software-services-bv/" title="Ga naar Gateway Software Services Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-gateway-software-services-b-v.jpg" alt="Gateway Software Services Bv" class="company-logo">
-            </div>
-            <div class="company-name">Gateway Software Services Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/gidpro-bv/" title="Ga naar Gidpro Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-gidpro-bv.jpg" alt="Gidpro Bv" class="company-logo">
             </div>
             <div class="company-name">Gidpro Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/goharmony/" title="Ga naar Goharmony op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-goharmony.jpg" alt="Goharmony" class="company-logo">
-            </div>
-            <div class="company-name">Goharmony</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/green-secure-it-bv/" title="Ga naar Green Secure It Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-green-secure-it-b-v.jpg" alt="Green Secure It Bv" class="company-logo">
-            </div>
-            <div class="company-name">Green Secure It Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/hackify-bv/" title="Ga naar Hackify Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-hackify-b-v.jpg" alt="Hackify Bv" class="company-logo">
-            </div>
-            <div class="company-name">Hackify Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -479,27 +1204,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/hogeschool-dirksen-bv/" title="Ga naar Hogeschool Dirksen Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-hogeschool-dirksen-b-v.jpg" alt="Hogeschool Dirksen Bv" class="company-logo">
-            </div>
-            <div class="company-name">Hogeschool Dirksen Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/house-of-data/" title="Ga naar House Of Data op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-house-of-data.jpg" alt="House Of Data" class="company-logo">
             </div>
             <div class="company-name">House Of Data</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/iacobien/" title="Ga naar Iacobien op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-iacobien.jpg" alt="Iacobien" class="company-logo">
-            </div>
-            <div class="company-name">Iacobien</div>
         </a>
     </div>
     <div class="company-card">
@@ -511,91 +1220,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/ictivity-groep-bv/" title="Ga naar Ictivity Groep Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-ictivity-groep-b-v.jpg" alt="Ictivity Groep Bv" class="company-logo">
-            </div>
-            <div class="company-name">Ictivity Groep Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/informant-software/" title="Ga naar Informant Software op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-informant-software.jpg" alt="Informant Software" class="company-logo">
-            </div>
-            <div class="company-name">Informant Software</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/informant-software-bv/" title="Ga naar Informant Software Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-informant-software-b-v.jpg" alt="Informant Software Bv" class="company-logo">
-            </div>
-            <div class="company-name">Informant Software Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/infourge-consulting-bv/" title="Ga naar Infourge Consulting Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-infourge-consulting-b-v.jpg" alt="Infourge Consulting Bv" class="company-logo">
-            </div>
-            <div class="company-name">Infourge Consulting Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/infracare-bv/" title="Ga naar Infracare Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-infracare-b-v.jpg" alt="Infracare Bv" class="company-logo">
             </div>
             <div class="company-name">Infracare Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/inlinesoftware-bv/" title="Ga naar Inlinesoftware Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-inlinesoftware-b-v.jpg" alt="Inlinesoftware Bv" class="company-logo">
-            </div>
-            <div class="company-name">Inlinesoftware Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/insphire-international-bv/" title="Ga naar Insphire International Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-insphire-international-b-v.jpg" alt="Insphire International Bv" class="company-logo">
-            </div>
-            <div class="company-name">Insphire International Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/intigris-bv/" title="Ga naar Intigris Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-intigris-b-v.jpg" alt="Intigris Bv" class="company-logo">
-            </div>
-            <div class="company-name">Intigris Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/it-formule/" title="Ga naar It Formule op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-it-formule.jpg" alt="It Formule" class="company-logo">
-            </div>
-            <div class="company-name">It Formule</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/itph-academy-bv/" title="Ga naar Itph Academy Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-itph-academy-b-v.jpg" alt="Itph Academy Bv" class="company-logo">
-            </div>
-            <div class="company-name">Itph Academy Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/itph-academy-gbo-bv/" title="Ga naar Itph Academy Gbo Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-itph-academy-gbo-b-v.jpg" alt="Itph Academy Gbo Bv" class="company-logo">
-            </div>
-            <div class="company-name">Itph Academy Gbo Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -607,27 +1236,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/iventure-it-solutions-bv/" title="Ga naar Iventure It Solutions Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-iventure-it-solutions-b-v.jpg" alt="Iventure It Solutions Bv" class="company-logo">
-            </div>
-            <div class="company-name">Iventure It Solutions Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/jacobs-breda-electronics-bv/" title="Ga naar Jacobs Breda Electronics Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-jacobs-breda-electronics-b-v.jpg" alt="Jacobs Breda Electronics Bv" class="company-logo">
             </div>
             <div class="company-name">Jacobs Breda Electronics Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/kentie-smart-packaging-solutions-bv/" title="Ga naar Kentie Smart Packaging Solutions Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-kentie-smart-packaging-solutions-b-v.jpg" alt="Kentie Smart Packaging Solutions Bv" class="company-logo">
-            </div>
-            <div class="company-name">Kentie Smart Packaging Solutions Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -660,14 +1273,6 @@
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-leanforms.jpg" alt="Leanforms" class="company-logo">
             </div>
             <div class="company-name">Leanforms</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/lefebvre-sdu/" title="Ga naar Lefebvre Sdu op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-lefebvre-sdu.jpg" alt="Lefebvre Sdu" class="company-logo">
-            </div>
-            <div class="company-name">Lefebvre Sdu</div>
         </a>
     </div>
     <div class="company-card">
@@ -711,30 +1316,6 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/meneer-jansen-ict/" title="Ga naar Meneer Jansen Ict op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-meneer-jansen-ict.jpg" alt="Meneer Jansen Ict" class="company-logo">
-            </div>
-            <div class="company-name">Meneer Jansen Ict</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/merlinq-bv/" title="Ga naar Merlinq Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-merlinq-b-v.jpg" alt="Merlinq Bv" class="company-logo">
-            </div>
-            <div class="company-name">Merlinq Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/mnp-solutions/" title="Ga naar Mnp Solutions op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-mnp-solutions.jpg" alt="Mnp Solutions" class="company-logo">
-            </div>
-            <div class="company-name">Mnp Solutions</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/momentumai/" title="Ga naar Momentumai op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-momentumai.jpg" alt="Momentumai" class="company-logo">
@@ -743,27 +1324,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/mosteasy/" title="Ga naar Mosteasy op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-mosteasy.jpg" alt="Mosteasy" class="company-logo">
-            </div>
-            <div class="company-name">Mosteasy</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/mydatafactory-bv/" title="Ga naar Mydatafactory Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-mydatafactory-b-v.jpg" alt="Mydatafactory Bv" class="company-logo">
             </div>
             <div class="company-name">Mydatafactory Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/nebius-group-n-v/" title="Ga naar Nebius Group N V op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-nebius-group-n-v.jpg" alt="Nebius Group N V" class="company-logo">
-            </div>
-            <div class="company-name">Nebius Group N V</div>
         </a>
     </div>
     <div class="company-card">
@@ -780,14 +1345,6 @@
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-nobis-it.jpg" alt="Nobis It" class="company-logo">
             </div>
             <div class="company-name">Nobis It</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/northbridge-group-ict-services-bv/" title="Ga naar Northbridge Group Ict Services Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-northbridge-group-ict-services-b-v.jpg" alt="Northbridge Group Ict Services Bv" class="company-logo">
-            </div>
-            <div class="company-name">Northbridge Group Ict Services Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -820,22 +1377,6 @@
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-nualis-b-v.jpg" alt="Nualis Bv" class="company-logo">
             </div>
             <div class="company-name">Nualis Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/obses-bv/" title="Ga naar Obses Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-obses-b-v.jpg" alt="Obses Bv" class="company-logo">
-            </div>
-            <div class="company-name">Obses Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/omines-internetbureau-bv/" title="Ga naar Omines Internetbureau Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-omines-internetbureau-b-v.jpg" alt="Omines Internetbureau Bv" class="company-logo">
-            </div>
-            <div class="company-name">Omines Internetbureau Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -943,14 +1484,6 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/rappit-bv/" title="Ga naar Rappit Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-rappit-bv.jpg" alt="Rappit Bv" class="company-logo">
-            </div>
-            <div class="company-name">Rappit Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/resyniq/" title="Ga naar Resyniq op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-resyniq.jpg" alt="Resyniq" class="company-logo">
@@ -975,51 +1508,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/sdu-bv/" title="Ga naar Sdu Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-sdu-b-v.jpg" alt="Sdu Bv" class="company-logo">
-            </div>
-            <div class="company-name">Sdu Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/seqvitum-bv/" title="Ga naar Seqvitum Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-seqvitum-b-v.jpg" alt="Seqvitum Bv" class="company-logo">
-            </div>
-            <div class="company-name">Seqvitum Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/sevenp/" title="Ga naar Sevenp op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-sevenp.jpg" alt="Sevenp" class="company-logo">
-            </div>
-            <div class="company-name">Sevenp</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/sevenp-bv/" title="Ga naar Sevenp Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-sevenp-b-v.jpg" alt="Sevenp Bv" class="company-logo">
-            </div>
-            <div class="company-name">Sevenp Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/smart-analytic-solutions-bv/" title="Ga naar Smart Analytic Solutions Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-smart-analytic-solutions-b-v.jpg" alt="Smart Analytic Solutions Bv" class="company-logo">
             </div>
             <div class="company-name">Smart Analytic Solutions Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/sqnetworks-cyber-security-bv/" title="Ga naar Sqnetworks Cyber Security Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-sqnetworks-cyber-security-b-v.jpg" alt="Sqnetworks Cyber Security Bv" class="company-logo">
-            </div>
-            <div class="company-name">Sqnetworks Cyber Security Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -1031,27 +1524,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/stb-computer-service/" title="Ga naar Stb Computer Service op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-stb-computer-service.jpg" alt="Stb Computer Service" class="company-logo">
-            </div>
-            <div class="company-name">Stb Computer Service</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/stichting-hack-your-future/" title="Ga naar Stichting Hack Your Future op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-stichting-hack-your-future.jpg" alt="Stichting Hack Your Future" class="company-logo">
             </div>
             <div class="company-name">Stichting Hack Your Future</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/stormin-bv/" title="Ga naar Stormin Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-stormin-b-v.jpg" alt="Stormin Bv" class="company-logo">
-            </div>
-            <div class="company-name">Stormin Bv</div>
         </a>
     </div>
     <div class="company-card">
@@ -1079,30 +1556,6 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/the-digital-federation-bv/" title="Ga naar The Digital Federation Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-the-digital-federation-b-v.jpg" alt="The Digital Federation Bv" class="company-logo">
-            </div>
-            <div class="company-name">The Digital Federation Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/the-rmo-company-bv/" title="Ga naar The Rmo Company Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-the-rmo-company-b-v.jpg" alt="The Rmo Company Bv" class="company-logo">
-            </div>
-            <div class="company-name">The Rmo Company Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/thij-soft-computers-oldenzaal-bv/" title="Ga naar Thij Soft Computers Oldenzaal Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-thij-soft-computers-oldenzaal-b-v.jpg" alt="Thij Soft Computers Oldenzaal Bv" class="company-logo">
-            </div>
-            <div class="company-name">Thij Soft Computers Oldenzaal Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/tjip-bv/" title="Ga naar Tjip Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-tjip-b-v.jpg" alt="Tjip Bv" class="company-logo">
@@ -1111,51 +1564,11 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/top-systems/" title="Ga naar Top Systems op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-top-systems.jpg" alt="Top Systems" class="company-logo">
-            </div>
-            <div class="company-name">Top Systems</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/top-systems-bv/" title="Ga naar Top Systems Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-top-systems-b-v.jpg" alt="Top Systems Bv" class="company-logo">
-            </div>
-            <div class="company-name">Top Systems Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/toshiba-global-commerce-solutions-benelux/" title="Ga naar Toshiba Global Commerce Solutions Benelux op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-toshiba-global-commerce-solutions-benelux.jpg" alt="Toshiba Global Commerce Solutions Benelux" class="company-logo">
-            </div>
-            <div class="company-name">Toshiba Global Commerce Solutions Benelux</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/travelspirit-bv/" title="Ga naar Travelspirit Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-travelspirit-b-v.jpg" alt="Travelspirit Bv" class="company-logo">
-            </div>
-            <div class="company-name">Travelspirit Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/triple9it-bv/" title="Ga naar Triple9It Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-triple9it-b-v.jpg" alt="Triple9It Bv" class="company-logo">
             </div>
             <div class="company-name">Triple9It Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/turn-one/" title="Ga naar Turn One op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/01/logo-turn-one.jpg" alt="Turn One" class="company-logo">
-            </div>
-            <div class="company-name">Turn One</div>
         </a>
     </div>
     <div class="company-card">
@@ -1175,38 +1588,6 @@
         </a>
     </div>
     <div class="company-card">
-        <a href="https://nldigital.nl/leden/water-platform-company-bv/" title="Ga naar Water Platform Company Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2024/11/logo-water-platform-company-bv.jpg" alt="Water Platform Company Bv" class="company-logo">
-            </div>
-            <div class="company-name">Water Platform Company Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/wercstat/" title="Ga naar Wercstat op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-wercstat.jpg" alt="Wercstat" class="company-logo">
-            </div>
-            <div class="company-name">Wercstat</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/westcon-group-europe/" title="Ga naar Westcon Group Europe op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-westcon-group-europe.jpg" alt="Westcon Group Europe" class="company-logo">
-            </div>
-            <div class="company-name">Westcon Group Europe</div>
-        </a>
-    </div>
-    <div class="company-card">
-        <a href="https://nldigital.nl/leden/workforce-insights-bv/" title="Ga naar Workforce Insights Bv op NLDigital.nl" class="company-link">
-            <div class="logo-container">
-                <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2025/08/logo-workforce-insights-b-v.jpg" alt="Workforce Insights Bv" class="company-logo">
-            </div>
-            <div class="company-name">Workforce Insights Bv</div>
-        </a>
-    </div>
-    <div class="company-card">
         <a href="https://nldigital.nl/leden/xpslogic-bv/" title="Ga naar Xpslogic Bv op NLDigital.nl" class="company-link">
             <div class="logo-container">
                 <img src="https://www.nldigital.nl/wp-content/uploads/sites/3/2026/02/logo-xpslogic-b-v.jpg" alt="Xpslogic Bv" class="company-logo">
@@ -1222,11 +1603,13 @@
             <div class="company-name">Yuca365 Bv</div>
         </a>
     </div>
+            </div>
         </div>
-        
+
+
         <div class="back-link">
-            <a href="departed_companies_logos.html">← Vertrokken Bedrijven</a> | 
-            <a href="index.html">Sankey →</a>
+            <a href="departed_companies_logos.html">&larr; Vertrokken Bedrijven</a> |
+            <a href="index.html">Sankey &rarr;</a>
         </div>
     </div>
 </body>

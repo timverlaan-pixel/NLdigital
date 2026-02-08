@@ -158,16 +158,11 @@ all_nodes = sorted(list(set(all_sources + all_targets)))
 print(f"Total nodes: {len(all_nodes)}")
 
 
-# Helper to create vertical display labels for date nodes
+# Helper to create compact display labels for nodes (repositioned by JS post-render)
 def display_label_for_node(n: str) -> str:
     parts = n.split('\n')
     if len(parts) >= 2 and re.match(r'^\d{4}-\d{2}-\d{2}$', parts[0]):
-        date_part = parts[0]
-        rest = '\n'.join(parts[1:])
-        # Make date truly vertical by putting each char on own line
-        # Also flip order so it reads bottom-to-top
-        vertical_date = '\n'.join(reversed(list(date_part)))
-        return vertical_date + '\n' + rest
+        return parts[0] + ' ' + ' '.join(parts[1:])
     return n
 
 # Create mapping of node names to indices
@@ -245,6 +240,139 @@ fig.update_layout(
 # Save HTML
 output_file = os.path.join(data_dir, '..', 'sankey_diagram_filtered.html')
 fig.write_html(output_file)
+
+# Post-process: inject JS to reposition node labels inside node boundaries
+# and add visible numbers on link paths
+CUSTOM_JS = r"""
+<script>
+(function() {
+    function repositionNodeLabels() {
+        var nodes = document.querySelectorAll('.sankey-node');
+        nodes.forEach(function(node) {
+            var rect = node.querySelector('rect');
+            var textEl = node.querySelector('text');
+            if (!rect || !textEl) return;
+
+            var rectX = parseFloat(rect.getAttribute('x'));
+            var rectY = parseFloat(rect.getAttribute('y'));
+            var rectW = parseFloat(rect.getAttribute('width'));
+            var rectH = parseFloat(rect.getAttribute('height'));
+
+            var centerX = rectX + rectW / 2;
+            var centerY = rectY + rectH / 2;
+
+            // Position text at center of rectangle, rotated vertically
+            textEl.setAttribute('x', centerX);
+            textEl.setAttribute('y', centerY);
+            textEl.setAttribute('text-anchor', 'middle');
+            textEl.setAttribute('dominant-baseline', 'central');
+            textEl.setAttribute('transform',
+                'rotate(-90, ' + centerX + ', ' + centerY + ')');
+            textEl.style.fontSize = '11px';
+            textEl.style.fill = 'white';
+            textEl.style.fontWeight = 'bold';
+            textEl.style.paintOrder = 'stroke';
+            textEl.style.stroke = 'rgba(0,0,0,0.3)';
+            textEl.style.strokeWidth = '2px';
+            textEl.style.strokeLinejoin = 'round';
+        });
+    }
+
+    function addLinkLabels() {
+        // Remove any previously added link labels
+        document.querySelectorAll('.custom-link-label').forEach(function(el) {
+            el.remove();
+        });
+
+        var plotDiv = document.querySelector('.plotly-graph-div');
+        if (!plotDiv || !plotDiv.data || !plotDiv.data[0] || !plotDiv.data[0].link) return;
+        var linkData = plotDiv.data[0].link;
+        var labels = linkData.label;
+        var values = linkData.value;
+
+        var links = document.querySelectorAll('.sankey-link');
+        links.forEach(function(linkGroup, index) {
+            if (index >= labels.length) return;
+
+            var path = linkGroup.querySelector('path');
+            if (!path) return;
+
+            var label = labels[index];
+            var match = label.match(/:\s*(\d+)/);
+            if (!match) return;
+            var number = match[1];
+            var value = values[index];
+
+            // Skip very small links where text won't fit
+            if (value < 5) return;
+
+            var pathLength = path.getTotalLength();
+            var midPoint = path.getPointAtLength(pathLength / 2);
+
+            // Determine color based on link type
+            var textColor = '#333';
+            if (label.indexOf('Vertrokken') >= 0) textColor = '#b71c1c';
+            else if (label.indexOf('Toegetreden') >= 0) textColor = '#1b5e20';
+            else if (label.indexOf('Gebleven') >= 0) textColor = '#1a237e';
+
+            var svgNS = 'http://www.w3.org/2000/svg';
+            var text = document.createElementNS(svgNS, 'text');
+            text.setAttribute('x', midPoint.x);
+            text.setAttribute('y', midPoint.y);
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('dominant-baseline', 'central');
+            text.setAttribute('class', 'custom-link-label');
+            text.style.fontSize = value > 50 ? '12px' : '9px';
+            text.style.fontWeight = 'bold';
+            text.style.fill = textColor;
+            text.style.pointerEvents = 'none';
+            text.style.paintOrder = 'stroke';
+            text.style.stroke = 'white';
+            text.style.strokeWidth = '3px';
+            text.style.strokeLinejoin = 'round';
+            text.textContent = number;
+
+            // Add to the SVG layer above the link paths
+            var svg = path.closest('svg');
+            if (svg) svg.appendChild(text);
+        });
+    }
+
+    function customizeSankey() {
+        repositionNodeLabels();
+        addLinkLabels();
+    }
+
+    // Wait for Plotly to finish rendering
+    var observer = new MutationObserver(function(mutations, obs) {
+        if (document.querySelectorAll('.sankey-node').length > 0) {
+            obs.disconnect();
+            setTimeout(customizeSankey, 200);
+        }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Re-apply after Plotly re-renders (e.g. node drag)
+    setTimeout(function() {
+        var plotDiv = document.querySelector('.plotly-graph-div');
+        if (plotDiv && plotDiv.on) {
+            plotDiv.on('plotly_afterplot', function() {
+                setTimeout(customizeSankey, 100);
+            });
+        }
+    }, 500);
+})();
+</script>
+"""
+
+with open(output_file, 'r', encoding='utf-8') as f:
+    html_content = f.read()
+
+html_content = html_content.replace('</body>', CUSTOM_JS + '\n</body>')
+
+with open(output_file, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
 print(f"✓ Sankey diagram saved to {output_file}")
 
 # Print summary

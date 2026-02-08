@@ -1,12 +1,26 @@
 #!/usr/bin/env python3
 """
 Create a visual gallery of company logos that left in each batch
+Direct approach: pre-fetch all logo URLs and embed in HTML
 """
 
 import json
 import os
 from datetime import datetime
 import re
+
+# Local slugify to match other scripts
+def slugify(name: str) -> str:
+    s = (name or '').strip().lower()
+    s = s.strip('/')
+    if s.startswith('logo-'):
+        s = s[len('logo-'):]
+    s = re.sub(r"\.(jpg|jpeg|png|gif)$", '', s)
+    s = re.sub(r"\bb[\.\-\s]?v\b", 'bv', s)
+    s = re.sub(r'[^a-z0-9]+', '-', s)
+    s = re.sub(r'-{2,}', '-', s)
+    s = s.strip('-')
+    return s
 
 # Load member flows and snapshots
 data_dir = '/workspaces/NLdigital/member_data'
@@ -17,343 +31,317 @@ with open(os.path.join(data_dir, 'member_flows.json'), 'r') as f:
 # Load all member snapshots to find logo URLs
 member_files = sorted([f for f in os.listdir(data_dir) if f.startswith('members_') and f.endswith('.json')])
 
-snapshots_by_date = {}
+# Build a complete mapping of all member -> logo URL across all snapshots
+all_logos = {}  # member_slug -> logo_url
+
 for filename in member_files:
     with open(os.path.join(data_dir, filename), 'r') as f:
         data = json.load(f)
-        date = data['date'].split()[0]  # Just the date part
-        # Extract company name -> logo URL mapping
         logo_urls = [u for u in data['members'] if 'logo' in u.lower()]
-        member_urls = [u for u in data['members'] if '/leden/' in u and 'logo' not in u.lower()]
-        
+
         # Create mapping (normalize keys so they match company slugs)
-        logos_by_company = {}
         for logo_url in logo_urls:
-            # Extract company name from logo URL
-            # Format: logo-company-name.jpg
-            logo_filename = logo_url.split('/')[-1]  # Get filename
-            # Use same slugification as other scripts
-            # remove extension and leading 'logo-' inside slugify
-            def slugify(name: str) -> str:
-                s = (name or '').strip().lower()
-                s = s.strip('/')
-                if s.startswith('logo-'):
-                    s = s[len('logo-'):]
-                s = re.sub(r"\.(jpg|jpeg|png|gif)$", '', s)
-                s = re.sub(r"\bb[\.\-\s]?v\b", 'bv', s)
-                s = re.sub(r'[^a-z0-9]+', '-', s)
-                s = re.sub(r'-{2,}', '-', s)
-                s = s.strip('-')
-                return s
-
+            logo_filename = logo_url.split('/')[-1]
             key = slugify(logo_filename)
-            logos_by_company[key] = logo_url
+            if key not in all_logos:  # Use first occurrence (most recent)
+                all_logos[key] = logo_url
 
-        snapshots_by_date[data['date']] = {
-            'members': data['members'],
-            'logos_by_company': logos_by_company,
-            'logo_urls': set(logo_urls)
-        }
+print(f"✓ Found {len(all_logos)} unique company logos across all snapshots")
 
-# Build HTML
-html_content = '''<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NLdigital - Companies That Left (Visual)</title>
-    <style>
-        * {
+# Build batches: list of dicts with date range + company lists
+departed_batches = []
+joined_batches = []
+
+for flow in flows:
+    from_date = flow['from_date'].split()[0]
+    to_date = flow['to_date'].split()[0]
+
+    left_members = flow.get('left_members', [])
+    joined_members = flow.get('joined_members', [])
+
+    if left_members:
+        departed_batches.append({
+            'from_date': from_date,
+            'to_date': to_date,
+            'companies': sorted(left_members)
+        })
+
+    if joined_members:
+        joined_batches.append({
+            'from_date': from_date,
+            'to_date': to_date,
+            'companies': sorted(joined_members)
+        })
+
+total_departed = sum(len(b['companies']) for b in departed_batches)
+total_joined = sum(len(b['companies']) for b in joined_batches)
+
+print(f"Creating gallery for {total_departed} departed companies in {len(departed_batches)} batches...")
+print(f"Creating gallery for {total_joined} joined companies in {len(joined_batches)} batches...")
+
+# Create function to generate company HTML card with logo
+def create_company_card(company_slug):
+    """Generate HTML card for a company with its logo and link"""
+    company_name = company_slug.replace('-', ' ').title()
+    logo_url = all_logos.get(company_slug)
+    nldigital_url = f'https://nldigital.nl/leden/{company_slug}/'
+
+    # Card HTML with logo or fallback
+    html = f'''    <div class="company-card">
+        <a href="{nldigital_url}" title="Ga naar {company_name} op NLDigital.nl" class="company-link">
+            <div class="logo-container">
+'''
+
+    if logo_url:
+        html += f'                <img src="{logo_url}" alt="{company_name}" class="company-logo">\n'
+
+    html += f'''            </div>
+            <div class="company-name">{company_name}</div>
+        </a>
+    </div>
+'''
+    return html
+
+def generate_batch_sections(batches, header_gradient):
+    """Generate HTML for batch sections with company cards."""
+    sections_html = ''
+    for batch in batches:
+        batch_cards = ''.join(create_company_card(slug) for slug in batch['companies'])
+        sections_html += f'''
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, {header_gradient});">
+                <div class="batch-dates">{batch['from_date']} &rarr; {batch['to_date']}</div>
+                <div class="batch-count-badge">{len(batch['companies'])} bedrijven</div>
+            </div>
+            <div class="batch-gallery">
+{batch_cards}            </div>
+        </div>
+'''
+    return sections_html
+
+# Common CSS for both pages
+COMMON_CSS = '''        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
-        header {
-            background: white;
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
+
         h1 {
-            color: #d32f2f;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        
-        .batch {
-            background: white;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .batch-title {
-            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
             color: white;
-            padding: 15px;
-            border-radius: 6px;
-            margin: -25px -25px 20px -25px;
-            font-size: 1.3em;
-            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .stats {
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .batch-section {
+            margin-bottom: 40px;
+        }
+
+        .batch-header {
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px 12px 0 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .batch-count {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 5px 12px;
+
+        .batch-dates {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .batch-count-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.9em;
+            font-weight: bold;
+            font-size: 1.1em;
         }
-        
-        .logo-gallery {
+
+        .batch-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 15px;
-            padding: 20px 0;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 25px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 0 0 12px 12px;
         }
-        
-        .logo-gallery a {
+
+        .company-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .company-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .company-link {
             text-decoration: none;
             color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        
-        .logo-item {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            cursor: pointer;
-        }
-        
-        .logo-item:hover {
-            border-color: #d32f2f;
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
-        }
-        
-        .logo-item img {
-            max-width: 100%;
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 8px;
-        }
-        
-        .logo-item-name {
-            font-size: 0.75em;
-            color: #666;
-            word-break: break-word;
-            height: 2.5em;
-            overflow: hidden;
+
+        .logo-container {
+            background: #f5f5f5;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
         }
-        
-        .no-logos {
-            color: #999;
-            font-style: italic;
-            padding: 20px;
+
+        .company-logo {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .company-name {
+            padding: 15px;
+            font-weight: 600;
+            color: #333;
             text-align: center;
-            background: #f8f9fa;
-            border-radius: 6px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
         }
-        
-        footer {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
+
+        .back-link {
+            color: white;
             text-align: center;
-            color: #999;
-            font-size: 0.9em;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            font-size: 1em;
         }
-        
-        @media (max-width: 768px) {
-            header {
-                padding: 15px;
-            }
-            
-            .batch {
-                padding: 15px;
-            }
-            
-            .batch-title {
-                margin: -15px -15px 15px -15px;
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .logo-gallery {
-                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-                gap: 10px;
-            }
+
+        .back-link a {
+            color: white;
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
         }
+
+        .back-link a:hover {
+            opacity: 0.8;
+        }'''
+
+# Generate departed page
+departed_batches_html = generate_batch_sections(departed_batches, '#d32f2f 0%, #b71c1c 100%')
+
+departed_html = f'''<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertrokken Bedrijven</title>
+    <style>
+{COMMON_CSS}
+
+        body {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }}
+
+        .company-card:hover .company-name {{
+            color: #667eea;
+        }}
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🎨 NLdigital Member Departures - Visual Gallery</h1>
-            <p class="subtitle">Company logos that left in each batch (Aug 2025 - Feb 2026)</p>
-            <p style="color: #999; font-size: 0.9em;">Hover over logos to see details</p>
-        </header>
-        
-        <div id="batches"></div>
-        
-        <footer>
-            <p>Logos sourced from NLdigital member directory</p>
-        </footer>
+        <h1>Vertrokken Bedrijven</h1>
+        <div class="stats">{total_departed} bedrijven hebben NLdigital verlaten</div>
+
+{departed_batches_html}
+
+        <div class="back-link">
+            <a href="index.html">&larr; Terug naar Sankey</a> |
+            <a href="joined_companies_logos.html">Nieuwe Bedrijven &rarr;</a>
+        </div>
     </div>
-    
-    <script>
-        const flows = %FLOWS_JSON%;
-        const snapshots = %SNAPSHOTS_JSON%;
-        
-        function renderBatches() {
-            const batchesContainer = document.getElementById('batches');
-            
-            flows.forEach((flow, index) => {
-                const fromDate = flow.from_date.split(' ')[0];
-                const toDate = flow.to_date.split(' ')[0];
-                const leftMembers = flow.left_members;
-                
-                const batchDiv = document.createElement('div');
-                batchDiv.className = 'batch';
-                
-                // Find the snapshot that has the logos
-                const snapshotDate = flow.from_date;
-                const snapshot = Object.values(snapshots).find(s => s.date === snapshotDate);
-                
-                let logoGalleryHtml = '<div class="logo-gallery">';
-                
-                if (leftMembers.length > 0 && snapshot) {
-                    leftMembers.forEach(company => {
-                        // Try to find logo URL
-                        const logoUrl = snapshot.logos_by_company[company];
-                        
-                        if (logoUrl) {
-                            // Format company name: replace hyphens with spaces, normalize "b v" to "bv"
-                            let companyDisplay = company
-                                .replace(/-/g, ' ')
-                                .replace(/bv/g, 'BV')
-                                .replace(/([a-z])([A-Z])/g, '$1 $2');
-                            
-                            const nldigitalUrl = `https://nldigital.nl/leden/${company}/`;
-                            
-                            logoGalleryHtml += `
-                                <a href="${nldigitalUrl}" target="_blank" style="text-decoration: none;">
-                                    <div class="logo-item" title="${companyDisplay}">
-                                        <img src="${logoUrl}" alt="${companyDisplay}" onerror="this.style.display='none'">
-                                        <div class="logo-item-name">${companyDisplay}</div>
-                                    </div>
-                                </a>
-                            `;
-                        } else {
-                            // No logo found - still show company name with link
-                            let companyDisplay = company
-                                .replace(/-/g, ' ')
-                                .replace(/bv/g, 'BV');
-                            const nldigitalUrl = `https://nldigital.nl/leden/${company}/`;
-                            
-                            logoGalleryHtml += `
-                                <a href="${nldigitalUrl}" target="_blank" style="text-decoration: none;">
-                                    <div class="logo-item" title="${companyDisplay}">
-                                        <div class="logo-item-name">${companyDisplay}</div>
-                                    </div>
-                                </a>
-                            `;
-                        }
-                    });
-                } else {
-                    logoGalleryHtml = '<div class="no-logos">No logos available for this batch</div>';
-                }
-                
-                logoGalleryHtml += '</div>';
-                
-                batchDiv.innerHTML = `
-                    <div class="batch-title">
-                        <span>${fromDate} → ${toDate}</span>
-                        <span class="batch-count">${leftMembers.length} companies left</span>
-                    </div>
-                    ${logoGalleryHtml}
-                `;
-                
-                batchesContainer.appendChild(batchDiv);
-            });
-        }
-        
-        renderBatches();
-    </script>
 </body>
 </html>
 '''
 
-# Create snapshot lookup for the template
-snapshots_data = {}
-for date, snapshot_info in snapshots_by_date.items():
-    logos_mapping = {}
-    for company, logo_url in snapshot_info['logos_by_company'].items():
-        logos_mapping[company] = logo_url
-    
-    snapshots_data[date] = {
-        'date': date,
-        'logos_by_company': logos_mapping
-    }
+# Generate joined page
+joined_batches_html = generate_batch_sections(joined_batches, '#11998e 0%, #38ef7d 100%')
 
-# Replace placeholders
-html_final = html_content.replace(
-    '%FLOWS_JSON%',
-    json.dumps(flows)
-).replace(
-    '%SNAPSHOTS_JSON%',
-    json.dumps(snapshots_data)
-)
+joined_html = f'''<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nieuwe Bedrijven</title>
+    <style>
+{COMMON_CSS}
 
-# Write output
-# Write departed companies page
-output_file_departed = os.path.join(data_dir, '..', 'departed_companies_logos.html')
-with open(output_file_departed, 'w', encoding='utf-8') as f:
-    f.write(html_final)
+        body {{
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }}
 
-print(f"✓ Departed logo gallery created: {output_file_departed}")
-print(f"\nBatch Summary (departures):")
-for i, flow in enumerate(flows, 1):
-    print(f"{i}. {flow['from_date'].split()[0]} → {flow['to_date'].split()[0]}: {flow['left']} companies left")
+        .company-card:hover .company-name {{
+            color: #11998e;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nieuwe Bedrijven</h1>
+        <div class="stats">{total_joined} bedrijven zijn toegetreden tot NLdigital</div>
 
-# Create joined companies page by adapting the template JS to use joined_members
-html_joined = html_content.replace('%FLOWS_JSON%', json.dumps(flows)).replace('%SNAPSHOTS_JSON%', json.dumps(snapshots_data))
-html_joined = html_joined.replace("const flows = %FLOWS_JSON%;", "const flows = %FLOWS_JSON%;\n        const mode = 'joined';")
-# Replace rendering logic: use joined_members and snapshot for to_date
-html_joined = html_joined.replace("const snapshotDate = flow.from_date;", "const snapshotDate = flow.to_date;")
-html_joined = html_joined.replace("const leftMembers = flow.left_members;", "const leftMembers = flow.joined_members;")
-html_joined = html_joined.replace("${leftMembers.length} companies left", "${leftMembers.length} companies joined")
+{joined_batches_html}
 
-output_file_joined = os.path.join(data_dir, '..', 'joined_companies_logos.html')
-with open(output_file_joined, 'w', encoding='utf-8') as f:
-    f.write(html_joined)
+        <div class="back-link">
+            <a href="departed_companies_logos.html">&larr; Vertrokken Bedrijven</a> |
+            <a href="index.html">Sankey &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>
+'''
 
-print(f"✓ Joined logo gallery created: {output_file_joined}")
+# Write HTML files
+output_dir = '/workspaces/NLdigital'
+
+with open(os.path.join(output_dir, 'departed_companies_logos.html'), 'w', encoding='utf-8') as f:
+    f.write(departed_html)
+
+with open(os.path.join(output_dir, 'joined_companies_logos.html'), 'w', encoding='utf-8') as f:
+    f.write(joined_html)
+
+print(f"✓ Generated departed_companies_logos.html ({len(departed_batches)} batches)")
+print(f"✓ Generated joined_companies_logos.html ({len(joined_batches)} batches)")
+for batch in departed_batches:
+    print(f"  {batch['from_date']} -> {batch['to_date']}: {len(batch['companies'])} departed")
