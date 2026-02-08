@@ -8,13 +8,13 @@
   {
     "source": "New members",
     "target": "2025-01-03",
-    "value": 638,
+    "value": 15,
     "label": "Joined"
   },
   {
     "source": "2024-11-07",
     "target": "Left",
-    "value": 636,
+    "value": 11,
     "label": "Left"
   },
   {
@@ -26,13 +26,13 @@
   {
     "source": "New members",
     "target": "2025-02-15",
-    "value": 620,
+    "value": 51,
     "label": "Joined"
   },
   {
     "source": "2025-01-03",
     "target": "Left",
-    "value": 735,
+    "value": 112,
     "label": "Left"
   },
   {
@@ -44,13 +44,13 @@
   {
     "source": "New members",
     "target": "2025-04-01",
-    "value": 553,
+    "value": 15,
     "label": "Joined"
   },
   {
     "source": "2025-02-15",
     "target": "Left",
-    "value": 609,
+    "value": 40,
     "label": "Left"
   },
   {
@@ -62,13 +62,13 @@
   {
     "source": "New members",
     "target": "2025-04-06",
-    "value": 559,
+    "value": 9,
     "label": "Joined"
   },
   {
     "source": "2025-04-01",
     "target": "Left",
-    "value": 541,
+    "value": 3,
     "label": "Left"
   },
   {
@@ -76,18 +76,6 @@
     "target": "2025-05-01",
     "value": 552,
     "label": "Stayed"
-  },
-  {
-    "source": "New members",
-    "target": "2025-05-01",
-    "value": 545,
-    "label": "Joined"
-  },
-  {
-    "source": "2025-04-06",
-    "target": "Left",
-    "value": 550,
-    "label": "Left"
   },
   {
     "source": "2025-05-01",
@@ -98,14 +86,8 @@
   {
     "source": "New members",
     "target": "2025-06-01",
-    "value": 555,
+    "value": 3,
     "label": "Joined"
-  },
-  {
-    "source": "2025-05-01",
-    "target": "Left",
-    "value": 545,
-    "label": "Left"
   },
   {
     "source": "2025-06-01",
@@ -116,13 +98,13 @@
   {
     "source": "New members",
     "target": "2025-07-01",
-    "value": 555,
+    "value": 8,
     "label": "Joined"
   },
   {
     "source": "2025-06-01",
     "target": "Left",
-    "value": 561,
+    "value": 9,
     "label": "Left"
   },
   {
@@ -134,13 +116,13 @@
   {
     "source": "New members",
     "target": "2025-08-04",
-    "value": 571,
+    "value": 12,
     "label": "Joined"
   },
   {
     "source": "2025-07-01",
     "target": "Left",
-    "value": 550,
+    "value": 3,
     "label": "Left"
   },
   {
@@ -152,13 +134,13 @@
   {
     "source": "New members",
     "target": "2026-02-06",
-    "value": 609,
+    "value": 66,
     "label": "Joined"
   },
   {
     "source": "2025-08-04",
     "target": "Left",
-    "value": 645,
+    "value": 86,
     "label": "Left"
   }
 ]

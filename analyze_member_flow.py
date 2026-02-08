@@ -1,12 +1,26 @@
 #!/usr/bin/env python3
 """
 Analyze member inflow and outflow for Sankey diagram
+Properly parses company names from URLs
 """
 
 import json
 import os
 from datetime import datetime
 import pandas as pd
+
+def extract_company_name(url):
+    """Extract company name from URL - only from actual leden URLs, not logo images"""
+    url = url.strip()
+    # Only process actual member profile URLs, skip logo images
+    if '/leden/' in url and not url.endswith('.jpg') and not url.endswith('.png'):
+        parts = url.split('/leden/')
+        if len(parts) > 1:
+            company_slug = parts[1].strip('/').strip()
+            # Make sure it's not a logo path
+            if not company_slug.startswith('wp-content'):
+                return company_slug
+    return None
 
 # Load all member data
 data_dir = '/workspaces/NLdigital/member_data'
@@ -18,17 +32,34 @@ print("="*60)
 
 member_snapshots = []
 
-# Load all snapshots
+# Load all snapshots and extract company names
 for filename in member_files:
     with open(os.path.join(data_dir, filename), 'r', encoding='utf-8') as f:
         data = json.load(f)
+        # Extract company names and deduplicate
+        company_names = set()
+        for url in data['members']:
+            company_name = extract_company_name(url)
+            if company_name:  # Only add if extraction was successful
+                company_names.add(company_name)
+        
         member_snapshots.append({
             'date': data['date'],
-            'members': set(data['members']),
-            'count': len(data['members'])
+            'members': company_names,
+            'count': len(company_names),
+            'raw_urls': len(data['members']),
+            'duplicates_removed': len(data['members']) - len(company_names)
         })
 
 print(f"\nLoaded {len(member_snapshots)} snapshots")
+
+# Show deduplication stats
+print("\nDeduplication Statistics:")
+print("-" * 60)
+for snap in member_snapshots:
+    dedup_pct = (snap['duplicates_removed'] / snap['raw_urls'] * 100) if snap['raw_urls'] > 0 else 0
+    print(f"{snap['date']}: {snap['raw_urls']} URLs → {snap['count']} companies (removed {snap['duplicates_removed']} duplicates, {dedup_pct:.1f}%)")
+print("-" * 60)
 
 # Analyze flows between consecutive snapshots
 sankey_data = []
@@ -60,29 +91,15 @@ for i in range(len(member_snapshots) - 1):
     print(f"  Left:    {len(left)}")
     print(f"  Net change: {len(next_members) - len(current_members):+d}")
     
-    # Extract member IDs from URLs
-    def extract_member_id(url):
-        # URL format: https://www.nldigital.nl/member/slug-name/
-        parts = url.strip('/').split('/')
-        if 'member' in parts:
-            idx = parts.index('member')
-            if idx + 1 < len(parts):
-                return parts[idx + 1]
-        return url
-    
-    stayed_ids = [extract_member_id(m) for m in stayed]
-    joined_ids = [extract_member_id(m) for m in joined]
-    left_ids = [extract_member_id(m) for m in left]
-    
     sankey_data.append({
         'from_date': current_date,
         'to_date': next_date,
         'stayed': len(stayed),
         'joined': len(joined),
         'left': len(left),
-        'stayed_members': stayed_ids,
-        'joined_members': joined_ids,
-        'left_members': left_ids
+        'stayed_members': sorted(list(stayed)),
+        'joined_members': sorted(list(joined)),
+        'left_members': sorted(list(left))
     })
 
 # Save flow analysis

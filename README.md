@@ -14,21 +14,35 @@ Interactive Sankey diagram showing:
   - 🟢 Green = New members who joined  
   - 🔴 Red = Members who left
 
-**Key Metrics:**
-- Total Members Joined: **5,205**
-- Total Members Left: **5,372**
-- Average Retention Rate: **47.6%**
+**Key Metrics (Unique Companies Only):**
+- Total Members Joined: **279**
+- Total Members Left: **264**
+- Average Retention Rate: **68.5%**
 
-### 2. Companies That Left (Last Period)
-**URL:** [companies_left.html](companies_left.html)
+**Note:** Sitemaps contained ~50% duplicate logo URLs, removed for accurate company counts.
 
-Detailed interactive list of all **645 companies** that left between August 4, 2025 and February 6, 2026.
+### 2. Departed Companies - Visual Gallery
+**URL:** [departed_companies_logos.html](departed_companies_logos.html)
+
+**Interactive logo gallery** showing company logos organized by departure batch:
+- Nov 2024 → Jan 2025: 11 companies left
+- Jan 2025 → Feb 2025: 112 companies left
+- Feb 2025 → Apr 2025: 40 companies left
+- Apr 2025 → May 2025: 3 companies left
+- May 2025 → Jun 2025: 0 companies left
+- Jun 2025 → Jul 2025: 9 companies left
+- Jul 2025 → Aug 2025: 3 companies left
+- **Aug 2025 → Feb 2026: 86 companies left** (largest batch)
 
 **Features:**
-- ✅ Searchable database
-- ✅ Grid and List view modes
-- ✅ Sortable by name (A-Z)
-- ✅ Company rankings with departure order
+- ✅ Hover to see company names
+- ✅ Visual gallery with company logos
+- ✅ Grouped by departure period
+
+### 3. Companies That Left (Text List)
+**URL:** [companies_left.html](companies_left.html) (deprecated - previous version had incorrect counts)
+
+Interactive list view (now using corrected data).
 
 ---
 
