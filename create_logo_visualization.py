@@ -134,6 +134,11 @@ html_content = '''<!DOCTYPE html>
             padding: 20px 0;
         }
         
+        .logo-gallery a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
         .logo-item {
             background: #f8f9fa;
             border-radius: 8px;
@@ -254,15 +259,32 @@ html_content = '''<!DOCTYPE html>
                             // Format company name: replace hyphens with spaces, normalize "b v" to "bv"
                             let companyDisplay = company
                                 .replace(/-/g, ' ')
-                                .replace(/b v/g, 'BV')
-                                .replace(/b-v/g, 'BV')
+                                .replace(/bv/g, 'BV')
                                 .replace(/([a-z])([A-Z])/g, '$1 $2');
                             
+                            const nldigitalUrl = `https://nldigital.nl/leden/${company}/`;
+                            
                             logoGalleryHtml += `
-                                <div class="logo-item" title="${companyDisplay}">
-                                    <img src="${logoUrl}" alt="${companyDisplay}" onerror="this.style.display='none'">
-                                    <div class="logo-item-name">${companyDisplay}</div>
-                                </div>
+                                <a href="${nldigitalUrl}" target="_blank" style="text-decoration: none;">
+                                    <div class="logo-item" title="${companyDisplay}">
+                                        <img src="${logoUrl}" alt="${companyDisplay}" onerror="this.style.display='none'">
+                                        <div class="logo-item-name">${companyDisplay}</div>
+                                    </div>
+                                </a>
+                            `;
+                        } else {
+                            // No logo found - still show company name with link
+                            let companyDisplay = company
+                                .replace(/-/g, ' ')
+                                .replace(/bv/g, 'BV');
+                            const nldigitalUrl = `https://nldigital.nl/leden/${company}/`;
+                            
+                            logoGalleryHtml += `
+                                <a href="${nldigitalUrl}" target="_blank" style="text-decoration: none;">
+                                    <div class="logo-item" title="${companyDisplay}">
+                                        <div class="logo-item-name">${companyDisplay}</div>
+                                    </div>
+                                </a>
                             `;
                         }
                     });
