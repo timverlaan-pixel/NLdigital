@@ -8,6 +8,7 @@ import json
 import os
 import pandas as pd
 from datetime import datetime
+import re
 
 # Install plotly if needed
 try:
@@ -127,6 +128,18 @@ all_nodes = sorted(list(set(all_sources + all_targets)))
 
 print(f"Total nodes: {len(all_nodes)}")
 
+
+# Helper to create vertical display labels for date nodes
+def display_label_for_node(n: str) -> str:
+    parts = n.split('\n')
+    if len(parts) >= 2 and re.match(r'^\d{4}-\d{2}-\d{2}$', parts[0]):
+        date_part = parts[0]
+        rest = '\n'.join(parts[1:])
+        # Make date vertical (one char per line) and keep rest (counts) on bottom
+        vertical_date = '\n'.join(list(date_part))
+        return vertical_date + '\n\n' + rest
+    return n
+
 # Create mapping of node names to indices
 node_indices = {node: i for i, node in enumerate(all_nodes)}
 
@@ -172,10 +185,11 @@ for n in all_nodes:
 # Create Sankey diagram
 fig = go.Figure(data=[go.Sankey(
     node=dict(
-        pad=15,
-        thickness=20,
+        pad=20,
+        thickness=80,
         line=dict(color='black', width=0.5),
-        label=all_nodes,
+        # display vertical labels for date boxes, keep internal ids in all_nodes
+        label=[display_label_for_node(n) for n in all_nodes],
         color=node_colors
     ),
     link=dict(

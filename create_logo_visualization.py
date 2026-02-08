@@ -6,6 +6,7 @@ Create a visual gallery of company logos that left in each batch
 import json
 import os
 from datetime import datetime
+import re
 
 # Load member flows and snapshots
 data_dir = '/workspaces/NLdigital/member_data'
@@ -31,13 +32,21 @@ for filename in member_files:
             # Extract company name from logo URL
             # Format: logo-company-name.jpg
             logo_filename = logo_url.split('/')[-1]  # Get filename
-            logo_filename = logo_filename.replace('logo-', '')
-            logo_filename = logo_filename.replace('.jpg', '').replace('.png', '').replace('.jpeg', '')
-            # Normalize common variants: b v -> bv, b-v -> bv
-            key = logo_filename.lower()
-            key = key.replace(' b v', ' bv').replace(' b-v', ' bv')
-            key = key.replace('-b-v', '-bv').replace(' b v', ' bv')
-            key = key.replace(' ', '-')
+            # Use same slugification as other scripts
+            # remove extension and leading 'logo-' inside slugify
+            def slugify(name: str) -> str:
+                s = (name or '').strip().lower()
+                s = s.strip('/')
+                if s.startswith('logo-'):
+                    s = s[len('logo-'):]
+                s = re.sub(r"\.(jpg|jpeg|png|gif)$", '', s)
+                s = re.sub(r"\bb[\.\-\s]?v\b", 'bv', s)
+                s = re.sub(r'[^a-z0-9]+', '-', s)
+                s = re.sub(r'-{2,}', '-', s)
+                s = s.strip('-')
+                return s
+
+            key = slugify(logo_filename)
             logos_by_company[key] = logo_url
 
         snapshots_by_date[data['date']] = {

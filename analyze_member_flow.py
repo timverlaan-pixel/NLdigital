@@ -8,6 +8,7 @@ import json
 import os
 from datetime import datetime
 import pandas as pd
+import re
 
 def extract_company_name(url):
     """Extract company name from URL - only from actual leden URLs, not logo images"""
@@ -19,12 +20,37 @@ def extract_company_name(url):
             company_slug = parts[1].strip('/').strip()
             # Make sure it's not a logo path
             if not company_slug.startswith('wp-content'):
-                # Normalize company names: "b v" -> "bv"
-                company_slug = company_slug.replace(' b v', ' bv').replace(' b v/', 'bv')
-                # Also handle common variants
-                company_slug = company_slug.replace('-b-v', '-bv')
-                return company_slug
+                return slugify(company_slug)
     return None
+
+
+def slugify(name: str) -> str:
+    """Return a canonical slug used across scripts.
+
+    Rules:
+    - lowercase
+    - normalize variants like "b v", "b-v", "b.v" -> "bv"
+    - remove leading "logo-" when present
+    - replace non-alphanumeric characters with single hyphen
+    - trim extra hyphens
+    """
+    s = (name or '').strip().lower()
+    # remove any leading/trailing slashes
+    s = s.strip('/')
+    # drop common prefix
+    if s.startswith('logo-'):
+        s = s[len('logo-'):]
+    # remove file extensions if any
+    s = re.sub(r"\.(jpg|jpeg|png|gif)$", '', s)
+    # normalize b v / b-v / b.v -> bv
+    s = re.sub(r"\bb[\.\-\s]?v\b", 'bv', s)
+    # replace any non-alphanumeric sequences with hyphen
+    s = re.sub(r'[^a-z0-9]+', '-', s)
+    # collapse hyphens
+    s = re.sub(r'-{2,}', '-', s)
+    # strip leading/trailing hyphens
+    s = s.strip('-')
+    return s
 
 # Load all member data
 data_dir = '/workspaces/NLdigital/member_data'
