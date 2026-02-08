@@ -244,6 +244,45 @@ fig.update_layout(
 # Save HTML
 output_file = os.path.join(data_dir, '..', 'sankey_diagram_filtered.html')
 fig.write_html(output_file)
+
+# Post-process HTML to rotate node labels 90 degrees
+with open(output_file, 'r', encoding='utf-8') as f:
+    html_content = f.read()
+
+# Inject JavaScript to rotate node labels
+rotation_script = r'''
+<script>
+// Wait for Plotly to finish rendering
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        // Get all SVG text elements in the Sankey
+        var texts = document.querySelectorAll('text');
+        texts.forEach(function(text) {
+            var content = text.textContent.trim();
+            // Check if it looks like a date (contains digits and hyphens) or "Nieuw/Toegetreden" or "Vertrokken"
+            if ((content.match(/\d{4}-\d{2}-\d{2}/) || content.includes('Nieuw') || content.includes('Vertrokken') || content.includes('leden'))) {
+                // Get the current position
+                var x = parseFloat(text.getAttribute('x') || 0);
+                var y = parseFloat(text.getAttribute('y') || 0);
+                // Apply rotation: rotate -90 degrees around the center of the text
+                // transform="rotate(-90 x y)" rotates 90 degrees clockwise (bottom-to-top)
+                var currentTransform = text.getAttribute('transform') || '';
+                text.setAttribute('transform', 'rotate(-90 ' + x + ' ' + y + ')' + currentTransform);
+                // Center the text better
+                text.setAttribute('text-anchor', 'middle');
+            }
+        });
+    }, 100);  // Small delay to ensure Plotly has rendered
+});
+</script>
+'''
+
+# Insert the script before closing body tag
+html_content = html_content.replace('</body>', rotation_script + '</body>')
+
+with open(output_file, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
 print(f"✓ Sankey diagram saved to {output_file}")
 
 # Print summary
