@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies That Left NLdigital (Aug 2025 - Feb 2026)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #d32f2f;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .stats-row {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .stat-label {
+            color: #999;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            color: #d32f2f;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .controls {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        input[type="text"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #667eea;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 0.9em;
+        }
+        
+        button:hover {
+            background: #5568d3;
+        }
+        
+        button.active {
+            background: #d32f2f;
+        }
+        
+        .list-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .companies-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .company-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #d32f2f;
+            border-radius: 4px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .company-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+        }
+        
+        .company-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            word-break: break-word;
+        }
+        
+        .company-number {
+            color: #999;
+            font-size: 0.85em;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+        
+        .count-info {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            color: #e65100;
+            font-weight: 500;
+        }
+        
+        .view-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .view-toggle button {
+            padding: 8px 15px;
+            font-size: 0.9em;
+        }
+        
+        .list-view {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .list-view .company-card {
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .list-view .company-name {
+            margin-bottom: 0;
+            flex: 1;
+        }
+        
+        footer {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            header, .controls, .list-container {
+                padding: 15px;
+            }
+            
+            .companies-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔴 Companies That Left NLdigital</h1>
+            <p class="subtitle">Period: August 4, 2025 → February 6, 2026</p>
+            
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-label">Total Departures</div>
+                    <div class="stat-value">645</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Departure Rate</div>
+                    <div class="stat-value">57.5%</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search company name...">
+            <div class="filter-buttons">
+                <button id="sortNameBtn">Sort A-Z</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+        </div>
+        
+        <div id="countInfo" class="count-info" style="display: none;"></div>
+        
+        <div class="view-toggle">
+            <button id="gridViewBtn" class="active">Grid View</button>
+            <button id="listViewBtn">List View</button>
+        </div>
+        
+        <div class="list-container">
+            <div id="companiesList" class="companies-list"></div>
+        </div>
+        
+        <footer>
+            <p>NLdigital Member Flow Analysis | Data from Internet Archive</p>
+        </footer>
+    </div>
+    
+    <script>
+        const companies = [
+            "Logo Insphire International B V", "Logo Nokia Solutions And Networks B V", "Logo Lucrasoft Solutions Bv", "Logo Barion B V", "Logo Luminos Software B V",
+            "Logo Extended It B V", "Logo Cpyou B V", "Logo Red Hat B V", "Logo Microway B V", "Logo Icotec B V",
+            "Logo Chiefs Of It B V", "Logo Altasen Services B V", "Logo Fndmnt Bv", "Logo Steam Connect Benelux B V", "Logo Blue10",
+            "Astebanio", "Logo Hyde Financial Services", "Logo Riso Benelux", "Logo Enai", "Logo Servicetec Airport Operations Netherlands B V",
+            "Logo Pm Networking Group B V", "Logo 00010110 B V", "Logo Tiktok Technologies Netherlands B V", "Logo Loogisch Communicatie En It B V", "Logo Datacadabra B V",
+            "Logo Enabled Core Services B V", "Logo Brigit Software B V", "Logo Brandcode", "Alturna Networks N V", "Logo Dmarc Advisor B V",
+            "Logo Topdesk Nederland B V", "Logo Hewlett Packard Enterprise", "Logo Label Solutions Bv", "Logo Glow Management Nederland Bv", "Logo Mendify Netherlands B V",
+            "Logo Konica Minolta Business Solutions Nederland B V", "Logo Newtee B V", "Logo Bouwinfosys B V", "Logo Ibm Nederland B V", "Logo Clember B V",
+            "Logo Holland Datacenters B V", "Logo Inlinesoftware B V", "Logo Ddi B V", "Logo Ricoh Nederland B V", "Logo Moonly Software B V",
+            "Logo Lama Empowerz B V", "Logo Gigaset Technologies", "Logo Gateway Software Services B V", "Logo Ag Neovo Technology B V", "Logo Planmotion B V",
+            "Logo Group 2000 Nederland B V", "Logo Vsa B V", "Logo Kelio B V", "Exact Group B V", "Logo Fortytwo Security",
+            "Logo Boxwise", "Logo Git Solutions B V", "Logo Fusix Networks B V", "Logo Utilis", "Logo Inconel B V",
+            "Logo Agis Automatisering B V", "Logo Parsival Beheer B V", "Thysia Information Management B V", "Logo Flexyz B V", "Patchmanager Bv",
+            "Logo Pluym Ict B V", "Logo Kodify B V", "Macroscoop B V", "Logo Cloudconnected", "Ctrlcloud B V",
+            "Logo Actabyte", "Logo Astebanio", "Logo Experit B V", "Logo Samsung Electronics Benelux B V", "Ddi B V",
+            "Logo Arrows Ict Solutions B V", "Logo Van Hulten Software B V", "Logo Kbsapp", "Logo Green Secure It B V", "Logo Kentie Smart Packaging Solutions B V",
+            "Microway B V", "Logo Thij Soft Computers Oldenzaal B V", "Logo Xolphin B V", "Logo Softcrow Financial Services B V", "Agiboo B V",
+            "Logo Cisco Systems International B V", "Logo Sogeti Nederland B V", "Logo It Partner B V", "Logo Deckers It Dit B V", "Logo Nebius Group N V",
+            "Logo Factorylab B V", "Logo Quadient Netherlands B V", "Logo Mercell Nederland B V", "Logo Mysport B V", "Logo Condor Solutions B V",
+            "Logo Lefebvre Sdu", "Logo Modulex", "Logo Teradata Netherlands B V", "Logo Canon Nederland N V", "Logo Patchmanager Bv",
+            "Logo Equinix Netherlands B V", "Logo De Technische Jongens B V", "Logo Netcompany Netherlands B V", "Logo Grijpma Asg B V", "Logo Brink Software B V",
+            "Logo Argo360 B V", "Logo Integra Implementaties", "Logo Isset Internet Professionals", "Logo Agritect Advies", "Logo Westcon Group Europe",
+            "Logo Kentie Systeemtechniek B V", "Logo Hp Nederland B V", "Logo 1Digitalnl B V", "Logo Van Hessen B V", "Logo Piersma Com B V",
+            "Logo Axpertec International B V", "Logo Sevenp B V", "Logo Accnt B V", "Pca Bv", "Logo The Infrastructure Group B V",
+            "Logo Lydis B V", "Logo Goharmony", "Logo Eljakim Information Technology B V", "Logo Agfa Healthcare Netherlands B V", "Logo Mnp Solutions",
+            "Logo De Smeth Kok Dochteronderneming Van Shared Services Holding B V", "Logo Stork Software", "Logo Reliable Transformation B V", "Logo Fujitsu Technology Solutions B V", "Logo Manneken Systems B V",
+            "Logo Pqr B V", "Logo Asset People B V", "Logo Nerium B V", "Floran", "Logo Akb Longs B V",
+            "Logo Nexusocean B V", "Logo Abc Solutions B V", "Logo Ericsson Holding International B V", "Logo Informant Software B V", "Logo The Digital Federation B V",
+            "Logo Ncubed B V", "Logo Enable U", "Logo Uniprofs Services B V", "Logo Digital Realty", "Logo Calago B V",
+            "Logo Validsign", "Logo Juniper Networks International Bv", "Logo Clever Llamas", "Logo Purple Cloud Consultants B V", "Logo Compumatica Secure Networks Bv",
+            "Logo Kingkees B V", "Logo License Partners B V", "Logo Iquality Business Solutions B V", "Logo Infologic Nederland B V", "Logo Kader Digital B V",
+            "Relyon Service Management B V", "Logo Ict Teamwork Bv", "Empowertech B V", "Logo Culturesuite", "Logo Northbridge Group Ict Services B V",
+            "Logo Jacobs Breda Electronics", "3D Systems Benelux B V", "Digilyfe B V", "Tellus Bi B V", "Logo Sectra Communications Bv",
+            "Logo Integral Knowledge Utilization B V", "Logo Mnemonic Cybersecurity", "Logo Eurofiber Nederland", "Mproof B V", "Logo Matthat Software B V",
+            "Logo Siteminds Consultancy B V", "Logo Tcl Energy Mobile Technology Netherlands B V", "Logo Myvin B V", "Logo Tauw Group B V", "Logo Infotopics B V",
+            "Logo Sharp Electronics Benelux B V", "Logo Aenova B V", "Logo Value Creation Capital B V", "Logo Bytesnet Groningen", "Logo Fp Ruys",
+            "Buynamics B V", "Logo Dexels Bv", "Logo Monitech Security Solutions Bv", "Logo Parlando B V", "Logo Tef Digitaal",
+            "Logo Conscia Nederland B V", "Logo Sherpaan B V", "Logo Projectconnect B V", "Logo Proud Innovations B V", "Logo Exin Holding Bv",
+            "Logo Skyleague", "Logo Copaco Nederland B V", "Logo Classict B V", "Logo Spinque B V", "Logo Instech Netherlands B V",
+            "Logo Apacer Technology B V", "Logo Thysia Information Management B V", "Logo Altea Holding B V", "Logo Metis Edge", "Logo Hippoline B V",
+            "Logo Dima Support", "Logo Sposea Bv", "Logo Jm Bruneau Belgium", "Logo Bgts B V", "Enabled Core Services B V",
+            "Vwc Ict Telecom B V", "Logo Slidecrew B V", "Logo Acousoft Informatisering B V", "Logo Data Praesideo B V", "Logo Babbage B V",
+            "Logo Motorola Solutions Netherlands B V", "Logo Cadac Group Services Bv", "Logo Global Switch Amsterdam B V", "Logo Texas Instruments Holland B V", "License Partners B V",
+            "Logo 4Efficiency Services B V", "Logo Southernhill B V", "Logo Buynamics B V", "Batenburg Magion Bv", "Nobis Stultius It",
+            "Global Switch Amsterdam B V", "Logo Empowertech B V", "Logo Actemium", "Logo Brother International Nederland B V", "Logo Fellowmind",
+            "Logo Sd Groep B V", "Purple Cloud Consultants B V", "Logo Firebrand Training Benelux B V", "Logo Ic Solutions", "Logo Fc Card Solutions B V",
+            "Logo Flowgistics B V", "Suitit B V", "Logo Travelspirit B V", "Logo Viamet", "Logo Maincubes B V",
+            "Logo Declan B V", "Logo Ictivity Groep B V", "Insphire International B V", "Smartaim Nederland B V", "Logo Wwt Netherlands B V",
+            "Logo Tinx It B V", "Logo Summix B V", "Carema Hardware Bv", "Logo Digilyfe B V", "Logo Qwasp B V",
+            "Logo Originem B V", "Logo Yaacomm", "Logo Garmin Nederland B V", "Logo Root B V", "Take It Over B V",
+            "Logo Netgear Netherlands B V", "Logo Komexo B V", "Hitachi Vantara Nederland B V", "Siteminds Consultancy B V", "Logo Claire Automotive Support B V",
+            "Logo Iron Mountain Nederland Data Centre B V", "Logo Nobis Stultius It", "Logo Intigris B V", "Logo Duocom B V", "Logo Huawei Technologies Netherlands B V",
+            "Logo Customseye Bv", "Logo Telematch B V", "Logo Nedsoft B V", "Logo Crayon Benelux", "Logo Acer Computer B V",
+            "Logo Bookzo V O F", "Logo Relyon Service Management B V", "Van Hulten Software B V", "Logo Tackle It", "Logo Itph Academy Gbo B V",
+            "Logo Easylink Bv", "Logo Secomp", "Metis Edge", "Logo Iiyama Benelux B V", "Make Life Easier B V",
+            "Logo Boostix B V", "Logo Webapptool Solutions B V", "Logo Enterprise Outsourcing B V", "Logo Silicon Power", "Pqr B V",
+            "Logo Admx", "Logo Harmony Group", "Logo Hortitime", "Logo Tredos Connect B V", "Logo Infourge Consulting B V",
+            "Logo Eurocom Group", "Logo Plus Automatisering B V", "Logo Itcall B V", "Logo Maxcom B V", "Logo Connect Solutions B V",
+            "Logo Roma Ict Diensten B V", "Logo All Automation Service B V", "Logo Uber B V", "Logo Curvature Llc", "Logo Kyocera Document Solutions Nederland B V",
+            "Logo Meetrix Online B V", "Logo Cloudfreaks B V", "Logo Agepe Logistics Software Nv", "Logo Looc Digital Bv", "Logo Xitres Nieuwbouwoffice B V",
+            "Logo Tjip The Platform Engineers", "Sqnetworks Cyber Security B V", "Logo Consafe Logistics B V", "Logo Sopra Steria Nederland B V", "Logo Pangaea Digital Agency Bv",
+            "Logo Adfontes Software B V", "Logo Iventure It Solutions B V", "Logo Merlinq B V", "Logo Flynq B V", "Logo E Tales B V",
+            "Agis Automatisering B V", "Logo Debrand Software Developers B V", "Logo Intemo B V", "Logo Raritan Europe B V", "Logo Flowmaeker B V",
+            "Logo Universal It B V", "Logo Take It Over B V", "Logo Tellus Bi B V", "Logo Roger365 Io B V", "Logo Evalue8 B V",
+            "Logo Jacob Van Dam Ict B V", "Logo Clickon Bv", "Logo Geone B V", "Logo Aliens Marketing It B V", "Logo Sas Nederland",
+            "Rog Consultancy Services", "Logo The Code Crowd", "Logo Rapidcloud B V", "Logo W T International B V", "Logo Vlaar Computer Dienstverlening",
+            "Logo Stormin B V", "Logo Betabit Nederland B V", "Logo Pragmatools Bv", "Logo Capgemini Nederland B V", "Logo Bee Flow B V",
+            "Logo Caci", "Logo Vlot Solutions", "Logo Aopen Computer B V", "Logo Carvaljo Bv", "Harmony Group",
+            "Logo 4I Solutions B V", "Logo Tradeinterop Utrecht", "Logo Timetell B V", "Texas Instruments Holland B V", "Logo Mindyourpass B V",
+            "Logo Spotler Send Pro", "Logo Orangehill Bv", "Logo Ingram Micro Bv", "Logo Holland Ict Groep B V", "Logo Buro De Haan Informatietechnologie",
+            "Support It", "Logo Bradon Bv", "Logo Pengine B V", "Logo Besharp Experts B V", "Logo Kyndryl Nederland B V",
+            "Logo Oracle Nederland B V", "Concur Holdings Netherlands B V", "Logo Adviconit B V", "Logo 3D Systems Benelux B V", "Logo Turn One",
+            "Logo Hys Enterprise Bv", "Logo Enfinitec B V", "Logo Giga Byte Technology B V", "Jacobs Breda Electronics", "Logo Uxit",
+            "Logo Datto Nederland B V", "Logo Buro Gekko B V", "Logo Balanced Force B V", "Truelime B V", "Logo Cikam B V",
+            "Logo Sky Medical Group B V", "Tcl Energy Mobile Technology Netherlands B V", "Logo Hitachi Vantara Nederland B V", "Besharp Experts B V", "Logo Dobit Bv",
+            "Logo Innovadri", "Logo Onespan Netherlands B V", "Logo Amosa Holding B V", "Logo Pyramid Applied Solutions Bv", "Logo Connectwise Nederland",
+            "Logo Tft Solutions B V", "Logo Google Netherlands B V", "Logo Conduction B V", "Logo Ntt Netherlands B V", "Logo Wercstat",
+            "Logo Exact Group B V", "Logo Axians", "Logo Comtrend Technology Netherlands B V", "Logo Coera Holding", "Logo Ascom Nederland B V",
+            "Wercstat", "Logo Factor Blue B V", "Logo Harmless Agency", "Parsival Beheer B V", "Logo Toshiba Global Commerce Solutions Benelux",
+            "Firebrand Training Benelux B V", "Logo Mybusiness Software", "Logo 8Vance Matching Technologies B V", "Logo Rbict", "Logo Atos Netherlands B V",
+            "Logo Habienet Service B V", "Logo T Systems Nederland B V", "Logo Personly B V", "Skyleague", "Logo Infravision B V",
+            "Logo Serviceware Benelux B V", "Logo Agiliq B V", "Logo Nxtmed Support B V", "Logo Edimax Technology Europe B V", "Hyde Financial Services",
+            "Logo Aiava B V", "Logo Macroscoop B V", "Logo Easysecure International B V", "Logo Rog Consultancy Services", "Logo Wozdata B V",
+            "Logo Wizzbit B V", "Logo Ecmsolutions Metastore Nederland B V", "Logo Ctrlcloud B V", "Logo Meta", "Group 2000 Nederland B V",
+            "Logo Pcg It B V", "Logo Avera B V", "Logo Nieuwenhuis It Connectivity B V", "Moonly Software B V", "Logo Mosteasy",
+            "Logo Dysel B V", "Logo Eizo Europe Gmbh", "Logo Corporate Ip B V", "Logo Ntri Technologies B V", "Logo Advitronics Telecom B V",
+            "Logo Scherpthe B V", "Logo Pixels Nederland B V", "Logo Carema Hardware Bv", "Logo Resource Opmeer B V", "Logo Protinus It B V",
+            "Logo Inmote Bv", "Logo Logic4 B V", "Logo Ncr Dutch Holdings B V", "Logo Computacenter B V", "Logo Fidendum It B V",
+            "Logo Breens Network B V", "Logo Bpsolutions", "Logo Atrea Systemen", "Topdesk Nederland B V", "Logo Smarticate B V",
+            "Logo Mystar Computer B V", "Logo Xerox Manufacturing Nederland B V", "Logo Weather Impact B V", "Logo Ecomwise B V", "Logo Optimum Ict B V",
+            "Logo Analitiqs B V", "Logo Syscopact B V", "Logo Support It", "Logo E Matcher 2 0 B V", "Logo Eformity Document Solutions B V",
+            "Bytesnet Groningen", "Logo Egberts Kuipers Bouw Software Bv", "Logo Truelime B V", "Logo Ranking It B V", "Logo Zte Netherlands B V",
+            "Logo Itium B V", "Logo Northc Datacenters B V", "Matthat Software B V", "Logo Basispoint Bv", "Logo Batenburg Magion Bv",
+            "Logo Levi9 Global Sourcing Benelux B V", "Logo Vanboxtel Bv", "Logo Scoretrace B V", "Logo Bitmetric B V", "Jm Bruneau Belgium",
+            "Logo Ac Systems B V", "Logo Van Vlodrop It", "Logo Servoy B V", "Logo Qmonkeys B V", "Logo Bruis B V",
+            "Logo Rem Automatisering B V", "Logo Afas Software Bv", "Logo Vst Software B V", "Logo Hackify B V", "Logo Sharp Nec Display Solutions Scaled",
+            "Logo Bolt", "Logo Rappit Bv", "E Storage B V", "Logo Steentjes Ict B V", "Logo Mproof B V",
+            "Logo Clear Managed It B V", "Logo Xafax Nederland B V", "Logo Rapid Circle B V", "Logo Yorizon", "Logo Lexcom B V",
+            "Logo Bizzcon It B V", "Logo Axians Performance Solutions B V", "Logo Xerox Nederland B V", "Logo Care4It B V", "Connectwise Nederland",
+            "Logo 3Corners Internetworking Services B V", "Patriot Memory B V", "Logo Bang Olufsen B V", "Ivano Bubani", "Logo Mobicoach B V",
+            "Logo Syscon Bv", "Logo Koren It", "Logo Rovers Software", "Logo Suitit B V", "Logo Crystalloids B V",
+            "Logo Fbi Digital Agency", "Logo Digital Rebels", "Logo Benq Benelux B V", "Logo Mediaheads B V", "Coera Holding",
+            "Logo Dg Groep B V", "Logo Streaming Valley B V", "Logo Westbury Software B V", "Cloudconnected", "Logo Sqnetworks Cyber Security B V",
+            "Logo Icorp Nl B V", "Logo Omines Internetbureau B V", "Logo Kidskonnect B V", "Logo Ikbenverzekerd B V", "Logo Concur Holdings Netherlands B V",
+            "Logo Aion Media Group B V", "Logo 3 Dm Consultancy", "Logo Fsas Technologies B V", "Logo Smartaim Nederland B V", "Logo Green Sky B V",
+            "Logo Aperium B V", "Breens Network B V", "Logo Digital Forms B V", "Sposea Bv", "Logo Netaspect Software Bv",
+            "Logo Laurens Nivard It Services B V", "Logo Top Systems", "Logo It Formule", "Logo Teklink Europe Bv", "Logo Bakkerelkhuizen Software B V",
+            "Logo Tredos It Solutions B V", "Logo Patriot Memory B V", "Logo Floran", "Logo It Management Group Bv", "Tjip The Platform Engineers",
+            "Logo Dalosy Projecten B V", "Logo Akam Netherlands Bv", "Logo Adalace Software B V", "Logo Digital Survival Company B V", "Logo Logic Vision B V",
+            "Logo Amazon Web Services Emea Sarl Dutch Branch", "Logo Inspektor Research Systems B V", "Buro De Haan Informatietechnologie", "Logo Remira Netherlands B V", "Logo Sfdc Netherlands B V",
+            "Logo 2Jours B V", "Logo Audittrail Professionals B V", "Logo Syntess Software Bv", "Logo Itrajectum B V", "Logo Apple Benelux B V",
+            "Logo Continue It B V", "Logo Alturna Networks N V", "Logo Kern Nederland B V", "Logo Frost It Bv", "Logo Mica It B V",
+            "Logo Agiboo B V", "Logo Teqa Informatica B V", "Spotler Send Pro", "Logo Soso Support B V", "Logo Nalta Bv",
+            "Logo Geckotech B V", "Logo Lenovo International Cooperatief U A", "Laurens Nivard It Services B V", "Logo Compurity", "Logo Duenit B V",
+            "Logo New Movements Innovations B V", "Logo Accenture B V", "Logo Snap B V", "Logo Insocial B V", "Logo Bluefinch Esbd Netherlands B V",
+            "Logo Ict Ingenieursbureau Caris Partners B V", "Logo Itnl Solutions B V", "Logo Stb Computer Service", "Logo Edutrainers B V", "Logo Hermac B V",
+            "All Automation Service B V", "Logo Microsoft B V", "Logo Enlimit B V", "Logo Cesbit B V", "E Matcher 2 0 B V",
+            "Logo Office Unlimited B V", "Mica It B V", "Logo Compano B V", "Brandcode", "Logo Freightdog B V",
+            "Logo Innovative365 B V", "Logo E Storage B V", "Logo Fuselogic B V", "Logo Novuss Telecom Ict Bv", "Logo Coas Business Systems Bv",
+            "Logo Pca Bv", "Logo Act In International B V", "Digital Survival Company B V", "Logo Goodzo Professional Services B V", "Logo Quality And Information Management Support B V",
+            "Kidskonnect B V", "Logo Kbite Automatisering B V", "Logo Ivengi Groep B V", "Logo Odin Groep", "Logo Dataazee",
+            "Logo Connectplaza B V", "Logo Selles Automatisering Bv", "Logo Tcc The Computer Company B V", "Logo Antteq Group B V", "Logo Vwc Ict Telecom B V",
+            "Logo Compass Relationship Management B V", "Logo Ncr Nederland B V", "Logo The Rmo Company B V", "Logo Zeroplex B V", "Logo Cloudzilla Bv",
+            "Logo Nexwork B V", "Logo 2Makeitwork B V", "Logo Toshiba Tec Netherlands", "Logo Infogroen Software B V", "Logo Inventx B V",
+            "Isset Internet Professionals", "Logo Hama B V", "Logo Itum Solutions B V", "Flowmaeker B V", "Logo Capteur Bv",
+            "Logo Benq Europe B V", "Lydis B V", "Logo Make Life Easier B V", "Logo Docassist Bv", "Logo Teleknowledge Call Center Solutions B V",
+            "Ikbenverzekerd B V", "Egberts Kuipers Bouw Software Bv", "Logo Meneer Jansen Ict", "Logo Masero B V", "Debrand Software Developers B V",
+            "Logo Workforce Insights B V", "Logo Ytec Development B V", "Logo Biostar Microtech Netherlands B V", "Mercell Nederland B V", "Calago B V",
+            "Logo One Fox B V", "Axians Performance Solutions B V", "Logo Face It", "Logo Ecs International Bv", "Logo Engation B V"
+        ];
+        
+        let currentView = 'grid';
+        let allCompanies = [...companies];
+        
+        function renderCompanies(list) {
+            const container = document.getElementById('companiesList');
+            const countInfo = document.getElementById('countInfo');
+            
+            if (list.length === 0) {
+                container.innerHTML = '<div class="no-results">No companies found matching your search.</div>';
+                countInfo.style.display = 'none';
+            } else {
+                countInfo.textContent = `Showing ${list.length} of ${companies.length} companies`;
+                countInfo.style.display = 'block';
+                
+                container.innerHTML = list.map((company, index) => `
+                    <div class="company-card">
+                        <div class="company-name">${company.replace(/Logo /i, '')}</div>
+                        <div class="company-number">#${companies.indexOf(company) + 1}</div>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = companies.filter(c => c.toLowerCase().includes(searchTerm));
+            renderCompanies(filtered);
+        });
+        
+        document.getElementById('sortNameBtn').addEventListener('click', () => {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = companies
+                .filter(c => c.toLowerCase().includes(searchTerm))
+                .sort();
+            renderCompanies(filtered);
+        });
+        
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            document.getElementById('searchInput').value = '';
+            renderCompanies(companies);
+        });
+        
+        document.getElementById('gridViewBtn').addEventListener('click', () => {
+            const container = document.getElementById('companiesList');
+            container.classList.remove('list-view');
+            container.classList.add('companies-list');
+            document.getElementById('gridViewBtn').classList.add('active');
+            document.getElementById('listViewBtn').classList.remove('active');
+        });
+        
+        document.getElementById('listViewBtn').addEventListener('click', () => {
+            const container = document.getElementById('companiesList');
+            container.classList.remove('companies-list');
+            container.classList.add('list-view');
+            document.getElementById('listViewBtn').classList.add('active');
+            document.getElementById('gridViewBtn').classList.remove('active');
+        });
+        
+        // Initial render
+        renderCompanies(companies);
+    </script>
+</body>
+</html>
