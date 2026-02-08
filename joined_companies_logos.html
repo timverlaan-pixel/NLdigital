@@ -176,13 +176,13 @@
             flows.forEach((flow, index) => {
                 const fromDate = flow.from_date.split(' ')[0];
                 const toDate = flow.to_date.split(' ')[0];
-                const leftMembers = flow.left_members;
+                const leftMembers = flow.joined_members;
                 
                 const batchDiv = document.createElement('div');
                 batchDiv.className = 'batch';
                 
                 // Find the snapshot that has the logos
-                const snapshotDate = flow.from_date;
+                const snapshotDate = flow.to_date;
                 const snapshot = Object.values(snapshots).find(s => s.date === snapshotDate);
                 
                 let logoGalleryHtml = '<div class="logo-gallery">';
@@ -217,7 +217,7 @@
                 batchDiv.innerHTML = `
                     <div class="batch-title">
                         <span>${fromDate} → ${toDate}</span>
-                        <span class="batch-count">${leftMembers.length} companies left</span>
+                        <span class="batch-count">${leftMembers.length} companies joined</span>
                     </div>
                     ${logoGalleryHtml}
                 `;

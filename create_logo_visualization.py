@@ -25,15 +25,21 @@ for filename in member_files:
         logo_urls = [u for u in data['members'] if 'logo' in u.lower()]
         member_urls = [u for u in data['members'] if '/leden/' in u and 'logo' not in u.lower()]
         
-        # Create mapping
+        # Create mapping (normalize keys so they match company slugs)
         logos_by_company = {}
         for logo_url in logo_urls:
             # Extract company name from logo URL
             # Format: logo-company-name.jpg
             logo_filename = logo_url.split('/')[-1]  # Get filename
-            logo_filename = logo_filename.replace('logo-', '').replace('.jpg', '').replace('.png', '')
-            logos_by_company[logo_filename] = logo_url
-        
+            logo_filename = logo_filename.replace('logo-', '')
+            logo_filename = logo_filename.replace('.jpg', '').replace('.png', '').replace('.jpeg', '')
+            # Normalize common variants: b v -> bv, b-v -> bv
+            key = logo_filename.lower()
+            key = key.replace(' b v', ' bv').replace(' b-v', ' bv')
+            key = key.replace('-b-v', '-bv').replace(' b v', ' bv')
+            key = key.replace(' ', '-')
+            logos_by_company[key] = logo_url
+
         snapshots_by_date[data['date']] = {
             'members': data['members'],
             'logos_by_company': logos_by_company,
@@ -297,11 +303,26 @@ html_final = html_content.replace(
 )
 
 # Write output
-output_file = os.path.join(data_dir, '..', 'departed_companies_logos.html')
-with open(output_file, 'w', encoding='utf-8') as f:
+# Write departed companies page
+output_file_departed = os.path.join(data_dir, '..', 'departed_companies_logos.html')
+with open(output_file_departed, 'w', encoding='utf-8') as f:
     f.write(html_final)
 
-print(f"✓ Logo gallery created: {output_file}")
-print(f"\nBatch Summary:")
+print(f"✓ Departed logo gallery created: {output_file_departed}")
+print(f"\nBatch Summary (departures):")
 for i, flow in enumerate(flows, 1):
     print(f"{i}. {flow['from_date'].split()[0]} → {flow['to_date'].split()[0]}: {flow['left']} companies left")
+
+# Create joined companies page by adapting the template JS to use joined_members
+html_joined = html_content.replace('%FLOWS_JSON%', json.dumps(flows)).replace('%SNAPSHOTS_JSON%', json.dumps(snapshots_data))
+html_joined = html_joined.replace("const flows = %FLOWS_JSON%;", "const flows = %FLOWS_JSON%;\n        const mode = 'joined';")
+# Replace rendering logic: use joined_members and snapshot for to_date
+html_joined = html_joined.replace("const snapshotDate = flow.from_date;", "const snapshotDate = flow.to_date;")
+html_joined = html_joined.replace("const leftMembers = flow.left_members;", "const leftMembers = flow.joined_members;")
+html_joined = html_joined.replace("${leftMembers.length} companies left", "${leftMembers.length} companies joined")
+
+output_file_joined = os.path.join(data_dir, '..', 'joined_companies_logos.html')
+with open(output_file_joined, 'w', encoding='utf-8') as f:
+    f.write(html_joined)
+
+print(f"✓ Joined logo gallery created: {output_file_joined}")
