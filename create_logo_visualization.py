@@ -48,6 +48,24 @@ for filename in member_files:
 
 print(f"✓ Found {len(all_logos)} unique company logos across all snapshots")
 
+# Build mapping: normalized slug -> original URL path (for correct NLdigital links)
+# The slugify() normalizes "b-v" to "bv", but the actual URLs use "b-v"
+slug_to_original = {}  # normalized_slug -> original_url_path
+for filename in member_files:
+    with open(os.path.join(data_dir, filename), 'r') as f:
+        data = json.load(f)
+        for url in data['members']:
+            if '/leden/' in url and 'logo' not in url.lower():
+                parts = url.split('/leden/')
+                if len(parts) > 1:
+                    original_path = parts[1].strip('/').strip()
+                    if not original_path.startswith('wp-content'):
+                        normalized = slugify(original_path)
+                        if normalized not in slug_to_original:
+                            slug_to_original[normalized] = original_path
+
+print(f"✓ Built URL mapping for {len(slug_to_original)} companies")
+
 # Build batches: list of dicts with date range + company lists
 departed_batches = []
 joined_batches = []
@@ -84,7 +102,9 @@ def create_company_card(company_slug):
     """Generate HTML card for a company with its logo and link"""
     company_name = company_slug.replace('-', ' ').title()
     logo_url = all_logos.get(company_slug)
-    nldigital_url = f'https://nldigital.nl/leden/{company_slug}/'
+    # Use original URL path (with b-v etc.) instead of normalized slug
+    original_path = slug_to_original.get(company_slug, company_slug)
+    nldigital_url = f'https://www.nldigital.nl/leden/{original_path}/'
 
     # Card HTML with logo or fallback
     html = f'''    <div class="company-card">

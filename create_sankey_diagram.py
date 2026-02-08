@@ -231,32 +231,39 @@ fig = go.Figure(data=[go.Sankey(
 fig.update_layout(
     title_text="NLdigital Ledenstromen - Gefiltreerde Batches<br>(Alleen batches met vertrekken)",
     font=dict(size=11),
-    height=900,
-    width=1400,
+    height=700,
     template='plotly_white',
-    hovermode='closest'
+    hovermode='closest',
+    margin=dict(l=10, r=10, t=60, b=10)
 )
 
-# Save HTML
+# Save HTML (responsive so it fits the screen width)
 output_file = os.path.join(data_dir, '..', 'sankey_diagram_filtered.html')
-fig.write_html(output_file)
+fig.write_html(output_file, config={'responsive': True})
 
 # Post-process: inject JS to reposition node labels inside node boundaries
-# and add visible numbers on link paths
+# and add visible numbers on link paths.
+# Plotly Sankey renders nodes as <g> groups containing <rect> + <text> children.
+# We find these by scanning all <g> elements for ones with both rect and text.
 CUSTOM_JS = r"""
 <script>
 (function() {
     function repositionNodeLabels() {
-        var nodes = document.querySelectorAll('.sankey-node');
-        nodes.forEach(function(node) {
-            var rect = node.querySelector('rect');
-            var textEl = node.querySelector('text');
+        // Plotly renders Sankey nodes as <g> with child <rect> and <text>.
+        // Scan all <g> elements to find node groups.
+        var allGroups = document.querySelectorAll('g');
+        allGroups.forEach(function(g) {
+            var rect = g.querySelector(':scope > rect');
+            var textEl = g.querySelector(':scope > text');
             if (!rect || !textEl) return;
 
-            var rectX = parseFloat(rect.getAttribute('x'));
-            var rectY = parseFloat(rect.getAttribute('y'));
             var rectW = parseFloat(rect.getAttribute('width'));
             var rectH = parseFloat(rect.getAttribute('height'));
+            // Only process Sankey node rects (skip tiny rects, axes, etc.)
+            if (!rectW || !rectH || rectW < 20 || rectH < 30) return;
+
+            var rectX = parseFloat(rect.getAttribute('x')) || 0;
+            var rectY = parseFloat(rect.getAttribute('y')) || 0;
 
             var centerX = rectX + rectW / 2;
             var centerY = rectY + rectH / 2;
@@ -290,12 +297,22 @@ CUSTOM_JS = r"""
         var labels = linkData.label;
         var values = linkData.value;
 
-        var links = document.querySelectorAll('.sankey-link');
-        links.forEach(function(linkGroup, index) {
-            if (index >= labels.length) return;
+        // Find all link <path> elements within the Sankey SVG.
+        // Plotly link paths have a fill with rgba and are inside groups.
+        var svg = plotDiv.querySelector('svg.main-svg');
+        if (!svg) return;
+        var paths = svg.querySelectorAll('path');
+        var linkPaths = [];
+        paths.forEach(function(p) {
+            var fill = p.getAttribute('style') || p.getAttribute('fill') || '';
+            // Sankey link paths have rgba fill colors we set
+            if (fill.indexOf('rgba') >= 0 && fill.indexOf('0.6') >= 0) {
+                linkPaths.push(p);
+            }
+        });
 
-            var path = linkGroup.querySelector('path');
-            if (!path) return;
+        linkPaths.forEach(function(path, index) {
+            if (index >= labels.length) return;
 
             var label = labels[index];
             var match = label.match(/:\s*(\d+)/);
@@ -306,35 +323,35 @@ CUSTOM_JS = r"""
             // Skip very small links where text won't fit
             if (value < 5) return;
 
-            var pathLength = path.getTotalLength();
-            var midPoint = path.getPointAtLength(pathLength / 2);
+            try {
+                var pathLength = path.getTotalLength();
+                var midPoint = path.getPointAtLength(pathLength / 2);
 
-            // Determine color based on link type
-            var textColor = '#333';
-            if (label.indexOf('Vertrokken') >= 0) textColor = '#b71c1c';
-            else if (label.indexOf('Toegetreden') >= 0) textColor = '#1b5e20';
-            else if (label.indexOf('Gebleven') >= 0) textColor = '#1a237e';
+                // Determine color based on link type
+                var textColor = '#333';
+                if (label.indexOf('Vertrokken') >= 0) textColor = '#b71c1c';
+                else if (label.indexOf('Toegetreden') >= 0) textColor = '#1b5e20';
+                else if (label.indexOf('Gebleven') >= 0) textColor = '#1a237e';
 
-            var svgNS = 'http://www.w3.org/2000/svg';
-            var text = document.createElementNS(svgNS, 'text');
-            text.setAttribute('x', midPoint.x);
-            text.setAttribute('y', midPoint.y);
-            text.setAttribute('text-anchor', 'middle');
-            text.setAttribute('dominant-baseline', 'central');
-            text.setAttribute('class', 'custom-link-label');
-            text.style.fontSize = value > 50 ? '12px' : '9px';
-            text.style.fontWeight = 'bold';
-            text.style.fill = textColor;
-            text.style.pointerEvents = 'none';
-            text.style.paintOrder = 'stroke';
-            text.style.stroke = 'white';
-            text.style.strokeWidth = '3px';
-            text.style.strokeLinejoin = 'round';
-            text.textContent = number;
+                var svgNS = 'http://www.w3.org/2000/svg';
+                var text = document.createElementNS(svgNS, 'text');
+                text.setAttribute('x', midPoint.x);
+                text.setAttribute('y', midPoint.y);
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('dominant-baseline', 'central');
+                text.setAttribute('class', 'custom-link-label');
+                text.style.fontSize = value > 50 ? '12px' : '9px';
+                text.style.fontWeight = 'bold';
+                text.style.fill = textColor;
+                text.style.pointerEvents = 'none';
+                text.style.paintOrder = 'stroke';
+                text.style.stroke = 'white';
+                text.style.strokeWidth = '3px';
+                text.style.strokeLinejoin = 'round';
+                text.textContent = number;
 
-            // Add to the SVG layer above the link paths
-            var svg = path.closest('svg');
-            if (svg) svg.appendChild(text);
+                path.parentNode.appendChild(text);
+            } catch(e) {}
         });
     }
 
@@ -343,24 +360,32 @@ CUSTOM_JS = r"""
         addLinkLabels();
     }
 
-    // Wait for Plotly to finish rendering
-    var observer = new MutationObserver(function(mutations, obs) {
-        if (document.querySelectorAll('.sankey-node').length > 0) {
-            obs.disconnect();
-            setTimeout(customizeSankey, 200);
+    // Wait for Plotly to finish rendering by polling for rect elements
+    function waitAndCustomize() {
+        var rects = document.querySelectorAll('g > rect');
+        var found = false;
+        rects.forEach(function(r) {
+            var w = parseFloat(r.getAttribute('width'));
+            var h = parseFloat(r.getAttribute('height'));
+            if (w > 20 && h > 30) found = true;
+        });
+        if (found) {
+            setTimeout(customizeSankey, 300);
+        } else {
+            setTimeout(waitAndCustomize, 200);
         }
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
+    }
+    waitAndCustomize();
 
-    // Re-apply after Plotly re-renders (e.g. node drag)
+    // Re-apply after Plotly re-renders (e.g. node drag, resize)
     setTimeout(function() {
         var plotDiv = document.querySelector('.plotly-graph-div');
         if (plotDiv && plotDiv.on) {
             plotDiv.on('plotly_afterplot', function() {
-                setTimeout(customizeSankey, 100);
+                setTimeout(customizeSankey, 150);
             });
         }
-    }, 500);
+    }, 1000);
 })();
 </script>
 """
