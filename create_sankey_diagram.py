@@ -10,6 +10,29 @@ import pandas as pd
 from datetime import datetime
 import re
 
+# Local slugify to match other scripts
+def slugify(name: str) -> str:
+    s = (name or '').strip().lower()
+    s = s.strip('/')
+    if s.startswith('logo-'):
+        s = s[len('logo-'):]
+    s = re.sub(r"\.(jpg|jpeg|png|gif)$", '', s)
+    s = re.sub(r"\bb[\.\-\s]?v\b", 'bv', s)
+    s = re.sub(r'[^a-z0-9]+', '-', s)
+    s = re.sub(r'-{2,}', '-', s)
+    s = s.strip('-')
+    return s
+
+def extract_company_from_url(url: str) -> str:
+    u = (url or '').strip()
+    if '/leden/' in u and not u.lower().endswith(('.jpg', '.png', '.jpeg', '.gif')):
+        parts = u.split('/leden/')
+        if len(parts) > 1:
+            candidate = parts[1].strip('/').strip()
+            if not candidate.startswith('wp-content'):
+                return slugify(candidate)
+    return None
+
 # Install plotly if needed
 try:
     import plotly.graph_objects as go
@@ -44,8 +67,14 @@ member_counts = {}
 for filename in member_files:
     with open(os.path.join(data_dir, filename), 'r') as f:
         data = json.load(f)
-        date = data['date'].split()[0]
-        member_counts[data['date']] = data['member_count']
+        # compute deduplicated member slugs from snapshot URLs
+        company_slugs = set()
+        for url in data.get('members', []):
+            slug = extract_company_from_url(url)
+            if slug:
+                company_slugs.add(slug)
+        # store deduplicated count keyed by full datetime string (matches flows)
+        member_counts[data['date']] = len(company_slugs)
 
 # Process each active flow
 for i, flow in enumerate(active_flows):
