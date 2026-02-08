@@ -51,8 +51,17 @@ for i, flow in enumerate(active_flows):
     from_date = flow['from_date'].split()[0]  # Just date part
     to_date = flow['to_date'].split()[0]
     
-    from_count = member_counts.get(flow['from_date'], '?')
-    to_count = member_counts.get(flow['to_date'], '?')
+    # Ensure member counts are integers (no trailing .0)
+    from_count_raw = member_counts.get(flow['from_date'], '?')
+    to_count_raw = member_counts.get(flow['to_date'], '?')
+    try:
+        from_count = int(round(float(from_count_raw)))
+    except Exception:
+        from_count = from_count_raw
+    try:
+        to_count = int(round(float(to_count_raw)))
+    except Exception:
+        to_count = to_count_raw
     
     # Create labeled nodes
     from_node = f"{from_date}\n({from_count} leden)"
@@ -72,33 +81,36 @@ for i, flow in enumerate(active_flows):
     else:
         companies_text += "No data"
     
-    # Add stayed flow
-    if flow['stayed'] > 0:
+    # Add stayed flow (use integer values)
+    if flow.get('stayed', 0) > 0:
+        stayed_val = int(round(float(flow.get('stayed', 0))))
         sankey_entries.append({
             'source': from_node,
             'target': to_node,
-            'value': flow['stayed'],
-            'label': f"Gebleven: {flow['stayed']}",
+            'value': stayed_val,
+            'label': f"Gebleven: {stayed_val}",
             'type': 'stayed'
         })
     
     # Add joined flow (from "New")
-    if flow['joined'] > 0:
+    if flow.get('joined', 0) > 0:
+        joined_val = int(round(float(flow.get('joined', 0))))
         sankey_entries.append({
             'source': 'Nieuw / Toegetreden',
             'target': to_node,
-            'value': flow['joined'],
-            'label': f"Toegetreden: {flow['joined']}",
+            'value': joined_val,
+            'label': f"Toegetreden: {joined_val}",
             'type': 'joined'
         })
     
     # Add left flow (to "Gone")
-    if flow['left'] > 0:
+    if flow.get('left', 0) > 0:
+        left_val = int(round(float(flow.get('left', 0))))
         sankey_entries.append({
             'source': from_node,
             'target': 'Vertrokken',
-            'value': flow['left'],
-            'label': f"Vertrokken: {flow['left']}",
+            'value': left_val,
+            'label': f"Vertrokken: {left_val}",
             'type': 'left',
             'hover_companies': companies_text
         })
@@ -121,8 +133,10 @@ node_indices = {node: i for i, node in enumerate(all_nodes)}
 # Prepare source, target, and value arrays
 source_indices = [node_indices[s] for s in df['source']]
 target_indices = [node_indices[t] for t in df['target']]
+# Ensure values are integers (no .0) and labels reflect integer values
+df['value'] = df['value'].astype(int)
 values = df['value'].tolist()
-labels = df['label'].tolist()
+labels = df['label'].astype(str).tolist()
 
 # Prepare custom hover text with company information
 hover_texts = []
