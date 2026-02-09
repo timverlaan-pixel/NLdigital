@@ -61,7 +61,6 @@ print(f"Active batches (with departures): {len(active_flows)}")
 sankey_entries = []
 
 # Load the original member snapshots for count information
-import json
 member_files = sorted([f for f in os.listdir(data_dir) if f.startswith('members_') and f.endswith('.json')])
 member_counts = {}
 for filename in member_files:
@@ -80,7 +79,7 @@ for filename in member_files:
 for i, flow in enumerate(active_flows):
     from_date = flow['from_date'].split()[0]  # Just date part
     to_date = flow['to_date'].split()[0]
-    
+
     # Ensure member counts are integers (no trailing .0)
     from_count_raw = member_counts.get(flow['from_date'], '?')
     to_count_raw = member_counts.get(flow['to_date'], '?')
@@ -92,26 +91,24 @@ for i, flow in enumerate(active_flows):
         to_count = int(round(float(to_count_raw)))
     except Exception:
         to_count = to_count_raw
-    
-    # Create labeled nodes
+
+    # Create labeled nodes - use \n for multiline
     from_node = f"{from_date}\n({from_count} leden)"
     to_node = f"{to_date}\n({to_count} leden)"
-    
+
     # Create company list string for hover text (companies that left)
     left_companies = flow.get('left_members', [])
     companies_text = '<b>Companies that left:</b><br>'
     if left_companies:
-        # Show first 10 companies + count of remaining
         for company in left_companies[:10]:
-            # Normalize display name
             display_name = company.replace('-', ' ').replace('bv', 'BV')
             companies_text += f"• {display_name}<br>"
         if len(left_companies) > 10:
             companies_text += f"... and {len(left_companies) - 10} more<br>"
     else:
         companies_text += "No data"
-    
-    # Add stayed flow (use integer values)
+
+    # Add stayed flow
     if flow.get('stayed', 0) > 0:
         stayed_val = int(round(float(flow.get('stayed', 0))))
         sankey_entries.append({
@@ -121,7 +118,7 @@ for i, flow in enumerate(active_flows):
             'label': f"Gebleven: {stayed_val}",
             'type': 'stayed'
         })
-    
+
     # Add joined flow (from "New")
     if flow.get('joined', 0) > 0:
         joined_val = int(round(float(flow.get('joined', 0))))
@@ -132,7 +129,7 @@ for i, flow in enumerate(active_flows):
             'label': f"Toegetreden: {joined_val}",
             'type': 'joined'
         })
-    
+
     # Add left flow (to "Gone")
     if flow.get('left', 0) > 0:
         left_val = int(round(float(flow.get('left', 0))))
@@ -157,21 +154,12 @@ all_nodes = sorted(list(set(all_sources + all_targets)))
 
 print(f"Total nodes: {len(all_nodes)}")
 
-
-# Helper to create compact display labels for nodes (repositioned by JS post-render)
-def display_label_for_node(n: str) -> str:
-    parts = n.split('\n')
-    if len(parts) >= 2 and re.match(r'^\d{4}-\d{2}-\d{2}$', parts[0]):
-        return parts[0] + ' ' + ' '.join(parts[1:])
-    return n
-
 # Create mapping of node names to indices
 node_indices = {node: i for i, node in enumerate(all_nodes)}
 
 # Prepare source, target, and value arrays
 source_indices = [node_indices[s] for s in df['source']]
 target_indices = [node_indices[t] for t in df['target']]
-# Ensure values are integers (no .0) and labels reflect integer values
 df['value'] = df['value'].astype(int)
 values = df['value'].tolist()
 labels = df['label'].astype(str).tolist()
@@ -185,37 +173,64 @@ for idx, row in df.iterrows():
         hover_text = row['label']
     hover_texts.append(hover_text)
 
-# Create color mapping with better visibility
+# Link colors
 colors = []
 for label in labels:
     if 'Gebleven' in label:
-        colors.append('rgba(100, 150, 200, 0.6)')  # Blue
+        colors.append('rgba(100, 150, 200, 0.6)')
     elif 'Toegetreden' in label:
-        colors.append('rgba(100, 200, 100, 0.6)')  # Green
+        colors.append('rgba(100, 200, 100, 0.6)')
     elif 'Vertrokken' in label:
-        colors.append('rgba(200, 100, 100, 0.6)')  # Red
+        colors.append('rgba(200, 100, 100, 0.6)')
     else:
         colors.append('rgba(150, 150, 150, 0.5)')
 
-# Node colors
-node_colors = []
-for n in all_nodes:
-    if 'Toegetreden' in n:
-        node_colors.append('rgba(100, 200, 100, 1)')
-    elif 'Vertrokken' in n:
-        node_colors.append('rgba(200, 100, 100, 1)')
-    else:
-        node_colors.append('rgba(100, 150, 200, 1)')
+# -- Manual node positioning: ALL date nodes in a single horizontal row --
+date_nodes = sorted([n for n in all_nodes if re.match(r'^\d{4}-\d{2}-\d{2}', n)])
+special_nodes = [n for n in all_nodes if n not in date_nodes]
 
-# Create Sankey diagram
+num_date = len(date_nodes)
+node_x = []
+node_y = []
+node_colors = []
+node_labels = []
+
+for n in all_nodes:
+    if n in date_nodes:
+        idx = date_nodes.index(n)
+        # Spread date nodes evenly across the full width
+        x = 0.01 + (idx / max(num_date - 1, 1)) * 0.98
+        node_x.append(x)
+        node_y.append(0.55)  # Center-ish vertically, leave room for special nodes
+        node_colors.append('rgba(100, 150, 200, 1)')
+        node_labels.append(n)  # Keep \n, Plotly renders as tspan
+    elif 'Toegetreden' in n:
+        node_x.append(0.5)
+        node_y.append(0.01)  # Top center
+        node_colors.append('rgba(100, 200, 100, 1)')
+        node_labels.append(n)
+    elif 'Vertrokken' in n:
+        node_x.append(0.5)
+        node_y.append(0.99)  # Bottom center
+        node_colors.append('rgba(200, 100, 100, 1)')
+        node_labels.append(n)
+    else:
+        node_x.append(0.5)
+        node_y.append(0.5)
+        node_colors.append('rgba(150, 150, 150, 1)')
+        node_labels.append(n)
+
+# Use arrangement='fixed' so Plotly respects our exact x/y positions
 fig = go.Figure(data=[go.Sankey(
+    arrangement='fixed',
     node=dict(
-        pad=20,
-        thickness=80,
+        pad=8,
+        thickness=35,
         line=dict(color='black', width=0.5),
-        # display vertical labels for date boxes, keep internal ids in all_nodes
-        label=[display_label_for_node(n) for n in all_nodes],
-        color=node_colors
+        label=node_labels,
+        color=node_colors,
+        x=node_x,
+        y=node_y
     ),
     link=dict(
         source=source_indices,
@@ -229,28 +244,26 @@ fig = go.Figure(data=[go.Sankey(
 )])
 
 fig.update_layout(
-    title_text="NLdigital Ledenstromen - Gefiltreerde Batches<br>(Alleen batches met vertrekken)",
-    font=dict(size=11),
-    height=700,
+    title_text="NLdigital Ledenstromen (Alleen batches met vertrekken)",
+    font=dict(size=9),
+    height=420,
+    width=1100,
     template='plotly_white',
     hovermode='closest',
-    margin=dict(l=10, r=10, t=60, b=10)
+    margin=dict(l=5, r=5, t=35, b=5)
 )
 
-# Save HTML (responsive so it fits the screen width)
+# Save HTML
 output_file = os.path.join(data_dir, '..', 'sankey_diagram_filtered.html')
 fig.write_html(output_file, config={'responsive': True})
 
-# Post-process: inject JS to reposition node labels inside node boundaries
-# and add visible numbers on link paths.
-# Plotly Sankey renders nodes as <g> groups containing <rect> + <text> children.
-# We find these by scanning all <g> elements for ones with both rect and text.
+# Post-process: inject JS to rotate node labels 90 degrees and add link numbers
 CUSTOM_JS = r"""
 <script>
 (function() {
     function repositionNodeLabels() {
-        // Plotly renders Sankey nodes as <g> with child <rect> and <text>.
-        // Scan all <g> elements to find node groups.
+        // Plotly Sankey renders nodes as <g> with child <rect> + <text>.
+        // The <text> may have <tspan> children for multi-line labels.
         var allGroups = document.querySelectorAll('g');
         allGroups.forEach(function(g) {
             var rect = g.querySelector(':scope > rect');
@@ -259,53 +272,59 @@ CUSTOM_JS = r"""
 
             var rectW = parseFloat(rect.getAttribute('width'));
             var rectH = parseFloat(rect.getAttribute('height'));
-            // Only process Sankey node rects (skip tiny rects, axes, etc.)
-            if (!rectW || !rectH || rectW < 20 || rectH < 30) return;
+            // Only Sankey node rects (skip tiny ones)
+            if (!rectW || !rectH || rectW < 15 || rectH < 20) return;
 
             var rectX = parseFloat(rect.getAttribute('x')) || 0;
             var rectY = parseFloat(rect.getAttribute('y')) || 0;
-
             var centerX = rectX + rectW / 2;
             var centerY = rectY + rectH / 2;
 
-            // Position text at center of rectangle, rotated vertically
+            // Remove all tspan children and flatten to single text
+            var tspans = textEl.querySelectorAll('tspan');
+            var fullText = '';
+            if (tspans.length > 0) {
+                tspans.forEach(function(ts) {
+                    if (fullText) fullText += ' ';
+                    fullText += ts.textContent;
+                });
+                // Remove tspans
+                while (textEl.firstChild) textEl.removeChild(textEl.firstChild);
+                textEl.textContent = fullText;
+            }
+
+            // Position at center, rotated -90 degrees (vertical, reading bottom-to-top)
             textEl.setAttribute('x', centerX);
             textEl.setAttribute('y', centerY);
             textEl.setAttribute('text-anchor', 'middle');
             textEl.setAttribute('dominant-baseline', 'central');
             textEl.setAttribute('transform',
                 'rotate(-90, ' + centerX + ', ' + centerY + ')');
-            textEl.style.fontSize = '11px';
+            textEl.style.fontSize = '9px';
             textEl.style.fill = 'white';
             textEl.style.fontWeight = 'bold';
             textEl.style.paintOrder = 'stroke';
-            textEl.style.stroke = 'rgba(0,0,0,0.3)';
-            textEl.style.strokeWidth = '2px';
+            textEl.style.stroke = 'rgba(0,0,0,0.4)';
+            textEl.style.strokeWidth = '2.5px';
             textEl.style.strokeLinejoin = 'round';
         });
     }
 
     function addLinkLabels() {
-        // Remove any previously added link labels
-        document.querySelectorAll('.custom-link-label').forEach(function(el) {
-            el.remove();
-        });
-
+        document.querySelectorAll('.custom-link-label').forEach(function(el) { el.remove(); });
         var plotDiv = document.querySelector('.plotly-graph-div');
         if (!plotDiv || !plotDiv.data || !plotDiv.data[0] || !plotDiv.data[0].link) return;
         var linkData = plotDiv.data[0].link;
         var labels = linkData.label;
         var values = linkData.value;
-
-        // Find all link <path> elements within the Sankey SVG.
-        // Plotly link paths have a fill with rgba and are inside groups.
         var svg = plotDiv.querySelector('svg.main-svg');
         if (!svg) return;
+
+        // Collect link paths (Plotly link paths have fill with rgba and opacity)
         var paths = svg.querySelectorAll('path');
         var linkPaths = [];
         paths.forEach(function(p) {
-            var fill = p.getAttribute('style') || p.getAttribute('fill') || '';
-            // Sankey link paths have rgba fill colors we set
+            var fill = p.getAttribute('style') || '';
             if (fill.indexOf('rgba') >= 0 && fill.indexOf('0.6') >= 0) {
                 linkPaths.push(p);
             }
@@ -313,26 +332,15 @@ CUSTOM_JS = r"""
 
         linkPaths.forEach(function(path, index) {
             if (index >= labels.length) return;
-
             var label = labels[index];
             var match = label.match(/:\s*(\d+)/);
             if (!match) return;
             var number = match[1];
             var value = values[index];
-
-            // Skip very small links where text won't fit
             if (value < 5) return;
-
             try {
-                var pathLength = path.getTotalLength();
-                var midPoint = path.getPointAtLength(pathLength / 2);
-
-                // Determine color based on link type
-                var textColor = '#333';
-                if (label.indexOf('Vertrokken') >= 0) textColor = '#b71c1c';
-                else if (label.indexOf('Toegetreden') >= 0) textColor = '#1b5e20';
-                else if (label.indexOf('Gebleven') >= 0) textColor = '#1a237e';
-
+                var len = path.getTotalLength();
+                var midPoint = path.getPointAtLength(len / 2);
                 var svgNS = 'http://www.w3.org/2000/svg';
                 var text = document.createElementNS(svgNS, 'text');
                 text.setAttribute('x', midPoint.x);
@@ -340,7 +348,11 @@ CUSTOM_JS = r"""
                 text.setAttribute('text-anchor', 'middle');
                 text.setAttribute('dominant-baseline', 'central');
                 text.setAttribute('class', 'custom-link-label');
-                text.style.fontSize = value > 50 ? '12px' : '9px';
+                var textColor = '#333';
+                if (label.indexOf('Vertrokken') >= 0) textColor = '#b71c1c';
+                else if (label.indexOf('Toegetreden') >= 0) textColor = '#1b5e20';
+                else if (label.indexOf('Gebleven') >= 0) textColor = '#1a237e';
+                text.style.fontSize = value > 50 ? '10px' : '8px';
                 text.style.fontWeight = 'bold';
                 text.style.fill = textColor;
                 text.style.pointerEvents = 'none';
@@ -349,7 +361,6 @@ CUSTOM_JS = r"""
                 text.style.strokeWidth = '3px';
                 text.style.strokeLinejoin = 'round';
                 text.textContent = number;
-
                 path.parentNode.appendChild(text);
             } catch(e) {}
         });
@@ -360,14 +371,14 @@ CUSTOM_JS = r"""
         addLinkLabels();
     }
 
-    // Wait for Plotly to finish rendering by polling for rect elements
+    // Wait for Plotly to render
     function waitAndCustomize() {
         var rects = document.querySelectorAll('g > rect');
         var found = false;
         rects.forEach(function(r) {
             var w = parseFloat(r.getAttribute('width'));
             var h = parseFloat(r.getAttribute('height'));
-            if (w > 20 && h > 30) found = true;
+            if (w > 15 && h > 20) found = true;
         });
         if (found) {
             setTimeout(customizeSankey, 300);
@@ -377,7 +388,7 @@ CUSTOM_JS = r"""
     }
     waitAndCustomize();
 
-    // Re-apply after Plotly re-renders (e.g. node drag, resize)
+    // Re-apply after Plotly re-renders (resize, etc.)
     setTimeout(function() {
         var plotDiv = document.querySelector('.plotly-graph-div');
         if (plotDiv && plotDiv.on) {
@@ -398,7 +409,7 @@ html_content = html_content.replace('</body>', CUSTOM_JS + '\n</body>')
 with open(output_file, 'w', encoding='utf-8') as f:
     f.write(html_content)
 
-print(f"✓ Sankey diagram saved to {output_file}")
+print(f"Sankey diagram saved to {output_file}")
 
 # Print summary
 print("\n" + "="*70)
@@ -409,12 +420,11 @@ for flow in active_flows:
     to_date = flow['to_date'].split()[0]
     from_count = member_counts.get(flow['from_date'], '?')
     to_count = member_counts.get(flow['to_date'], '?')
-    
-    print(f"\n{from_date} ({from_count} leden) → {to_date} ({to_count} leden)")
+
+    print(f"\n{from_date} ({from_count} leden) -> {to_date} ({to_count} leden)")
     print(f"  Gebleven:    {flow['stayed']}")
     print(f"  Toegetreden: {flow['joined']}")
-    print(f"  Vertrokken:  {flow['left']} ⚠️")
+    print(f"  Vertrokken:  {flow['left']}")
     print(f"  Netto:       {flow['joined'] - flow['left']:+d}")
 
 print("\n" + "="*70)
-
