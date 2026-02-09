@@ -189,7 +189,9 @@ for label in labels:
 date_nodes = sorted([n for n in all_nodes if re.match(r'^\d{4}-\d{2}-\d{2}', n)])
 special_nodes = [n for n in all_nodes if n not in date_nodes]
 
+# Build ordered list: Nieuw, then date nodes, then Vertrokken — all in one row
 num_date = len(date_nodes)
+total_cols = num_date + 2  # +2 for Nieuw and Vertrokken
 node_x = []
 node_y = []
 node_colors = []
@@ -198,20 +200,21 @@ node_labels = []
 for n in all_nodes:
     if n in date_nodes:
         idx = date_nodes.index(n)
-        # Spread date nodes evenly across the full width
-        x = 0.01 + (idx / max(num_date - 1, 1)) * 0.98
+        # Date nodes occupy columns 1..num_date (0-indexed), leaving col 0 for Nieuw, last for Vertrokken
+        col = idx + 1
+        x = 0.01 + (col / (total_cols - 1)) * 0.98
         node_x.append(x)
-        node_y.append(0.55)  # Center-ish vertically, leave room for special nodes
+        node_y.append(0.5)
         node_colors.append('rgba(100, 150, 200, 1)')
-        node_labels.append(n)  # Keep \n, Plotly renders as tspan
+        node_labels.append(n)
     elif 'Toegetreden' in n:
-        node_x.append(0.5)
-        node_y.append(0.01)  # Top center
+        node_x.append(0.01)
+        node_y.append(0.5)  # Same row as date nodes
         node_colors.append('rgba(100, 200, 100, 1)')
         node_labels.append(n)
     elif 'Vertrokken' in n:
-        node_x.append(0.5)
-        node_y.append(0.99)  # Bottom center
+        node_x.append(0.99)
+        node_y.append(0.5)  # Same row as date nodes
         node_colors.append('rgba(200, 100, 100, 1)')
         node_labels.append(n)
     else:
@@ -246,8 +249,8 @@ fig = go.Figure(data=[go.Sankey(
 fig.update_layout(
     title_text="NLdigital Ledenstromen (Alleen batches met vertrekken)",
     font=dict(size=9),
-    height=420,
-    width=1100,
+    height=450,
+    width=1200,
     template='plotly_white',
     hovermode='closest',
     margin=dict(l=5, r=5, t=35, b=5)

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLConnect - Nieuwe Bedrijven</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 {
+            color: white; text-align: center; margin-bottom: 10px;
+            font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .stats {
+            color: rgba(255,255,255,0.9); text-align: center;
+            margin-bottom: 30px; font-size: 1.1em;
+        }
+        .batch-section {
+            background: white; border-radius: 12px; overflow: hidden;
+            margin-bottom: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .batch-header {
+            color: white; padding: 20px 25px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .batch-dates { font-size: 1.3em; font-weight: bold; }
+        .badge {
+            background: rgba(255,255,255,0.3); padding: 8px 16px;
+            border-radius: 20px; font-weight: bold; font-size: 1.1em;
+        }
+        .company-list { padding: 10px 20px; }
+        .company-item {
+            display: flex; align-items: center; padding: 10px 5px;
+            border-bottom: 1px solid #eee; transition: background 0.2s;
+        }
+        .company-item:last-child { border-bottom: none; }
+        .company-item:hover { background: #f8f9fa; }
+        .company-num {
+            width: 30px; height: 30px; border-radius: 50%;
+            background: #e8e8e8; display: flex; align-items: center;
+            justify-content: center; font-size: 0.8em; color: #666;
+            margin-right: 12px; flex-shrink: 0;
+        }
+        .company-name { flex: 1; font-weight: 500; color: #333; }
+        .company-link {
+            padding: 6px 14px; background: #f0f0f0; border-radius: 6px;
+            text-decoration: none; color: #ff9800; font-size: 0.85em;
+            font-weight: 500; transition: all 0.3s;
+        }
+        .company-link:hover { background: var(--hover-bg, #ff9800); color: white; }
+        .back-link {
+            color: white; text-align: center; margin-top: 30px; font-size: 1em;
+        }
+        .back-link a {
+            color: white; text-decoration: underline; margin: 0 10px;
+            transition: opacity 0.3s;
+        }
+        .back-link a:hover { opacity: 0.8; }
+        body { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NLConnect - Nieuwe Bedrijven</h1>
+        <div class="stats">46 bedrijven zijn toegetreden tot NLConnect</div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2023-03-22 &rarr; 2023-06-09</div>
+                <div class="badge">2 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Fiber Groep Teleplaza Fiber</div>
+                <a href="https://www.nlconnect.org/onze-leden/fiber-groep-teleplaza-fiber" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Simac Electronics</div>
+                <a href="https://www.nlconnect.org/onze-leden/simac-electronics" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2023-06-09 &rarr; 2023-09-27</div>
+                <div class="badge">3 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Bns Data Logistics</div>
+                <a href="https://www.nlconnect.org/onze-leden/bns-data-logistics" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Odido</div>
+                <a href="https://www.nlconnect.org/onze-leden/odido" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">3</div>
+                <div class="company-name">Renewtech</div>
+                <a href="https://www.nlconnect.org/onze-leden/renewtech" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2023-09-27 &rarr; 2024-03-01</div>
+                <div class="badge">10 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Axians</div>
+                <a href="https://www.nlconnect.org/onze-leden/axians" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Cn Rood</div>
+                <a href="https://www.nlconnect.org/onze-leden/cn-rood" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">3</div>
+                <div class="company-name">Datafiber</div>
+                <a href="https://www.nlconnect.org/onze-leden/datafiber" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">4</div>
+                <div class="company-name">Delta Fiber</div>
+                <a href="https://www.nlconnect.org/onze-leden/delta-fiber" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">5</div>
+                <div class="company-name">Electroplast</div>
+                <a href="https://www.nlconnect.org/onze-leden/electroplast" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">6</div>
+                <div class="company-name">Euronet Infratechniek</div>
+                <a href="https://www.nlconnect.org/onze-leden/euronet-infratechniek" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">7</div>
+                <div class="company-name">Lh Glasvezeltechniek</div>
+                <a href="https://www.nlconnect.org/onze-leden/lh-glasvezeltechniek" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">8</div>
+                <div class="company-name">Qonnected</div>
+                <a href="https://www.nlconnect.org/onze-leden/qonnected" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">9</div>
+                <div class="company-name">Ravesteijn Infra Telecom</div>
+                <a href="https://www.nlconnect.org/onze-leden/ravesteijn-infra-telecom" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">10</div>
+                <div class="company-name">Zener Telecom</div>
+                <a href="https://www.nlconnect.org/onze-leden/zener-telecom" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2024-03-01 &rarr; 2024-06-20</div>
+                <div class="badge">7 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Colt Technology Services</div>
+                <a href="https://www.nlconnect.org/onze-leden/colt-technology-services" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Eunetworks</div>
+                <a href="https://www.nlconnect.org/onze-leden/eunetworks" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">3</div>
+                <div class="company-name">Exa Infrastructure</div>
+                <a href="https://www.nlconnect.org/onze-leden/exa-infrastructure" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">4</div>
+                <div class="company-name">Kpn</div>
+                <a href="https://www.nlconnect.org/onze-leden/kpn" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">5</div>
+                <div class="company-name">Netceed Netherlands</div>
+                <a href="https://www.nlconnect.org/onze-leden/netceed-netherlands" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">6</div>
+                <div class="company-name">Nokia</div>
+                <a href="https://www.nlconnect.org/onze-leden/nokia" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">7</div>
+                <div class="company-name">Vodafoneziggo</div>
+                <a href="https://www.nlconnect.org/onze-leden/vodafoneziggo" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2024-06-20 &rarr; 2024-09-12</div>
+                <div class="badge">1 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Klict Opleidingen</div>
+                <a href="https://www.nlconnect.org/onze-leden/klict-opleidingen" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2024-09-12 &rarr; 2024-12-08</div>
+                <div class="badge">5 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Capestone</div>
+                <a href="https://www.nlconnect.org/onze-leden/capestone" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Connectie Brainport</div>
+                <a href="https://www.nlconnect.org/onze-leden/connectie-brainport" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">3</div>
+                <div class="company-name">Onvi</div>
+                <a href="https://www.nlconnect.org/onze-leden/onvi" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">4</div>
+                <div class="company-name">Snlr</div>
+                <a href="https://www.nlconnect.org/onze-leden/snlr" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">5</div>
+                <div class="company-name">Spot Internet</div>
+                <a href="https://www.nlconnect.org/onze-leden/spot-internet" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2024-12-08 &rarr; 2025-02-19</div>
+                <div class="badge">5 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Hanab</div>
+                <a href="https://www.nlconnect.org/onze-leden/hanab" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Osi Global</div>
+                <a href="https://www.nlconnect.org/onze-leden/osi-global" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">3</div>
+                <div class="company-name">Radius Cts</div>
+                <a href="https://www.nlconnect.org/onze-leden/radius-cts" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">4</div>
+                <div class="company-name">Teleste Netherlands</div>
+                <a href="https://www.nlconnect.org/onze-leden/teleste-netherlands" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">5</div>
+                <div class="company-name">Tkf Telecom Solutions</div>
+                <a href="https://www.nlconnect.org/onze-leden/tkf-telecom-solutions" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-02-19 &rarr; 2025-04-26</div>
+                <div class="badge">3 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Hanab Telecom Infra</div>
+                <a href="https://www.nlconnect.org/onze-leden/hanab-telecom-infra" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Snllr</div>
+                <a href="https://www.nlconnect.org/onze-leden/snllr" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">3</div>
+                <div class="company-name">Technetix</div>
+                <a href="https://www.nlconnect.org/onze-leden/technetix" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-04-26 &rarr; 2025-08-11</div>
+                <div class="badge">3 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Budget Thuis</div>
+                <a href="https://www.nlconnect.org/onze-leden/budget-thuis" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Glasvezel Edam Volendam</div>
+                <a href="https://www.nlconnect.org/onze-leden/glasvezel-edam-volendam" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">3</div>
+                <div class="company-name">Matrix</div>
+                <a href="https://www.nlconnect.org/onze-leden/matrix" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-08-11 &rarr; 2025-10-09</div>
+                <div class="badge">3 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Fritz</div>
+                <a href="https://www.nlconnect.org/onze-leden/fritz" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Ilionx</div>
+                <a href="https://www.nlconnect.org/onze-leden/ilionx" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">3</div>
+                <div class="company-name">Tv2Z</div>
+                <a href="https://www.nlconnect.org/onze-leden/tv2z" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-10-09 &rarr; 2025-11-26</div>
+                <div class="badge">1 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Internet On Demand</div>
+                <a href="https://www.nlconnect.org/onze-leden/internet-on-demand" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="batch-section">
+            <div class="batch-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="batch-dates">2025-12-13 &rarr; 2026-02-09</div>
+                <div class="badge">3 bedrijven</div>
+            </div>
+            <div class="company-list">
+            <div class="company-item">
+                <div class="company-num">1</div>
+                <div class="company-name">Solutions30</div>
+                <a href="https://www.nlconnect.org/onze-leden/solutions30" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">2</div>
+                <div class="company-name">Vyntelligence</div>
+                <a href="https://www.nlconnect.org/onze-leden/vyntelligence" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            <div class="company-item">
+                <div class="company-num">3</div>
+                <div class="company-name">Weserve</div>
+                <a href="https://www.nlconnect.org/onze-leden/weserve" target="_blank" class="company-link" style="--hover-bg: #11998e;">Bezoeken</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="nlconnect_departed.html">&larr; Vertrokken Bedrijven</a> |
+            <a href="index.html">Overzicht &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>

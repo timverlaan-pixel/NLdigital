@@ -1,0 +1,33 @@
+{
+  "cross_flows": [
+    {
+      "from_org": "NLdigital",
+      "to_org": "NLConnect",
+      "nldigital_slug": "kpn-bv",
+      "nlconnect_slug": "kpn",
+      "direction": "digital_to_connect"
+    },
+    {
+      "from_org": "NLdigital",
+      "to_org": "NLConnect",
+      "nldigital_slug": "technetix-bv",
+      "nlconnect_slug": "technetix",
+      "direction": "digital_to_connect"
+    }
+  ],
+  "dual_members": [
+    {
+      "nldigital": "axians",
+      "nlconnect": "axians"
+    }
+  ],
+  "stats": {
+    "nldigital_departed": 242,
+    "nldigital_joined": 136,
+    "nlconnect_departed": 33,
+    "nlconnect_joined": 46,
+    "digital_to_connect": 2,
+    "connect_to_digital": 0,
+    "dual_members": 1
+  }
+}
