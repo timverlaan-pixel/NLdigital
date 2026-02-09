@@ -1,0 +1,4456 @@
+{
+  "total_members": 543,
+  "microsoft_partners": 126,
+  "partners": [
+    {
+      "nldigital_slug": "2makeitwork-bv",
+      "search_name": "2makeitwork",
+      "ms_partner_name": "2makeITwork",
+      "ms_partner_id": "8199b425-f22b-412a-b2ae-4b9ad048342a",
+      "city": "Barendrecht",
+      "designations": [],
+      "solutions": [
+        "Networking",
+        "Information Management",
+        "Analytics",
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "CloudVoice",
+        "Media",
+        "WebDevelopment",
+        "SQL Server upgrade",
+        "RegulatorycomplianceGDPR"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Cloud Platform",
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Teams",
+        "Office",
+        "Microsoft365",
+        "Exchange",
+        "SQL",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "3-dm-consultancy",
+      "search_name": "3 dm consultancy",
+      "ms_partner_name": "Tata Consultancy Services Ltd.",
+      "ms_partner_id": "3c8ea0e4-127c-4a02-ac65-58830e4ac608",
+      "city": "Amsterdam",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "BAGCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "Analytics",
+        "Application Integration",
+        "Artificial Intelligence",
+        "Security",
+        "Azure Stack",
+        "BackupDisasterRecovery",
+        "Big Data",
+        "Blockchain",
+        "Chatbot",
+        "Cloud Database Migration"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "DevOps",
+          "Datacenter",
+          "Cloud Platform",
+          "Cloud Business Applications",
+          "Enterprise Resource Planning",
+          "Collaboration and Content",
+          "Application Integration",
+          "Communications",
+          "Data Platform",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "DeveloperTools",
+        "Dynamics365Business",
+        "Dynamics365Enterprise",
+        "DynamicsAX GP NAV SL",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "SQL",
+        "Teams",
+        "Windows",
+        "Yammer"
+      ],
+      "endorsed_products": [
+        {
+          "product": "Microsoft Fabric",
+          "workloads": [
+            "Real-Time Intelligence",
+            "Power BI"
+          ]
+        }
+      ]
+    },
+    {
+      "nldigital_slug": "abc-solutions-bv",
+      "search_name": "abc solutions",
+      "ms_partner_name": "ABC GROUP B.V.",
+      "ms_partner_id": "87adb537-8432-4779-b82a-09bc304b705c",
+      "city": "Eindhoven",
+      "designations": [
+        "BAGCompetency"
+      ],
+      "solutions": [
+        "Cloud Database Migration",
+        "CloudMigration",
+        "Analytics",
+        "CompetitiveDatabaseMigration",
+        "DynamicsonAzure",
+        "DevOps",
+        "Developer Tools",
+        "Application Integration",
+        "Enterprise Business Intelligence"
+      ],
+      "competencies": {
+        "gold": [
+          "Enterprise Resource Planning"
+        ],
+        "silver": [
+          "Data Analytics",
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "DynamicsAX GP NAV SL",
+        "Dynamics365Business",
+        "PowerBI"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "acousoft-informatisering-bv",
+      "search_name": "acousoft informatisering",
+      "ms_partner_name": "Verito Informatisering B.V.",
+      "ms_partner_id": "a659e41c-c01e-4c6e-a07f-a963246e338a",
+      "city": "APELDOORN",
+      "designations": [],
+      "solutions": [
+        "Dynamics365forFinance"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Dynamics365Business",
+        "PowerBI",
+        "Office"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "admx",
+      "search_name": "admx",
+      "ms_partner_name": "ADMX",
+      "ms_partner_id": "750fe2a5-3624-4e6a-a874-20e7b9e69255",
+      "city": "Schijf",
+      "designations": [],
+      "solutions": [
+        "BackupDisasterRecovery",
+        "Information Management",
+        "Networking",
+        "ServerlessComputing",
+        "SQL Server upgrade"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Office",
+        "Windows",
+        "SQL",
+        "Visio",
+        "Exchange"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "afas-software-bv",
+      "search_name": "afas software",
+      "ms_partner_name": "AFAS Software B.V.",
+      "ms_partner_id": "e7397b50-73eb-4db7-84c5-cbd8fece46a7",
+      "city": "Leusden",
+      "designations": [],
+      "solutions": [
+        "Enterprise Business Intelligence",
+        "Mobile applications"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Development",
+          "Application Integration"
+        ],
+        "silver": []
+      },
+      "products": [
+        "Windows",
+        "SQL",
+        "Office",
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "agfa-healthcare-netherlands-bv",
+      "search_name": "agfa healthcare",
+      "ms_partner_name": "Performation Healthcare Intelligence BV",
+      "ms_partner_id": "8576b73b-c130-4b71-8275-e506522d523e",
+      "city": "Bilthoven",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [
+          "Application Integration",
+          "Application Development",
+          "Data Platform",
+          "Data Analytics"
+        ],
+        "silver": []
+      },
+      "products": [
+        "PowerBI",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "agiliq-bv",
+      "search_name": "agiliq",
+      "ms_partner_name": "Agiliq B.V.",
+      "ms_partner_id": "d26f2c66-b1ab-4446-8588-4df38602453c",
+      "city": "Sneek",
+      "designations": [
+        "BAGCompetency"
+      ],
+      "solutions": [
+        "CloudMigration",
+        "Application Integration",
+        "Cloud Database Migration",
+        "Networking",
+        "ServerlessComputing",
+        "Azure Stack",
+        "DynamicsonAzure",
+        "Dynamics365forSales",
+        "Dynamics365forCustomerService"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics"
+        ],
+        "silver": [
+          "Small and Midmarket Cloud Solutions",
+          "Application Integration"
+        ]
+      },
+      "products": [
+        "DynamicsAX GP NAV SL",
+        "Dynamics365Business",
+        "SkypeForBusiness",
+        "Azure",
+        "Office",
+        "SQL",
+        "Microsoft365",
+        "Teams"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "agritect-advies",
+      "search_name": "agritect advies",
+      "ms_partner_name": "Lenny Advies",
+      "ms_partner_id": "c0f4846b-5d4c-472e-bace-c82bb6d8b2d5",
+      "city": "Apeldoorn",
+      "designations": [],
+      "solutions": [
+        "Application Integration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Teams"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "aion-media-group-bv",
+      "search_name": "aion media",
+      "ms_partner_name": "Arbor Media",
+      "ms_partner_id": "c8287bc0-f5c6-45c5-a9b8-5512ad02b340",
+      "city": "Doetinchem",
+      "designations": [],
+      "solutions": [
+        "Media"
+      ],
+      "competencies": {
+        "gold": [
+          "Cloud Platform"
+        ],
+        "silver": [
+          "Application Development"
+        ]
+      },
+      "products": [
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "asset-people-bv",
+      "search_name": "asset people",
+      "ms_partner_name": "Dynamic People B.V.",
+      "ms_partner_id": "8d5bfe4e-11c6-4e32-a5c3-95efc1b4a711",
+      "city": "Amsterdam",
+      "designations": [
+        "BAGCompetency"
+      ],
+      "solutions": [
+        "DynamicsonAzure",
+        "SharepointonAzure",
+        "Dynamics365forFieldService",
+        "Dynamics365forFinance",
+        "Dynamics365forSales",
+        "Enterprise Business Intelligence",
+        "CloudMigration",
+        "Data Warehouse",
+        "Dynamics365forCustomerService",
+        "AI + Machine Learning"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Small and Midmarket Cloud Solutions",
+          "Datacenter",
+          "Cloud Platform",
+          "Cloud Business Applications",
+          "Enterprise Resource Planning",
+          "Application Integration",
+          "Project and Portfolio Management",
+          "Application Development"
+        ],
+        "silver": [
+          "Data Analytics",
+          "Cloud Productivity",
+          "Enterprise Resource Planning",
+          "Application Integration",
+          "Application Development",
+          "Security"
+        ]
+      },
+      "products": [
+        "Dynamics365Enterprise",
+        "Dynamics365Business",
+        "DynamicsAX GP NAV SL",
+        "PowerBI",
+        "Project",
+        "Azure",
+        "SQL",
+        "Microsoft365"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "atrea-systemen",
+      "search_name": "atrea systemen",
+      "ms_partner_name": "B.F. Systemen",
+      "ms_partner_id": "8105514d-6ca5-4792-8533-7492be4a95cb",
+      "city": "OOSTERHOUT",
+      "designations": [],
+      "solutions": [
+        "CloudMigration",
+        "BackupDisasterRecovery",
+        "SQL Server upgrade",
+        "Networking",
+        "RegulatorycomplianceGDPR"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Office",
+        "Windows",
+        "Exchange",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "audittrail-professionals-bv",
+      "search_name": "audittrail professionals",
+      "ms_partner_name": "Active Professionals",
+      "ms_partner_id": "ed80521b-09f1-4452-9921-22cf2b362305",
+      "city": "Rotterdam",
+      "designations": [
+        "AzureDataAICompetency"
+      ],
+      "solutions": [
+        "Analytics",
+        "Artificial Intelligence",
+        "Azure Stack",
+        "Enterprise Business Intelligence",
+        "AI + Machine Learning"
+      ],
+      "competencies": {
+        "gold": [
+          "Project and Portfolio Management"
+        ],
+        "silver": [
+          "Data Analytics",
+          "DevOps",
+          "Cloud Platform",
+          "Data Platform",
+          "Application Development",
+          "Windows and Devices"
+        ]
+      },
+      "products": [
+        "PowerBI",
+        "Azure",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "bakkerelkhuizen-software-bv",
+      "search_name": "bakkerelkhuizen software",
+      "ms_partner_name": "BakkerElkhuizen Group BV",
+      "ms_partner_id": "6750065e-64ef-4561-a4cb-6783cfafdcc7",
+      "city": "Vught",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [
+          "Windows and Devices",
+          "Application Development"
+        ],
+        "silver": [
+          "Application Integration"
+        ]
+      },
+      "products": [],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "balanced-force-bv",
+      "search_name": "balanced force",
+      "ms_partner_name": "Force Fusion BV",
+      "ms_partner_id": "db0ae81b-1134-4887-b4c6-24fed61d691d",
+      "city": "Terneuzen",
+      "designations": [],
+      "solutions": [
+        "BackupDisasterRecovery",
+        "Mobile applications",
+        "HighPerformanceComputing"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Microsoft365",
+        "Office",
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "bee-flow-bv",
+      "search_name": "bee flow",
+      "ms_partner_name": "Bee in Contact Enterprise BV",
+      "ms_partner_id": "01e8229a-3b1e-4015-afd4-ae25e34d7108",
+      "city": "Dongen",
+      "designations": [],
+      "solutions": [
+        "CloudMigration",
+        "CloudVoice"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Project and Portfolio Management",
+          "Application Integration",
+          "Communications"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Microsoft365",
+        "Teams",
+        "SkypeForBusiness",
+        "Project"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "betabit-nederland-bv",
+      "search_name": "betabit",
+      "ms_partner_name": "Betabit Nederland B.V.",
+      "ms_partner_id": "bd82c850-31e3-468e-a170-886174a9e22d",
+      "city": "ROTTERDAM",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency"
+      ],
+      "solutions": [
+        "Application Integration",
+        "Big Data",
+        "Blockchain",
+        "Chatbot",
+        "Cloud Database Migration",
+        "CloudMigration",
+        "Cognitive Services",
+        "Containers",
+        "Data Warehouse",
+        "Developer Tools"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "DevOps",
+          "Cloud Platform",
+          "Application Integration",
+          "Data Platform",
+          "Application Development"
+        ],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "DeveloperTools",
+        "SQL",
+        "PowerBI"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "bitmetric-bv",
+      "search_name": "bitmetric",
+      "ms_partner_name": "Bitmetric B.V.",
+      "ms_partner_id": "4973de1a-e654-4b7f-a5c0-542dca0d935b",
+      "city": "Aalsmeer",
+      "designations": [],
+      "solutions": [
+        "Analytics",
+        "Big Data",
+        "WebDevelopment",
+        "Data Warehouse",
+        "Enterprise Business Intelligence",
+        "Artificial Intelligence",
+        "Internet of Things",
+        "AI + Machine Learning",
+        "SQL Server upgrade",
+        "Cognitive Services"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "PowerBI",
+        "Azure",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "bizzcon-it-bv",
+      "search_name": "bizzcon it",
+      "ms_partner_name": "BizzCon IT B.V.",
+      "ms_partner_id": "8c5d34c6-36c7-41f7-b925-c400a1843237",
+      "city": "De Meern",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "Security",
+        "Cloud Database Migration",
+        "CloudMigration",
+        "Information Management",
+        "IdentityAccessMngmnt",
+        "Microserviceapplications",
+        "Networking",
+        "SharepointonAzure",
+        "Threat Protection"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Office",
+        "Microsoft365",
+        "Teams",
+        "Windows",
+        "SharePoint",
+        "Exchange",
+        "EnterpriseMobilityAndSecurity",
+        "Visio"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "bluefinch-esbd-netherlands-bv",
+      "search_name": "bluefinch esbd",
+      "ms_partner_name": "BlueFinch-ESBD Netherlands B.V.",
+      "ms_partner_id": "3d814d9a-a956-4660-8702-510d4c5d4d98",
+      "city": "Den Haag",
+      "designations": [],
+      "solutions": [
+        "Azure Stack",
+        "Application Integration",
+        "CloudMigration",
+        "RegulatorycomplianceGDPR"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "Office",
+        "SharePoint"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "bolt",
+      "search_name": "bolt",
+      "ms_partner_name": "Bolt Connect",
+      "ms_partner_id": "6d7f6d40-2f2d-4b61-b400-15a2a96eae9f",
+      "city": "Wageningen",
+      "designations": [],
+      "solutions": [
+        "CloudMigration",
+        "BackupDisasterRecovery"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Microsoft365",
+        "Office",
+        "SkypeForBusiness",
+        "Windows",
+        "Exchange",
+        "SharePoint",
+        "Teams",
+        "EnterpriseMobilityAndSecurity",
+        "Yammer"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "bos-brouwer-bv",
+      "search_name": "bos brouwer",
+      "ms_partner_name": "Brouwer ICT & Hosting",
+      "ms_partner_id": "6e198b38-49b2-4aa3-8b61-32bf703867c6",
+      "city": "Haaksbergen",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Microsoft365",
+        "Teams",
+        "Office",
+        "SQL",
+        "SharePoint",
+        "SkypeForBusiness",
+        "Windows",
+        "Visio",
+        "Azure",
+        "Exchange"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "bpsolutions",
+      "search_name": "bpsolutions",
+      "ms_partner_name": "BPSOLUTIONS",
+      "ms_partner_id": "ac9cf412-4b3b-4006-92d4-04e9178feaac",
+      "city": "Utrecht",
+      "designations": [
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency"
+      ],
+      "solutions": [
+        "Hybrid Storage",
+        "RedhatonAzure",
+        "Azure Stack",
+        "SAP on Microsoft Azure",
+        "Networking",
+        "AI + Machine Learning",
+        "CloudMigration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Office",
+        "Windows",
+        "PowerBI",
+        "Microsoft365"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "brink-software-bv",
+      "search_name": "brink software",
+      "ms_partner_name": "Van den Brink ICT BV",
+      "ms_partner_id": "7a916fd4-aeb7-40e0-8ae7-bfd72011f1d3",
+      "city": "Hengelo",
+      "designations": [],
+      "solutions": [
+        "Azure Stack",
+        "Security",
+        "BackupDisasterRecovery",
+        "Threat Protection",
+        "Big Data",
+        "Blockchain",
+        "Chatbot",
+        "CloudMigration",
+        "Cognitive Services",
+        "Containers"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Yammer",
+        "Windows",
+        "Visio",
+        "Exchange",
+        "SurfaceHub",
+        "Surface1",
+        "SkypeForBusiness",
+        "SharePoint",
+        "SQL",
+        "Project",
+        "PowerBI",
+        "DeveloperTools",
+        "Office",
+        "Teams",
+        "Microsoft365",
+        "EnterpriseMobilityAndSecurity",
+        "DynamicsAX GP NAV SL",
+        "Dynamics365Enterprise",
+        "Dynamics365Business"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "buro-gekko-bv",
+      "search_name": "buro gekko",
+      "ms_partner_name": "Buro Gekko B.V.",
+      "ms_partner_id": "fe98dfa1-d13d-48d5-a4c9-3721028dc511",
+      "city": "'s-Hertogenbosch",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Microsoft365",
+        "Office",
+        "Exchange",
+        "SharePoint",
+        "Teams",
+        "PowerBI"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "classict-bv",
+      "search_name": "classict",
+      "ms_partner_name": "ClassICT",
+      "ms_partner_id": "05a8a9ca-1ee3-46c0-af1a-2b8f3cfdc85e",
+      "city": "Zoetermeer",
+      "designations": [],
+      "solutions": [
+        "WebDevelopment",
+        "Networking",
+        "CloudVoice",
+        "CloudMigration",
+        "Application Integration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Microsoft365",
+        "Office",
+        "Exchange",
+        "Windows",
+        "Teams",
+        "SkypeForBusiness",
+        "SharePoint"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "clear-managed-it-bv",
+      "search_name": "clear managed it",
+      "ms_partner_name": "Arcus IT Managed Services B.V.",
+      "ms_partner_id": "179091db-1364-4418-bccc-1305556b6051",
+      "city": "Nijmegen",
+      "designations": [
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "Application Integration",
+        "BackupDisasterRecovery",
+        "Big Data",
+        "Cloud Database Migration",
+        "CloudMigration",
+        "Containers",
+        "Data Warehouse",
+        "Enterprise Business Intelligence",
+        "HighPerformanceComputing",
+        "Hybrid Storage"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Datacenter",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Communications",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices"
+        ],
+        "silver": [
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Enterprise Resource Planning",
+          "Collaboration and Content",
+          "Application Integration",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Dynamics365Business",
+        "Dynamics365Enterprise",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "Project",
+        "SharePoint",
+        "SkypeForBusiness",
+        "Surface1",
+        "SurfaceHub",
+        "SQL",
+        "Teams",
+        "Visio",
+        "Windows",
+        "Yammer"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "clickon-bv",
+      "search_name": "clickon",
+      "ms_partner_name": "ClickOn B.V.",
+      "ms_partner_id": "3871813c-6593-4581-b3bd-6f607ff8cbdc",
+      "city": "Woerden",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Office",
+        "SkypeForBusiness",
+        "Surface1",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "cloudconnected-bv",
+      "search_name": "cloudconnected",
+      "ms_partner_name": "CloudConnected",
+      "ms_partner_id": "c4800653-9df3-44c2-93aa-2defc64caa50",
+      "city": "Amsterdam",
+      "designations": [],
+      "solutions": [
+        "CloudVoice",
+        "IdentityAccessMngmnt",
+        "Networking"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Microsoft365",
+        "Office",
+        "SharePoint",
+        "Teams",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "cloudeenvoudig",
+      "search_name": "cloudeenvoudig",
+      "ms_partner_name": "Cloudeenvoudig",
+      "ms_partner_id": "b12a6742-9a41-4771-b98f-bc6a38be7209",
+      "city": "Ottersum",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Microsoft365",
+        "Office",
+        "Teams",
+        "Exchange",
+        "Visio",
+        "Windows",
+        "SharePoint",
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "PowerBI",
+        "Project"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "coas-business-systems-bv",
+      "search_name": "coas business systems",
+      "ms_partner_name": "COAS Software Systems BV",
+      "ms_partner_id": "77679b94-aedc-4297-8f7f-c28e9a04406c",
+      "city": "Middelharnis",
+      "designations": [
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency"
+      ],
+      "solutions": [
+        "WebDevelopment",
+        "BackupDisasterRecovery",
+        "Developer Tools",
+        "DevOps"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Application Integration",
+          "Application Development"
+        ],
+        "silver": [
+          "Collaboration and Content",
+          "Project and Portfolio Management",
+          "Security"
+        ]
+      },
+      "products": [
+        "Office",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "compumatica-secure-networks-bv",
+      "search_name": "compumatica secure networks",
+      "ms_partner_name": "Compumatica secure networks international BV",
+      "ms_partner_id": "f6a5aa90-c982-4954-9bf7-5ea1117106ef",
+      "city": "The Hague",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "Office"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "consafe-logistics-bv",
+      "search_name": "consafe logistics",
+      "ms_partner_name": "Arox Logistics IT",
+      "ms_partner_id": "c3f69a1d-0458-4847-b964-c115fde32587",
+      "city": "Hoogezand",
+      "designations": [],
+      "solutions": [
+        "Developer Tools"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "continue-it-bv",
+      "search_name": "continue it",
+      "ms_partner_name": "Continue IT B.V.",
+      "ms_partner_id": "68b58f68-28de-4604-b3d6-405ada521e78",
+      "city": "Teuge",
+      "designations": [],
+      "solutions": [
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "Hybrid Storage",
+        "Networking"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Cloud Productivity",
+          "Small and Midmarket Cloud Solutions",
+          "Datacenter"
+        ]
+      },
+      "products": [
+        "Microsoft365",
+        "Office",
+        "Azure",
+        "Teams",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "SharePoint",
+        "Surface1",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "copaco-nederland-bv",
+      "search_name": "copaco",
+      "ms_partner_name": "Copaco Cloud BV",
+      "ms_partner_id": "3229df5c-0b07-46e8-a244-94e0c6b561e3",
+      "city": "Eindhoven",
+      "designations": [
+        "AzureInfraCompetency",
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "BackupDisasterRecovery",
+        "Cloud Database Migration",
+        "CloudMigration",
+        "Security",
+        "IdentityAccessMngmnt",
+        "Networking",
+        "Threat Protection",
+        "ServerlessComputing",
+        "Dynamics365forSales",
+        "Dynamics365forFinance"
+      ],
+      "competencies": {
+        "gold": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Enterprise Resource Planning",
+          "Windows and Devices"
+        ],
+        "silver": [
+          "Collaboration and Content",
+          "Application Development",
+          "Enterprise Mobility Management",
+          "Security"
+        ]
+      },
+      "products": [
+        "Office",
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Dynamics365Enterprise",
+        "Microsoft365",
+        "Teams",
+        "Dynamics365Business",
+        "PowerBI",
+        "Project",
+        "SQL",
+        "SharePoint",
+        "Exchange",
+        "Windows",
+        "Visio"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "corporate-ip-bv",
+      "search_name": "corporate ip",
+      "ms_partner_name": "Ekco Cloud Corporate Limited",
+      "ms_partner_id": "048e4758-eb3c-4d3e-8534-630fbf0bacd5",
+      "city": "Veenendaal",
+      "designations": [
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "IdentityAccessMngmnt",
+        "Networking",
+        "Security",
+        "CloudMigration",
+        "Hybrid Storage",
+        "Threat Protection",
+        "BackupDisasterRecovery",
+        "Azure Stack",
+        "SharepointonAzure"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Datacenter",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Data Platform",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ],
+        "silver": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Datacenter",
+          "Cloud Platform",
+          "Enterprise Resource Planning",
+          "Collaboration and Content",
+          "Application Integration",
+          "Communications",
+          "Messaging",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "Windows",
+        "Yammer",
+        "Microsoft365",
+        "Project",
+        "SQL",
+        "Surface1",
+        "Teams",
+        "SkypeForBusiness"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "crown-consulting-management",
+      "search_name": "crown consulting management",
+      "ms_partner_name": "Crown Concepts",
+      "ms_partner_id": "93873690-76d3-48fd-aa10-954866e77373",
+      "city": "Sliedrecht",
+      "designations": [],
+      "solutions": [
+        "CloudMigration",
+        "Developer Tools",
+        "IdentityAccessMngmnt",
+        "Information Management",
+        "WebDevelopment",
+        "Application Integration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Microsoft365",
+        "Office",
+        "SharePoint",
+        "Teams",
+        "Windows",
+        "Exchange"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "de-technische-jongens-bv",
+      "search_name": "de technische jongens",
+      "ms_partner_name": "Jongens van Techniek B.V.",
+      "ms_partner_id": "c3cec375-b3b6-497e-9b29-73c6c33278bd",
+      "city": "'s-Gravenhage",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency"
+      ],
+      "solutions": [
+        "Application Integration",
+        "Artificial Intelligence",
+        "Chatbot",
+        "Cloud Database Migration",
+        "CloudMigration",
+        "Cognitive Services",
+        "Big Data",
+        "Analytics",
+        "DevOps",
+        "Developer Tools"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Development",
+          "Cloud Platform",
+          "Application Integration"
+        ],
+        "silver": [
+          "Data Analytics",
+          "DevOps",
+          "Datacenter",
+          "Data Platform",
+          "Windows and Devices"
+        ]
+      },
+      "products": [
+        "Azure",
+        "DeveloperTools",
+        "Microsoft365",
+        "SharePoint",
+        "SQL",
+        "PowerBI",
+        "Exchange",
+        "Office",
+        "Teams",
+        "Project"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "digital-rebels",
+      "search_name": "digital rebels",
+      "ms_partner_name": "Rebels",
+      "ms_partner_id": "d600260d-adea-467e-b668-b4c5e64e6e6e",
+      "city": "Amsterdam",
+      "designations": [],
+      "solutions": [
+        "WebDevelopment",
+        "Developer Tools",
+        "Mobile applications",
+        "Containers"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "DeveloperTools",
+        "SQL",
+        "Yammer"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "dmarc-advisor-bv",
+      "search_name": "dmarc advisor",
+      "ms_partner_name": "Advisor ICT Solutions",
+      "ms_partner_id": "fb20a917-a09e-47e1-9025-6953c291d5ff",
+      "city": "Mijdrecht",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [],
+      "competencies": {
+        "gold": [
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Small and Midmarket Cloud Solutions"
+        ],
+        "silver": [
+          "Data Analytics",
+          "Application Integration",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Security"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Exchange",
+        "EnterpriseMobilityAndSecurity",
+        "Office",
+        "Project",
+        "SharePoint",
+        "SkypeForBusiness",
+        "SQL",
+        "Visio",
+        "Windows",
+        "Yammer",
+        "Microsoft365",
+        "PowerBI",
+        "Teams",
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "docassist-bv-document-center-solutions",
+      "search_name": "docassist document center solutions",
+      "ms_partner_name": "eformity document solutions b.v.",
+      "ms_partner_id": "2a1c097f-94d4-46ac-852b-ceffe95073e4",
+      "city": "Alblasserdam",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Application Development"
+        ]
+      },
+      "products": [
+        "Office",
+        "SharePoint",
+        "Microsoft365"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "edutrainers-bv",
+      "search_name": "edutrainers",
+      "ms_partner_name": "Edutrainers",
+      "ms_partner_id": "861066af-02c3-4d21-b99d-ba79bf7f825f",
+      "city": "Hoofddorp",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "Media"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Office",
+        "Teams",
+        "SharePoint",
+        "Microsoft365"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "eformity-document-solutions-bv",
+      "search_name": "eformity document solutions",
+      "ms_partner_name": "eformity document solutions b.v.",
+      "ms_partner_id": "2a1c097f-94d4-46ac-852b-ceffe95073e4",
+      "city": "Alblasserdam",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Application Development"
+        ]
+      },
+      "products": [
+        "Office",
+        "SharePoint",
+        "Microsoft365"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "eljakim-information-technology-bv",
+      "search_name": "eljakim information technology",
+      "ms_partner_name": "Sonata Information Technology Limited",
+      "ms_partner_id": "7571a489-bd29-4f38-b9a6-7c880f8cddf0",
+      "city": "Netherlands",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "BAGCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "Analytics",
+        "Application Integration",
+        "Artificial Intelligence",
+        "Security",
+        "Azure Stack",
+        "BackupDisasterRecovery",
+        "Big Data",
+        "Blockchain",
+        "Chatbot",
+        "Cloud Database Migration"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "DevOps",
+          "Cloud Platform",
+          "Cloud Business Applications",
+          "Enterprise Resource Planning",
+          "Collaboration and Content",
+          "Application Integration",
+          "Communications",
+          "Data Platform",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "DeveloperTools",
+        "Dynamics365Business",
+        "Dynamics365Enterprise",
+        "DynamicsAX GP NAV SL",
+        "Microsoft365",
+        "PowerBI",
+        "Project",
+        "SharePoint",
+        "SQL",
+        "Teams",
+        "Office"
+      ],
+      "endorsed_products": [
+        {
+          "product": "Microsoft Fabric",
+          "workloads": [
+            "Fabric Databases",
+            "Real-Time Intelligence",
+            "Power BI"
+          ]
+        }
+      ]
+    },
+    {
+      "nldigital_slug": "enterprise-outsourcing-bv",
+      "search_name": "enterprise outsourcing",
+      "ms_partner_name": "Enterprise Outsourcing (Pty) Ltd",
+      "ms_partner_id": "e414692b-7544-41ac-973e-6580fd8635a5",
+      "city": "Amsterdam",
+      "designations": [],
+      "solutions": [
+        "Analytics",
+        "Application Integration",
+        "Security",
+        "Azure Stack",
+        "BackupDisasterRecovery",
+        "Cloud Database Migration",
+        "CloudMigration",
+        "CloudVoice",
+        "Data Warehouse",
+        "Hybrid Storage"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Integration",
+          "Data Analytics",
+          "Windows and Devices",
+          "Data Platform"
+        ],
+        "silver": [
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Exchange",
+        "EnterpriseMobilityAndSecurity",
+        "Microsoft365",
+        "Teams",
+        "Office",
+        "PowerBI",
+        "SQL",
+        "SharePoint",
+        "Windows",
+        "Visio",
+        "Project"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "eurofiber-nederland",
+      "search_name": "eurofiber",
+      "ms_partner_name": "Eurofiber Cloud Infra B.V.",
+      "ms_partner_id": "0871501c-2b2f-4759-a497-c5ee0da41d0d",
+      "city": "utrecht",
+      "designations": [],
+      "solutions": [
+        "Security",
+        "Azure Stack",
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "Containers",
+        "Developer Tools",
+        "DevOps",
+        "Hybrid Storage",
+        "IdentityAccessMngmnt",
+        "Internet of Things"
+      ],
+      "competencies": {
+        "gold": [
+          "Cloud Platform"
+        ],
+        "silver": [
+          "Application Development",
+          "Security",
+          "Application Integration",
+          "Datacenter"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "DeveloperTools",
+        "Office"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "experit-bv",
+      "search_name": "experit",
+      "ms_partner_name": "eXperIT",
+      "ms_partner_id": "31b30eaf-d8b3-4520-bd6a-ebc6a44b3455",
+      "city": "Rijswijk",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "Security",
+        "Azure Stack",
+        "Cloud Database Migration",
+        "CloudVoice",
+        "CompetitiveDatabaseMigration",
+        "HighPerformanceComputing",
+        "Hybrid Storage"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "Project",
+        "SharePoint",
+        "SkypeForBusiness",
+        "SQL",
+        "Teams",
+        "Visio",
+        "Yammer"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "eye-able-bv",
+      "search_name": "eye able",
+      "ms_partner_name": "Eye Security B.V.",
+      "ms_partner_id": "299463b1-2a35-4401-8727-e9aa26370988",
+      "city": "Eindhoven",
+      "designations": [],
+      "solutions": [
+        "Security",
+        "Artificial Intelligence",
+        "BackupDisasterRecovery",
+        "Threat Protection",
+        "AI + Machine Learning",
+        "IdentityAccessMngmnt",
+        "Information Management",
+        "Azure Stack"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "DevOps",
+          "Windows and Devices",
+          "Data Platform"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Office",
+        "Microsoft365",
+        "Exchange"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "fc-card-solutions-bv",
+      "search_name": "fc card solutions",
+      "ms_partner_name": "CARD IT Support B.V.",
+      "ms_partner_id": "2b985673-5251-47ff-8d75-b077f945586f",
+      "city": "Utrecht",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Office",
+        "Exchange",
+        "Dynamics365Business",
+        "SkypeForBusiness",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "fidendum-it-bv",
+      "search_name": "fidendum it",
+      "ms_partner_name": "Fidendum-IT",
+      "ms_partner_id": "d408c716-8230-48ba-a026-f648815e1fd7",
+      "city": "Middelburg",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "Exchange",
+        "Microsoft365",
+        "Office",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "fujitsu-technology-solutions-bv",
+      "search_name": "fujitsu technology solutions",
+      "ms_partner_name": "Fujitsu Technology Solutions BV",
+      "ms_partner_id": "80f3c3b3-aa9e-45d7-9706-6637f557d3d2",
+      "city": "De Meern",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "BAGCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "Application Integration",
+        "CloudMigration",
+        "Dynamics365forFinance",
+        "Developer Tools",
+        "WebDevelopment",
+        "Information Management",
+        "Containers",
+        "BackupDisasterRecovery",
+        "Analytics",
+        "Cloud Database Migration"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "DevOps",
+          "Datacenter",
+          "Cloud Platform",
+          "Enterprise Resource Planning",
+          "Collaboration and Content",
+          "Application Integration",
+          "Communications",
+          "Data Platform",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ],
+        "silver": []
+      },
+      "products": [
+        "Teams",
+        "SkypeForBusiness",
+        "Exchange",
+        "SharePoint",
+        "Office",
+        "PowerBI",
+        "SQL",
+        "Windows",
+        "Dynamics365Enterprise",
+        "Microsoft365",
+        "DeveloperTools",
+        "Azure",
+        "EnterpriseMobilityAndSecurity"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "futurised-consultancy-bv",
+      "search_name": "futurised consultancy",
+      "ms_partner_name": "Open Line Consultancy B.V.",
+      "ms_partner_id": "34e4d1e3-779c-4a56-90a8-8b02dd6fc09a",
+      "city": "Amsterdam",
+      "designations": [
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "Azure Stack",
+        "DevOps",
+        "Analytics",
+        "Security",
+        "BackupDisasterRecovery",
+        "Containers",
+        "Developer Tools",
+        "HighPerformanceComputing",
+        "Hybrid Storage",
+        "RedhatonAzure"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Messaging",
+          "Application Development",
+          "Windows and Devices"
+        ],
+        "silver": [
+          "Datacenter",
+          "Security"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Microsoft365",
+        "Office",
+        "SharePoint",
+        "SkypeForBusiness",
+        "Windows",
+        "SQL",
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "git-solutions-bv",
+      "search_name": "git solutions",
+      "ms_partner_name": "GiT Systems GmbH",
+      "ms_partner_id": "3adfd426-0459-4ad1-bf85-6f8eb5bbf517",
+      "city": "",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "Azure Stack",
+        "Analytics",
+        "Application Integration",
+        "Security",
+        "BackupDisasterRecovery",
+        "Chatbot",
+        "CloudMigration",
+        "Cloud Database Migration",
+        "CloudVoice",
+        "Hybrid Storage"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Cloud Productivity",
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Microsoft365",
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Office",
+        "SharePoint",
+        "Teams",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "goodzo-professional-services-bv",
+      "search_name": "goodzo professional services",
+      "ms_partner_name": "Goodzo BV",
+      "ms_partner_id": "fa21a0fa-dfb1-4655-9008-aec175cbb99f",
+      "city": "Zoetermeer",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureInfraCompetency",
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "Security",
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "IdentityAccessMngmnt",
+        "Networking",
+        "SharepointonAzure",
+        "ServerlessComputing",
+        "Information Management",
+        "DevOps",
+        "Threat Protection"
+      ],
+      "competencies": {
+        "gold": [
+          "Cloud Productivity",
+          "Windows and Devices",
+          "Cloud Platform",
+          "Application Integration"
+        ],
+        "silver": [
+          "Application Development",
+          "Data Analytics"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Office",
+        "Project",
+        "SkypeForBusiness",
+        "Windows",
+        "SQL",
+        "Microsoft365",
+        "SharePoint",
+        "Teams",
+        "PowerBI",
+        "Visio"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "harmless-agency",
+      "search_name": "harmless agency",
+      "ms_partner_name": "Victory Agency",
+      "ms_partner_id": "fa6f6fbd-cadb-4e2f-abd6-6fa94ab627e7",
+      "city": "Eindhoven",
+      "designations": [],
+      "solutions": [
+        "Cloud Database Migration",
+        "Developer Tools",
+        "CloudMigration",
+        "Security",
+        "BackupDisasterRecovery",
+        "WebDevelopment"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "DeveloperTools",
+        "Office",
+        "Exchange",
+        "SQL",
+        "Teams",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "hermac-bv",
+      "search_name": "hermac",
+      "ms_partner_name": "HERMAC",
+      "ms_partner_id": "46b55054-01c3-41c1-869c-c17e6aa47ef5",
+      "city": "Scherpenzeel",
+      "designations": [
+        "AzureInfraCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "CloudMigration",
+        "Analytics",
+        "Application Integration",
+        "BackupDisasterRecovery",
+        "Cloud Database Migration",
+        "CloudVoice",
+        "IdentityAccessMngmnt",
+        "Information Management",
+        "Internet of Things",
+        "Mobile applications"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Project and Portfolio Management",
+          "Application Development"
+        ]
+      },
+      "products": [
+        "Office",
+        "SharePoint",
+        "Azure",
+        "Exchange",
+        "Microsoft365",
+        "PowerBI",
+        "Surface1",
+        "SQL",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "holland-datacenters-bv",
+      "search_name": "holland datacenters",
+      "ms_partner_name": "Holland ICT Groep",
+      "ms_partner_id": "321ac2f2-2dac-4edc-bb44-d75fa8522d10",
+      "city": "Huizen",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "Azure Stack",
+        "CloudMigration",
+        "Hybrid Storage",
+        "BackupDisasterRecovery",
+        "DatabaseonLinux",
+        "Cloud Database Migration",
+        "DevOps",
+        "SharepointonAzure",
+        "SQL Server upgrade"
+      ],
+      "competencies": {
+        "gold": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity"
+        ],
+        "silver": [
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Office",
+        "Azure",
+        "Microsoft365",
+        "SkypeForBusiness",
+        "Teams",
+        "Windows",
+        "PowerBI",
+        "SharePoint"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "holland-ict-groep-bv",
+      "search_name": "holland ict groep",
+      "ms_partner_name": "Holland ICT Groep",
+      "ms_partner_id": "321ac2f2-2dac-4edc-bb44-d75fa8522d10",
+      "city": "Huizen",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "Azure Stack",
+        "CloudMigration",
+        "Hybrid Storage",
+        "BackupDisasterRecovery",
+        "DatabaseonLinux",
+        "Cloud Database Migration",
+        "DevOps",
+        "SharepointonAzure",
+        "SQL Server upgrade"
+      ],
+      "competencies": {
+        "gold": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity"
+        ],
+        "silver": [
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Office",
+        "Azure",
+        "Microsoft365",
+        "SkypeForBusiness",
+        "Teams",
+        "Windows",
+        "PowerBI",
+        "SharePoint"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "house-of-data",
+      "search_name": "house of data",
+      "ms_partner_name": "House of Engagement",
+      "ms_partner_id": "ac0d2af7-f0cb-48e1-8845-fc7add6cef1d",
+      "city": "Hilversum",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Dynamics365Business",
+        "Dynamics365Enterprise",
+        "PowerBI",
+        "Office"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "hys-enterprise-bv",
+      "search_name": "hys enterprise",
+      "ms_partner_name": "HYS Enterprise B.V.",
+      "ms_partner_id": "6f651a73-0287-4789-af44-94ee7cdd3be4",
+      "city": "Amsterdam",
+      "designations": [],
+      "solutions": [
+        "Analytics",
+        "Application Integration",
+        "Artificial Intelligence",
+        "Security",
+        "Azure Stack",
+        "BackupDisasterRecovery",
+        "Big Data",
+        "Blockchain",
+        "Chatbot",
+        "Cloud Database Migration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "DeveloperTools",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "Project",
+        "SharePoint",
+        "SkypeForBusiness",
+        "SQL",
+        "Teams",
+        "Visio",
+        "Windows",
+        "Yammer"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "icotec-bv",
+      "search_name": "icotec",
+      "ms_partner_name": "Icotec B.V.",
+      "ms_partner_id": "46f15469-1dea-4e80-ad27-84fed8dac730",
+      "city": "UITHOORN",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Office",
+        "Exchange",
+        "Teams",
+        "Windows",
+        "Microsoft365",
+        "Azure",
+        "EnterpriseMobilityAndSecurity"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "ict-ingenieursbureau-caris-partners-bv",
+      "search_name": "ict ingenieursbureau caris partners",
+      "ms_partner_name": "Solid Partners ICT Groep",
+      "ms_partner_id": "2ff8e9a0-5b7e-4e2f-aa71-be8826a0980b",
+      "city": "Raalte",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "Application Integration",
+        "Security",
+        "BackupDisasterRecovery",
+        "Cloud Database Migration",
+        "CloudMigration",
+        "CloudVoice",
+        "CompetitiveDatabaseMigration",
+        "Containers",
+        "DatabaseonLinux",
+        "Developer Tools"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Integration",
+          "Cloud Productivity"
+        ],
+        "silver": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Microsoft365",
+        "Azure",
+        "Exchange",
+        "Office",
+        "SharePoint",
+        "SkypeForBusiness",
+        "SQL",
+        "Teams",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "ict-teamwork-bv",
+      "search_name": "ict teamwork",
+      "ms_partner_name": "ICT Teamwork B.V.",
+      "ms_partner_id": "2261f689-045e-4fc7-bdde-1d30c95740bc",
+      "city": "Zoetermeer",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "CloudVoice",
+        "SharepointonAzure",
+        "ServerlessComputing"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Office",
+        "SharePoint",
+        "Windows",
+        "Teams",
+        "Microsoft365"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "ictivity-groep-bv",
+      "search_name": "ictivity groep",
+      "ms_partner_name": "De Ictivity Groep",
+      "ms_partner_id": "83f05592-dea8-4ffa-a81b-2c560fe6bf33",
+      "city": "Eindhoven",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "Analytics",
+        "Application Integration",
+        "Artificial Intelligence",
+        "Security",
+        "Azure Stack",
+        "BackupDisasterRecovery",
+        "Big Data",
+        "Blockchain",
+        "Chatbot",
+        "Cloud Database Migration"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "SkypeForBusiness",
+        "Windows",
+        "Yammer",
+        "Microsoft365",
+        "Project",
+        "SQL",
+        "Teams",
+        "Visio",
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "inconel-bv",
+      "search_name": "inconel",
+      "ms_partner_name": "Inconel B.V.",
+      "ms_partner_id": "39ea38d1-5b13-4480-a597-ad76e7cbebdf",
+      "city": "Valkenburg",
+      "designations": [],
+      "solutions": [
+        "Security",
+        "CloudVoice",
+        "Networking",
+        "Application Integration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Office",
+        "Microsoft365",
+        "PowerBI",
+        "Exchange",
+        "Azure",
+        "Windows",
+        "SharePoint"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "infotopics-bv",
+      "search_name": "infotopics",
+      "ms_partner_name": "Infotopics B.V.",
+      "ms_partner_id": "100be5cf-4cb1-4a4e-b93d-900be2bbc05c",
+      "city": "Oldenzaal",
+      "designations": [
+        "AzureDataAICompetency"
+      ],
+      "solutions": [
+        "Analytics",
+        "Data Warehouse",
+        "Cloud Database Migration",
+        "DatabaseonLinux"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics"
+        ],
+        "silver": [
+          "Data Platform"
+        ]
+      },
+      "products": [
+        "Azure",
+        "PowerBI",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "innovative365-bv",
+      "search_name": "innovative365",
+      "ms_partner_name": "Innovative365 B.V.",
+      "ms_partner_id": "8f3d46f0-9151-4904-be93-69420b7d9d61",
+      "city": "Purmerend",
+      "designations": [],
+      "solutions": [
+        "DevOps",
+        "Application Integration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Cloud Productivity"
+        ]
+      },
+      "products": [
+        "Office",
+        "Azure",
+        "Windows",
+        "Microsoft365",
+        "Teams"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "inspektor-research-systems-bv",
+      "search_name": "inspektor research systems",
+      "ms_partner_name": "Inventeers Research & Development B.V.",
+      "ms_partner_id": "ca318f0f-49a5-4bb8-88d5-be9159f9891c",
+      "city": "Leiden",
+      "designations": [],
+      "solutions": [
+        "Internet of Things",
+        "Application Integration",
+        "Big Data",
+        "BackupDisasterRecovery",
+        "Artificial Intelligence",
+        "DatabaseonLinux",
+        "Developer Tools",
+        "DevOps",
+        "Dynamics365forRetails",
+        "Information Management"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Windows and Devices"
+        ]
+      },
+      "products": [
+        "Office",
+        "Exchange",
+        "Microsoft365",
+        "SkypeForBusiness",
+        "Windows",
+        "Visio",
+        "DeveloperTools",
+        "Dynamics365Business",
+        "Dynamics365Enterprise",
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "SQL",
+        "PowerBI"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "integral-knowledge-utilization-bv",
+      "search_name": "integral knowledge utilization",
+      "ms_partner_name": "Global Knowledge Training LLC",
+      "ms_partner_id": "defa54f3-4877-425b-8965-eb5fbfd108ce",
+      "city": "Nieuwegein",
+      "designations": [],
+      "solutions": [
+        "Networking"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Cloud Productivity",
+          "Datacenter",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Communications",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices"
+        ],
+        "silver": [
+          "Collaboration and Content",
+          "DevOps"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Dynamics365Business",
+        "Dynamics365Enterprise",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "SkypeForBusiness",
+        "Teams",
+        "Windows",
+        "SharePoint"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "inventx-bv",
+      "search_name": "inventx",
+      "ms_partner_name": "InventX BV",
+      "ms_partner_id": "20e77f84-64db-4343-8d83-cd8739526e53",
+      "city": "Goes",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "DevOps",
+        "Security",
+        "Networking",
+        "Threat Protection"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Microsoft365",
+        "Office",
+        "Exchange",
+        "Azure",
+        "Project",
+        "SharePoint",
+        "Teams",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "iquality-business-solutions-bv",
+      "search_name": "iquality business solutions",
+      "ms_partner_name": "Iquality Business Solutions B.V.",
+      "ms_partner_id": "f99c78dc-3d42-4866-9626-fa7c971c4988",
+      "city": "Eindhoven",
+      "designations": [
+        "AzureDigiAppCompetency"
+      ],
+      "solutions": [
+        "Cloud Database Migration",
+        "Application Integration",
+        "Artificial Intelligence",
+        "Security",
+        "Chatbot",
+        "CloudMigration",
+        "CloudVoice",
+        "Developer Tools",
+        "DevOps",
+        "IdentityAccessMngmnt"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Integration",
+          "Cloud Platform",
+          "Application Development"
+        ],
+        "silver": [
+          "Security",
+          "Project and Portfolio Management",
+          "Data Analytics"
+        ]
+      },
+      "products": [
+        "Azure",
+        "DeveloperTools",
+        "PowerBI",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "it-formule",
+      "search_name": "it formule",
+      "ms_partner_name": "IT Formule B.V.",
+      "ms_partner_id": "71d45431-b522-4687-b1cf-5cdad6851630",
+      "city": "Leiderdorp",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Microsoft365"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "itph-academy-gbo-bv",
+      "search_name": "itph academy gbo",
+      "ms_partner_name": "@The Academy BV",
+      "ms_partner_id": "a9fce89b-966e-44a8-8fdd-a057fc8f5e0d",
+      "city": "Utrecht",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Cloud Productivity",
+          "Datacenter",
+          "Cloud Platform",
+          "Project and Portfolio Management",
+          "Application Development"
+        ]
+      },
+      "products": [
+        "Azure",
+        "PowerBI",
+        "Exchange",
+        "Office",
+        "SharePoint",
+        "SQL",
+        "Windows",
+        "SkypeForBusiness"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "itq-global-it-services-bv",
+      "search_name": "itq global it services",
+      "ms_partner_name": "ITQ",
+      "ms_partner_id": "6fe82dd1-c599-428d-818a-4573150bac32",
+      "city": "Beverwijk",
+      "designations": [],
+      "solutions": [
+        "CloudMigration",
+        "Application Integration",
+        "Containers"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "itum-solutions-bv",
+      "search_name": "itum solutions",
+      "ms_partner_name": "Itum Solutions",
+      "ms_partner_id": "aa55c219-7f6a-45e0-9275-69f2fbd4bc27",
+      "city": "Ridderkerk",
+      "designations": [],
+      "solutions": [
+        "Chatbot",
+        "HighPerformanceComputing",
+        "Networking",
+        "Threat Protection",
+        "Big Data",
+        "BackupDisasterRecovery",
+        "Application Integration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Exchange",
+        "Microsoft365",
+        "Office",
+        "SharePoint",
+        "Visio",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "iventure-it-solutions-bv",
+      "search_name": "iventure it solutions",
+      "ms_partner_name": "iVenture IT Solutions",
+      "ms_partner_id": "34438cf1-4cbc-43a1-a2c9-e9b36621e40a",
+      "city": "Breskens",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "CloudMigration",
+        "Networking",
+        "Threat Protection"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Exchange",
+        "Microsoft365",
+        "Azure",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "jacob-van-dam-ict-bv",
+      "search_name": "jacob van dam ict",
+      "ms_partner_name": "Jacob van Dam ICT",
+      "ms_partner_id": "8a799cf6-b3e7-44d5-be4f-b4d093d6944e",
+      "city": "Lienden",
+      "designations": [],
+      "solutions": [
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "Threat Protection",
+        "Chatbot",
+        "Azure Stack",
+        "Security",
+        "Containers",
+        "DatabaseonLinux",
+        "Cloud Database Migration",
+        "DevOps"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Microsoft365",
+        "Teams",
+        "Office",
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "DeveloperTools",
+        "PowerBI",
+        "Project",
+        "SQL",
+        "SharePoint",
+        "SkypeForBusiness",
+        "Visio",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "jacobs-breda-electronics-bv",
+      "search_name": "jacobs breda electronics",
+      "ms_partner_name": "Datamex Breda B.V.",
+      "ms_partner_id": "fb038e46-5b1d-41e0-aafa-8d9e9ba23a3e",
+      "city": "Breda",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "DevOps",
+          "Datacenter",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Communications",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ],
+        "silver": [
+          "Data Analytics",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "DevOps",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Dynamics365Business",
+        "Dynamics365Enterprise",
+        "DynamicsAX GP NAV SL",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "SkypeForBusiness",
+        "Surface1",
+        "Visio",
+        "Windows",
+        "Yammer"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "kbite-automatisering-bv",
+      "search_name": "kbite automatisering",
+      "ms_partner_name": "KBite Automatisering B.V.",
+      "ms_partner_id": "6b761b83-37f7-45de-a09c-b1dee505ae8c",
+      "city": "'s-Gravenzande",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "Information Management",
+        "IdentityAccessMngmnt",
+        "SQL Server upgrade",
+        "Threat Protection",
+        "WebDevelopment",
+        "CloudVoice"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Windows",
+        "SQL",
+        "Surface1",
+        "Office",
+        "Microsoft365",
+        "Exchange",
+        "EnterpriseMobilityAndSecurity"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "kerridge-commercial-systems-nederland-bv",
+      "search_name": "kerridge commercial systems",
+      "ms_partner_name": "Kerridge Commercial Systems Ltd",
+      "ms_partner_id": "926d73f1-f830-4621-b2b9-97385920d776",
+      "city": "Gouda",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [
+          "Application Development",
+          "Windows and Devices",
+          "Application Integration"
+        ],
+        "silver": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Office",
+        "Teams",
+        "Windows",
+        "SharePoint",
+        "SQL",
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "kodify-bv",
+      "search_name": "kodify",
+      "ms_partner_name": "Kodify B.V.",
+      "ms_partner_id": "f4f2ebdf-e42a-4449-85da-5eae8b3afaaf",
+      "city": "Ermelo",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "SQL",
+        "DeveloperTools",
+        "SharePoint"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "konica-minolta-business-solutions-nederland-bv",
+      "search_name": "konica minolta business solutions",
+      "ms_partner_name": "Iquality Business Solutions B.V.",
+      "ms_partner_id": "f99c78dc-3d42-4866-9626-fa7c971c4988",
+      "city": "Eindhoven",
+      "designations": [
+        "AzureDigiAppCompetency"
+      ],
+      "solutions": [
+        "Cloud Database Migration",
+        "Application Integration",
+        "Artificial Intelligence",
+        "Security",
+        "Chatbot",
+        "CloudMigration",
+        "CloudVoice",
+        "Developer Tools",
+        "DevOps",
+        "IdentityAccessMngmnt"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Integration",
+          "Cloud Platform",
+          "Application Development"
+        ],
+        "silver": [
+          "Security",
+          "Project and Portfolio Management",
+          "Data Analytics"
+        ]
+      },
+      "products": [
+        "Azure",
+        "DeveloperTools",
+        "PowerBI",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "kyocera-document-solutions-nederland-bv",
+      "search_name": "kyocera document solutions",
+      "ms_partner_name": "KYOCERA Document Solutions Nederland",
+      "ms_partner_id": "15d04da6-9ecf-4aaa-99b0-a46ba884bfcf",
+      "city": "Schiphol-Rijk",
+      "designations": [],
+      "solutions": [
+        "CloudMigration",
+        "IdentityAccessMngmnt",
+        "Mobile applications"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "loogisch-communicatie-en-it-bv",
+      "search_name": "loogisch communicatie en it",
+      "ms_partner_name": "Combat Jongerenmarketing en -communicatie B.V.",
+      "ms_partner_id": "4a46bc1b-04c8-49ff-9b1e-7c023b9f173d",
+      "city": "Amerongen",
+      "designations": [],
+      "solutions": [
+        "Developer Tools",
+        "DatabaseonLinux",
+        "DevOps",
+        "Containers",
+        "Media",
+        "WebDevelopment",
+        "Chatbot",
+        "Mobile applications"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Office",
+        "Azure",
+        "Teams"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "meetrix-online-bv",
+      "search_name": "meetrix online",
+      "ms_partner_name": "GTS-Online B.V.",
+      "ms_partner_id": "08a0362a-62f2-4802-944e-6e717e318d85",
+      "city": "VEENENDAAL",
+      "designations": [],
+      "solutions": [
+        "CloudMigration",
+        "Networking",
+        "Security",
+        "BackupDisasterRecovery",
+        "CloudVoice",
+        "Hybrid Storage",
+        "IdentityAccessMngmnt",
+        "Threat Protection",
+        "Azure Stack",
+        "DevOps"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Integration"
+        ],
+        "silver": [
+          "Application Development",
+          "Small and Midmarket Cloud Solutions",
+          "Communications",
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Exchange",
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Microsoft365",
+        "Office",
+        "SharePoint",
+        "SkypeForBusiness",
+        "Windows",
+        "SQL",
+        "Teams",
+        "PowerBI",
+        "Visio"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "mydatafactory-bv",
+      "search_name": "mydatafactory",
+      "ms_partner_name": "Mydatafactory B.V.",
+      "ms_partner_id": "632f01eb-baf5-4a82-959c-39810b5e079e",
+      "city": "Meppel",
+      "designations": [],
+      "solutions": [
+        "DevOps",
+        "AI + Machine Learning",
+        "Big Data",
+        "Information Management"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Application Development"
+        ]
+      },
+      "products": [
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "netaspect-software-bv",
+      "search_name": "netaspect software",
+      "ms_partner_name": "Netaspect Software B.V.",
+      "ms_partner_id": "28917125-000b-49d1-8b64-2264ac95e53f",
+      "city": "BREDA",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "Azure Stack",
+        "DevOps",
+        "WebDevelopment"
+      ],
+      "competencies": {
+        "gold": [
+          "Windows and Devices",
+          "DevOps"
+        ],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "DeveloperTools",
+        "SharePoint",
+        "SQL",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "nexxbiz-operations-bv",
+      "search_name": "nexxbiz operations",
+      "ms_partner_name": "Rax-IP Operations",
+      "ms_partner_id": "b5c2c02f-90e3-4814-be36-7a7a2c050a99",
+      "city": "Malden",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "odin-groep",
+      "search_name": "odin groep",
+      "ms_partner_name": "ODIN Groep B.V.",
+      "ms_partner_id": "1f337b27-5ea8-45ae-996a-21a25bc42b99",
+      "city": "Utrecht",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "Networking",
+        "IdentityAccessMngmnt",
+        "CloudMigration"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "DevOps",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Communications",
+          "Data Platform",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ],
+        "silver": [
+          "Data Analytics",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Datacenter",
+          "Cloud Platform",
+          "Enterprise Resource Planning",
+          "Collaboration and Content",
+          "Application Integration",
+          "Application Development",
+          "Windows and Devices"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Office",
+        "SharePoint",
+        "Surface1",
+        "Windows",
+        "Microsoft365",
+        "Teams"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "one-fox-bv",
+      "search_name": "one fox",
+      "ms_partner_name": "One Fox B.V.",
+      "ms_partner_id": "27e353d7-fcfc-4da9-8eb2-4f462b22cd93",
+      "city": "Utrecht",
+      "designations": [],
+      "solutions": [
+        "Information Management",
+        "Application Integration",
+        "WebDevelopment",
+        "Azure Stack",
+        "AI + Machine Learning",
+        "Artificial Intelligence"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Integration",
+          "Application Development"
+        ],
+        "silver": [
+          "Project and Portfolio Management",
+          "Cloud Platform",
+          "Collaboration and Content"
+        ]
+      },
+      "products": [
+        "Office",
+        "SharePoint",
+        "Teams",
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "one-value-bv",
+      "search_name": "one value",
+      "ms_partner_name": "IT Value",
+      "ms_partner_id": "c7073c1f-c483-4ac8-8121-fe25e13ee967",
+      "city": "Oosterbeek",
+      "designations": [
+        "AzureInfraCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "Analytics",
+        "Application Integration",
+        "Security",
+        "BackupDisasterRecovery",
+        "Cloud Database Migration",
+        "CloudMigration",
+        "Hybrid Storage",
+        "IdentityAccessMngmnt",
+        "Information Management",
+        "Mobile applications"
+      ],
+      "competencies": {
+        "gold": [
+          "Enterprise Mobility Management",
+          "Cloud Productivity",
+          "Datacenter",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Application Development",
+          "Windows and Devices"
+        ],
+        "silver": [
+          "Small and Midmarket Cloud Solutions",
+          "Security",
+          "Messaging"
+        ]
+      },
+      "products": [
+        "Microsoft365",
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Office",
+        "PowerBI",
+        "Windows",
+        "SharePoint",
+        "Teams"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "online-supporter-bv",
+      "search_name": "online supporter",
+      "ms_partner_name": "GTS-Online B.V.",
+      "ms_partner_id": "08a0362a-62f2-4802-944e-6e717e318d85",
+      "city": "VEENENDAAL",
+      "designations": [],
+      "solutions": [
+        "CloudMigration",
+        "Networking",
+        "Security",
+        "BackupDisasterRecovery",
+        "CloudVoice",
+        "Hybrid Storage",
+        "IdentityAccessMngmnt",
+        "Threat Protection",
+        "Azure Stack",
+        "DevOps"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Integration"
+        ],
+        "silver": [
+          "Application Development",
+          "Small and Midmarket Cloud Solutions",
+          "Communications",
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Exchange",
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Microsoft365",
+        "Office",
+        "SharePoint",
+        "SkypeForBusiness",
+        "Windows",
+        "SQL",
+        "Teams",
+        "PowerBI",
+        "Visio"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "optimum-ict-bv",
+      "search_name": "optimum ict",
+      "ms_partner_name": "Optimum ICT B.V.",
+      "ms_partner_id": "1b136054-9987-4b5e-a2d7-63d51f9bb157",
+      "city": "Baarn",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "Analytics",
+        "Security",
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "CloudVoice",
+        "Threat Protection",
+        "SharepointonAzure",
+        "Networking",
+        "Media",
+        "Information Management"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Exchange",
+        "Office",
+        "SharePoint",
+        "Windows",
+        "EnterpriseMobilityAndSecurity",
+        "Visio",
+        "Microsoft365",
+        "PowerBI",
+        "Teams",
+        "Yammer",
+        "SQL",
+        "Project"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "privacy-united-bv",
+      "search_name": "privacy united",
+      "ms_partner_name": "OVS United",
+      "ms_partner_id": "51e2536e-ef57-4fa7-a2e1-8c229612e8a4",
+      "city": "Den Haag",
+      "designations": [],
+      "solutions": [
+        "Analytics",
+        "Application Integration",
+        "Artificial Intelligence",
+        "Big Data",
+        "Blockchain",
+        "Chatbot",
+        "Cloud Database Migration",
+        "CompetitiveDatabaseMigration",
+        "Containers",
+        "Developer Tools"
+      ],
+      "competencies": {
+        "gold": [
+          "Application Integration",
+          "Application Development"
+        ],
+        "silver": [
+          "Cloud Platform",
+          "Data Analytics"
+        ]
+      },
+      "products": [
+        "Exchange",
+        "DeveloperTools",
+        "DynamicsAX GP NAV SL",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "SQL",
+        "Yammer",
+        "Windows",
+        "Azure",
+        "Dynamics365Enterprise"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "productivity-software-group-bv",
+      "search_name": "productivity software",
+      "ms_partner_name": "Business Productivity 2DAY B.V.",
+      "ms_partner_id": "5781c2cc-707b-4714-8e2c-bddf5bbbd1ca",
+      "city": "Amsterdam",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureInfraCompetency",
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "DevOps"
+      ],
+      "competencies": {
+        "gold": [
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Datacenter",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Project and Portfolio Management",
+          "Application Development"
+        ],
+        "silver": [
+          "Data Analytics",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Datacenter",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Messaging",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ]
+      },
+      "products": [
+        "SharePoint",
+        "SkypeForBusiness",
+        "Azure",
+        "Office",
+        "Teams"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "proud-innovations-bv",
+      "search_name": "proud innovations",
+      "ms_partner_name": "Proud Nerds BV",
+      "ms_partner_id": "8306904d-4940-4e6e-8874-a71f13e0e2ff",
+      "city": "Nijmegen",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "CloudVoice",
+        "Developer Tools",
+        "DevOps",
+        "Microserviceapplications",
+        "Mobile applications",
+        "Networking",
+        "SharepointonAzure"
+      ],
+      "competencies": {
+        "gold": [
+          "Cloud Productivity",
+          "Application Development"
+        ],
+        "silver": [
+          "Collaboration and Content",
+          "Cloud Platform",
+          "Application Integration"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "DeveloperTools",
+        "Microsoft365",
+        "Office",
+        "SharePoint",
+        "SQL",
+        "Teams",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "prowise-bv",
+      "search_name": "prowise",
+      "ms_partner_name": "Prowise B.V.",
+      "ms_partner_id": "4500a02f-73ee-4d66-9be1-7e0692605396",
+      "city": "Budel",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "purple-dragon-cybersecurity-bv",
+      "search_name": "purple dragon cybersecurity",
+      "ms_partner_name": "Let's Go Purple",
+      "ms_partner_id": "998b982f-4903-4ad2-90af-ecddd08ff971",
+      "city": "Vlijmen",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "CloudVoice",
+        "CloudMigration"
+      ],
+      "competencies": {
+        "gold": [
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Communications",
+          "Project and Portfolio Management",
+          "Windows and Devices"
+        ],
+        "silver": [
+          "Collaboration and Content"
+        ]
+      },
+      "products": [
+        "Teams",
+        "Microsoft365",
+        "Office",
+        "Project",
+        "EnterpriseMobilityAndSecurity"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "quality-and-information-management-support-bv-h-o-d-n-manualmaster",
+      "search_name": "quality and information management support h o d n manualmaster",
+      "ms_partner_name": "ManualMaster",
+      "ms_partner_id": "36a02c18-2de1-4c15-84b6-fd908c694d29",
+      "city": "Papendrecht",
+      "designations": [],
+      "solutions": [
+        "Information Management",
+        "Enterprise Business Intelligence",
+        "Application Integration"
+      ],
+      "competencies": {
+        "gold": [
+          "Windows and Devices",
+          "Data Platform",
+          "DevOps"
+        ],
+        "silver": [
+          "Application Development"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Microsoft365"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "rbict",
+      "search_name": "rbict",
+      "ms_partner_name": "RBICT",
+      "ms_partner_id": "6410eade-fd2b-4c2d-9e3e-e464b75c9414",
+      "city": "Arnhem",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "Networking"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Office",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "resource-opmeer-bv",
+      "search_name": "resource opmeer",
+      "ms_partner_name": "Resource Opmeer BV",
+      "ms_partner_id": "a4da9e8f-fc3d-47fe-8a74-889f4590afeb",
+      "city": "Hoogwoud",
+      "designations": [],
+      "solutions": [
+        "Networking",
+        "Application Integration",
+        "CloudMigration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "roger365-io-bv",
+      "search_name": "roger365 io",
+      "ms_partner_name": "ROGER365.io B.V.",
+      "ms_partner_id": "04945c1f-515e-4ae2-9e50-640740c8919e",
+      "city": "Delft",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Teams"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "roma-ict-diensten-bv",
+      "search_name": "roma ict diensten",
+      "ms_partner_name": "Roma ICT Diensten B.V.",
+      "ms_partner_id": "71e2e7ba-8915-489d-882a-7695c2dbdaa5",
+      "city": "Deurne",
+      "designations": [],
+      "solutions": [
+        "Security",
+        "CloudMigration",
+        "Networking",
+        "Threat Protection",
+        "RegulatorycomplianceGDPR",
+        "Information Management",
+        "Azure Stack",
+        "BackupDisasterRecovery"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Office",
+        "Azure",
+        "Exchange",
+        "Microsoft365",
+        "Windows",
+        "EnterpriseMobilityAndSecurity",
+        "SharePoint",
+        "Teams",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "scherpthe-bv",
+      "search_name": "scherpthe",
+      "ms_partner_name": "Scherpthe BV",
+      "ms_partner_id": "4c17d801-aba4-4f62-9af0-9b73daf949d5",
+      "city": "EIndhoven",
+      "designations": [],
+      "solutions": [
+        "Application Integration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "selles-automatisering-bv",
+      "search_name": "selles automatisering",
+      "ms_partner_name": "Selles Automatisering BV",
+      "ms_partner_id": "dba2b776-9d10-4678-b174-431d062230d1",
+      "city": "Genemuiden",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "Security",
+        "Azure Stack",
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "CloudVoice",
+        "DevOps",
+        "IdentityAccessMngmnt",
+        "Mobile applications",
+        "Networking"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Cloud Productivity",
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Exchange",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "Teams",
+        "Windows",
+        "EnterpriseMobilityAndSecurity",
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "servicetec-airport-operations-netherlands-bv",
+      "search_name": "servicetec airport operations",
+      "ms_partner_name": "Rax-IP Operations",
+      "ms_partner_id": "b5c2c02f-90e3-4814-be36-7a7a2c050a99",
+      "city": "Malden",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "sevenp-bv",
+      "search_name": "sevenp",
+      "ms_partner_name": "SEVENP BV",
+      "ms_partner_id": "75e7014e-d53c-462a-a0c4-b51bc6e47993",
+      "city": "Hardinxveld-Giessendam",
+      "designations": [
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "BackupDisasterRecovery",
+        "Cloud Database Migration",
+        "CloudMigration"
+      ],
+      "competencies": {
+        "gold": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Messaging"
+        ],
+        "silver": [
+          "Data Analytics",
+          "Application Integration",
+          "Communications",
+          "Application Development",
+          "Windows and Devices"
+        ]
+      },
+      "products": [
+        "Exchange",
+        "Microsoft365",
+        "PowerBI",
+        "SharePoint",
+        "SkypeForBusiness",
+        "SQL",
+        "Teams",
+        "Visio",
+        "Windows",
+        "Yammer"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "sky-medical-group-bv",
+      "search_name": "sky medical",
+      "ms_partner_name": "Medis Medical Imaging Systems B.V.",
+      "ms_partner_id": "b32f0325-24d1-44df-a702-f938c9f28cb7",
+      "city": "Leiden",
+      "designations": [],
+      "solutions": [
+        "DevOps",
+        "Application Integration",
+        "AI + Machine Learning",
+        "Developer Tools",
+        "Big Data"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "DevOps",
+          "Data Platform"
+        ],
+        "silver": []
+      },
+      "products": [
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "smart-analytic-solutions-bv",
+      "search_name": "smart analytic solutions",
+      "ms_partner_name": "SMART business",
+      "ms_partner_id": "2f6c8737-ed21-4ad1-9854-42f3fa8717ca",
+      "city": "Hilversum",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "BAGCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [
+        "Analytics",
+        "Artificial Intelligence",
+        "Azure Stack",
+        "Big Data",
+        "Chatbot",
+        "Cloud Database Migration",
+        "CloudMigration",
+        "Cognitive Services",
+        "DevOps",
+        "Dynamics365forCustomerService"
+      ],
+      "competencies": {
+        "gold": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity",
+          "DevOps",
+          "Datacenter",
+          "Cloud Platform",
+          "Enterprise Resource Planning",
+          "Collaboration and Content",
+          "Application Integration",
+          "Communications",
+          "Data Platform",
+          "Messaging",
+          "Project and Portfolio Management",
+          "Application Development",
+          "Windows and Devices",
+          "Security"
+        ],
+        "silver": [
+          "Cloud Business Applications"
+        ]
+      },
+      "products": [
+        "EnterpriseMobilityAndSecurity",
+        "DeveloperTools",
+        "Azure",
+        "Exchange",
+        "Dynamics365Business",
+        "Dynamics365Enterprise",
+        "DynamicsAX GP NAV SL",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "Project",
+        "SharePoint",
+        "Teams",
+        "Visio",
+        "Yammer",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "southernhill-bv",
+      "search_name": "southernhill",
+      "ms_partner_name": "SouthernHill",
+      "ms_partner_id": "62e23068-3172-4950-ac57-05f470422614",
+      "city": "Elsloo",
+      "designations": [],
+      "solutions": [
+        "CloudVoice",
+        "Containers",
+        "DatabaseonLinux",
+        "Developer Tools",
+        "IdentityAccessMngmnt",
+        "Networking",
+        "Threat Protection",
+        "CloudMigration",
+        "Cloud Database Migration"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Application Development",
+          "Application Integration",
+          "Project and Portfolio Management"
+        ]
+      },
+      "products": [
+        "EnterpriseMobilityAndSecurity",
+        "Azure",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "Teams",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "stb-computer-service",
+      "search_name": "stb computer service",
+      "ms_partner_name": "Allround Computer Service BV",
+      "ms_partner_id": "f4232421-e78e-4532-bf9d-b7039a1f47f6",
+      "city": "Maasdijk",
+      "designations": [],
+      "solutions": [],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Cloud Platform",
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Exchange",
+        "Office",
+        "EnterpriseMobilityAndSecurity",
+        "PowerBI",
+        "SharePoint",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "steentjes-ict-bv",
+      "search_name": "steentjes ict",
+      "ms_partner_name": "Steentjes ICT B.V.",
+      "ms_partner_id": "ea46e843-7071-44bf-a1f1-866198baa95e",
+      "city": "Lichtenvoorde",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "CloudMigration",
+        "DevOps",
+        "MySQLPostgresMigrationtoAzure"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Cloud Productivity",
+          "Cloud Platform",
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "Exchange",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "Teams",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "streaming-valley-bv",
+      "search_name": "streaming valley",
+      "ms_partner_name": "@Valley B.V.",
+      "ms_partner_id": "c7aaa087-da71-4b2f-9518-afe983136cb5",
+      "city": "Den Haag",
+      "designations": [],
+      "solutions": [
+        "Azure Stack",
+        "BackupDisasterRecovery",
+        "Networking"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Office",
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "syscon-bv",
+      "search_name": "syscon",
+      "ms_partner_name": "Syscon BV",
+      "ms_partner_id": "b1ef1da7-e7c9-4ab7-ab46-98ca930cb689",
+      "city": "Lelystad",
+      "designations": [],
+      "solutions": [
+        "Analytics",
+        "Application Integration",
+        "Big Data",
+        "Artificial Intelligence",
+        "Containers",
+        "DatabaseonLinux",
+        "Internet of Things",
+        "SQL Server upgrade",
+        "MySQLPostgresMigrationtoAzure",
+        "WebDevelopment"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Cloud Platform",
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Office",
+        "Azure",
+        "PowerBI",
+        "SQL",
+        "DeveloperTools"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "tcc-the-computer-company-bv",
+      "search_name": "tcc the computer company",
+      "ms_partner_name": "TCC The Computer Company B.V.",
+      "ms_partner_id": "ebcfd310-a0f6-4b9e-8559-39ae27251afb",
+      "city": "Maastricht",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency",
+        "AzureInfraCompetency",
+        "ModernCompetency",
+        "SecurityCompetency"
+      ],
+      "solutions": [],
+      "competencies": {
+        "gold": [
+          "Cloud Productivity",
+          "Cloud Platform"
+        ],
+        "silver": [
+          "Data Analytics",
+          "Enterprise Mobility Management",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Platform",
+          "Collaboration and Content",
+          "Application Integration",
+          "Application Development",
+          "Security"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Office",
+        "SharePoint",
+        "SkypeForBusiness",
+        "SQL",
+        "Windows"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "tef-digitaal",
+      "search_name": "tef digitaal",
+      "ms_partner_name": "TEF Digitaal",
+      "ms_partner_id": "909c18f4-371f-4a95-bec5-d1abbec0e51b",
+      "city": "Hendrik-Ido-Ambacht",
+      "designations": [],
+      "solutions": [
+        "WebDevelopment",
+        "Application Integration",
+        "Information Management",
+        "Networking"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Office",
+        "SharePoint",
+        "SkypeForBusiness",
+        "Visio",
+        "Exchange",
+        "EnterpriseMobilityAndSecurity",
+        "Microsoft365"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "tinx-it-bv",
+      "search_name": "tinx it",
+      "ms_partner_name": "Tinx-IT",
+      "ms_partner_id": "88b977b9-061e-4db3-a4cc-4b4817e87a2b",
+      "city": "Ede",
+      "designations": [],
+      "solutions": [
+        "Application Integration",
+        "Developer Tools"
+      ],
+      "competencies": {
+        "gold": [
+          "Enterprise Resource Planning"
+        ],
+        "silver": [
+          "Data Analytics"
+        ]
+      },
+      "products": [
+        "Dynamics365Business"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "tjip-bv",
+      "search_name": "tjip",
+      "ms_partner_name": "Tjip B.V.",
+      "ms_partner_id": "fd342738-ec39-4bb4-ba96-40a1a8d4c7ca",
+      "city": "Delft",
+      "designations": [],
+      "solutions": [
+        "Media",
+        "Networking",
+        "Application Integration",
+        "Azure Stack",
+        "Security",
+        "Containers",
+        "DevOps",
+        "Microserviceapplications",
+        "RegulatorycomplianceGDPR",
+        "Developer Tools"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Azure",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "top-systems",
+      "search_name": "top systems",
+      "ms_partner_name": "TOP systems B.V.",
+      "ms_partner_id": "8f53d8ab-b78b-4488-a721-baa2d0e8cf97",
+      "city": "Roosendaal",
+      "designations": [],
+      "solutions": [
+        "Security",
+        "BackupDisasterRecovery",
+        "CloudMigration",
+        "CloudVoice",
+        "Hybrid Storage",
+        "IdentityAccessMngmnt",
+        "Information Management",
+        "Mobile applications",
+        "Networking",
+        "RegulatorycomplianceGDPR"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Microsoft365",
+        "Office",
+        "SkypeForBusiness",
+        "SQL",
+        "Teams",
+        "Windows",
+        "Yammer",
+        "SharePoint"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "uniprofs-services-bv",
+      "search_name": "uniprofs services",
+      "ms_partner_name": "UniProfs - Services B.V.",
+      "ms_partner_id": "124e5861-f3a9-4acc-b082-3121355bf51d",
+      "city": "Almere",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "Azure Stack",
+        "Dynamics365forSales",
+        "Networking",
+        "CloudMigration",
+        "BackupDisasterRecovery",
+        "IdentityAccessMngmnt",
+        "Hybrid Storage",
+        "RegulatorycomplianceGDPR",
+        "Threat Protection",
+        "Security"
+      ],
+      "competencies": {
+        "gold": [
+          "Cloud Platform",
+          "Cloud Productivity"
+        ],
+        "silver": [
+          "Security",
+          "Enterprise Mobility Management",
+          "Application Development",
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "Windows",
+        "Microsoft365",
+        "SQL",
+        "Teams",
+        "Surface1",
+        "SurfaceHub"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "universal-it-bv",
+      "search_name": "universal it",
+      "ms_partner_name": "Universal IT B.V.",
+      "ms_partner_id": "8e9472af-2a3b-4741-9ac5-03ff5fb830db",
+      "city": "Arnhem",
+      "designations": [
+        "AzureDataAICompetency",
+        "AzureDigiAppCompetency"
+      ],
+      "solutions": [
+        "CloudMigration",
+        "Cloud Database Migration",
+        "CloudVoice",
+        "Application Integration",
+        "Security",
+        "BackupDisasterRecovery",
+        "Chatbot",
+        "Cognitive Services",
+        "DevOps",
+        "Enterprise Business Intelligence"
+      ],
+      "competencies": {
+        "gold": [
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity"
+        ],
+        "silver": [
+          "Security",
+          "Enterprise Mobility Management",
+          "Collaboration and Content",
+          "Cloud Platform"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "Surface1",
+        "Windows",
+        "Teams",
+        "Microsoft365",
+        "SurfaceHub",
+        "SQL",
+        "Project"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "value-creation-capital-bv",
+      "search_name": "value creation capital",
+      "ms_partner_name": "IT Creation B.V.",
+      "ms_partner_id": "29cfaf6f-f110-46ac-addc-b612ad0c11e3",
+      "city": "Papendrecht",
+      "designations": [],
+      "solutions": [
+        "BackupDisasterRecovery",
+        "Networking"
+      ],
+      "competencies": {
+        "gold": [
+          "Cloud Platform",
+          "Datacenter",
+          "Application Integration",
+          "Cloud Productivity"
+        ],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Azure",
+        "EnterpriseMobilityAndSecurity",
+        "Exchange",
+        "Dynamics365Business",
+        "Microsoft365",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "Teams",
+        "Windows",
+        "Visio",
+        "SQL"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "vlaar-computer-dienstverlening",
+      "search_name": "vlaar computer dienstverlening",
+      "ms_partner_name": "ICT-Dienstverlening",
+      "ms_partner_id": "85f86b64-3287-4328-9dca-8757703d9fe3",
+      "city": "Scherpenzeel",
+      "designations": [],
+      "solutions": [
+        "CloudMigration",
+        "CloudVoice",
+        "Networking"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Small and Midmarket Cloud Solutions"
+        ]
+      },
+      "products": [
+        "Office",
+        "Surface1",
+        "Exchange",
+        "Windows",
+        "Azure"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "wizzbit-bv",
+      "search_name": "wizzbit",
+      "ms_partner_name": "Wizzbit B.V.",
+      "ms_partner_id": "3cc0c730-7d1c-408f-8751-1e547627f7f0",
+      "city": "Rijswijk",
+      "designations": [],
+      "solutions": [
+        "Information Management",
+        "Internet of Things",
+        "CloudMigration",
+        "SharepointonAzure",
+        "Networking",
+        "Cloud Database Migration",
+        "Application Integration",
+        "Threat Protection"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": [
+          "Windows and Devices",
+          "Small and Midmarket Cloud Solutions",
+          "Cloud Productivity"
+        ]
+      },
+      "products": [
+        "Microsoft365",
+        "Exchange",
+        "Azure",
+        "Office",
+        "PowerBI",
+        "SharePoint",
+        "EnterpriseMobilityAndSecurity",
+        "Surface1",
+        "Teams",
+        "Windows",
+        "Project",
+        "SkypeForBusiness",
+        "Visio",
+        "Yammer"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "workforce-insights-bv",
+      "search_name": "workforce insights",
+      "ms_partner_name": "Organisation Insights",
+      "ms_partner_id": "8e24aeb1-e58c-46d2-9102-6c80288a1bd4",
+      "city": "Weesp",
+      "designations": [],
+      "solutions": [
+        "Dynamics365forFieldService",
+        "Dynamics365forFinance",
+        "Dynamics365forCustomerService",
+        "Dynamics365forSales",
+        "Information Management",
+        "SharepointonAzure"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Dynamics365Enterprise",
+        "DynamicsAX GP NAV SL",
+        "Microsoft365",
+        "Teams",
+        "Office",
+        "PowerBI",
+        "Project",
+        "SharePoint",
+        "Visio",
+        "Yammer"
+      ],
+      "endorsed_products": []
+    },
+    {
+      "nldigital_slug": "zeroplex-bv",
+      "search_name": "zeroplex",
+      "ms_partner_name": "ZeroPlex",
+      "ms_partner_id": "fe7ad64a-eb9a-434b-bff1-3fa030e3e6b6",
+      "city": "Venlo",
+      "designations": [
+        "ModernCompetency"
+      ],
+      "solutions": [
+        "Application Integration",
+        "Azure Stack",
+        "BackupDisasterRecovery",
+        "IdentityAccessMngmnt",
+        "Information Management",
+        "WebDevelopment"
+      ],
+      "competencies": {
+        "gold": [],
+        "silver": []
+      },
+      "products": [
+        "Microsoft365",
+        "Teams",
+        "Office",
+        "SharePoint",
+        "Windows",
+        "Visio",
+        "PowerBI",
+        "Exchange",
+        "EnterpriseMobilityAndSecurity"
+      ],
+      "endorsed_products": []
+    }
+  ]
+}

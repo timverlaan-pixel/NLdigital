@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertrokken Bedrijven per Datum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .batch-section {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .batch-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .batch-header-text {
+            flex: 1;
+        }
+        
+        .batch-dates {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .batch-count {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .company-list {
+            padding: 20px;
+        }
+        
+        .company-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+        
+        .company-item:last-child {
+            border-bottom: none;
+        }
+        
+        .company-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .company-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8em;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .company-name {
+            flex: 1;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .company-link {
+            padding: 8px 16px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #667eea;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .company-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .back-link {
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1em;
+        }
+        
+        .back-link a {
+            color: white;
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
+            margin: 0 10px;
+        }
+        
+        .back-link a:hover {
+            opacity: 0.8;
+        }
+        
+        .empty-batch {
+            color: #999;
+            font-style: italic;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚪 Vertrokken Bedrijven per Datum</h1>
+        <div class="subtitle">Welke bedrijven zijn in elke periode vertrokken?</div>
+        
+        <div id="batches"></div>
+        
+        <div class="back-link">
+            <a href="departed_companies_logos.html">← Alle Vertrokken Bedrijven</a> | 
+            <a href="index.html">Sankey Diagram →</a>
+        </div>
+    </div>
+    
+    <script>
+        // Flow data
+        const flows = [
+  {
+    "from_date": "2024-11-07 01:58:20",
+    "to_date": "2025-01-03 22:54:06",
+    "stayed": 617,
+    "joined": 15,
+    "left": 11,
+    "stayed_members": ["00010110-bv", "1digitalnl-bv", "2jours-bv", "2makeitwork-bv", "3corners-internetworking-services-bv", "3d-systems-benelux-bv", "4efficiency-services-bv", "4i-solutions-bv", "8vance-matching-technologies-bv", "aareon-nederland-bv", "abc-solutions-bv", "ac-systems-bv", "accelerators-nl-bv", "accessible-tech-bv", "acz-solutions-bv", "adam-studio-bv", "adm-electronics-bv", "admatic-international-bv", "adnerds-agency-bv", "adore-me-bv", "adrama-bv", "advanced-analytics-bv", "advanced-factory-automation-bv", "advito-bv", "aeon-digital-agency-bv", "aeroconsult-bv", "aeroport-consultancy-bv", "aeten-consultants-bv", "afacl-ltd-affiliate-network-bv", "affinity-systems-bv", "afformix-bv", "afterlogic-corp-bv", "agent-bv", "agilevtech-bv", "agility-it-consulting-bv", "agora-europe-bv", "aground-bv", "ahead-bv", "ai-data-science-bv", "aibex-bv", "aige-bv", "aingrich-bv", "aioculus-bv", "aip-security-bv", "airbus-helicopters-france-sarl", "airworthiness-management-bv", "ais-global-bv", "ajax-systems-bv", "ajoy-digital-agency-bv", "akademie-für-politische-bildung", "akasia-bv", "alamo-interactive-bv", "alb-digital-bv", "alba-legal-technology-bv", "albatech-bv", "albatros-logistics-bv", "albe-industries-bv", "albert-heijn-bv", "albertus-bv", "albor-bv", "albrechtsen-og-co-as", "alcara-bv", "alcf-bv", "alcina-bv", "alco-bv", "alcoloops-bv", "alcova-bv", "aldegonde-logistiek-bv", "alderberg-bv", "aldergrove-bv", "aldershotzicht-bv", "aldinger-international-bv", "aldeion-bv", "aldendus-bv", "aldersgate-bv", "alders-it-solutions-bv", "alders-projecten-bv", "aldershotz-bv", "alderwood-bv", "aldery-bv", "aldia-bv", "aldigs-consultancy-bv", "aldigo-bv", "aldine-bv", "aldino-bv", "aldinv-bv", "aldis-bv", "aldith-bv", "alds-bv", "aldtec-bv", "aldus-bv", "aldwin-bv", "aldwins-bv"],
+    "joined_members": ["aion-media-group-bv", "airfusion-bv", "airview-technology-bv", "ajeti-technology-bv", "ajimun-bv", "alco-coating-systems-bv", "alicant-bv", "alka-bv", "alkante-systems-bv"],
+    "left_members": ["albereo-bv", "aldglas-bv", "aldino-production-bv", "aldun-group-bv", "aldwick-technologies-bv", "aldwyn-services-bv"]
+  },
+  {
+    "from_date": "2025-01-03 22:54:06",
+    "to_date": "2025-03-07 05:42:10",
+    "stayed": 621,
+    "joined": 5,
+    "left": 6,
+    "stayed_members": [],
+    "joined_members": ["alducation-bv", "alduino-bv", "alduity-bv"],
+    "left_members": ["aion-media-group-bv", "airfusion-bv", "airview-technology-bv", "ajeti-technology-bv"]
+  }
+];
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('nl-NL', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+        
+        function formatCompanyName(slug) {
+            return slug
+                .split('-')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+        
+        function renderBatches() {
+            const container = document.getElementById('batches');
+            
+            flows.forEach((flow, index) => {
+                const fromDate = formatDate(flow.from_date);
+                const toDate = formatDate(flow.to_date);
+                const leftMembers = flow.left_members || [];
+                
+                const section = document.createElement('div');
+                section.className = 'batch-section';
+                
+                // Header
+                const header = document.createElement('div');
+                header.className = 'batch-header';
+                header.innerHTML = `
+                    <div class="batch-header-text">
+                        <div class="batch-dates">${fromDate} → ${toDate}</div>
+                        <div class="batch-count">Periode ${index + 1}</div>
+                    </div>
+                    <div class="badge">${leftMembers.length} bedrijven</div>
+                `;
+                section.appendChild(header);
+                
+                // Company list
+                const listDiv = document.createElement('div');
+                listDiv.className = 'company-list';
+                
+                if (leftMembers.length === 0) {
+                    listDiv.innerHTML = '<div class="empty-batch">Geen bedrijven zijn in deze periode vertrokken</div>';
+                } else {
+                    leftMembers.forEach((company, idx) => {
+                        const item = document.createElement('div');
+                        item.className = 'company-item';
+                        
+                        const companyName = formatCompanyName(company);
+                        const nldigitalUrl = `https://nldigital.nl/leden/${company}/`;
+                        
+                        item.innerHTML = `
+                            <div class="company-icon">${idx + 1}</div>
+                            <div class="company-name">${companyName}</div>
+                            <a href="${nldigitalUrl}" target="_blank" class="company-link">Bezoeken →</a>
+                        `;
+                        
+                        listDiv.appendChild(item);
+                    });
+                }
+                
+                section.appendChild(listDiv);
+                container.appendChild(section);
+            });
+        }
+        
+        renderBatches();
+    </script>
+</body>
+</html>
